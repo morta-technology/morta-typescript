@@ -22,7 +22,9 @@ The full API of this library can be found in [api.md](api.md).
 ```js
 import Morta from 'morta';
 
-const client = new Morta();
+const client = new Morta({
+  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted
+});
 
 const response = await client.user.retrieveMe();
 
@@ -37,7 +39,9 @@ This library includes TypeScript definitions for all request params and response
 ```ts
 import Morta from 'morta';
 
-const client = new Morta();
+const client = new Morta({
+  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted
+});
 
 const response: Morta.UserRetrieveMeResponse = await client.user.retrieveMe();
 ```
@@ -127,7 +131,6 @@ You can use the `maxRetries` option to configure or disable this:
 ```js
 // Configure the default for all requests:
 const client = new Morta({
-  apiKey: 'My API Key',
   maxRetries: 0, // default is 2
 });
 
@@ -145,7 +148,6 @@ Requests time out after 1 minute by default. You can configure this with a `time
 ```ts
 // Configure the default for all requests:
 const client = new Morta({
-  apiKey: 'My API Key',
   timeout: 20 * 1000, // 20 seconds (default is 1 minute)
 });
 
