@@ -84,6 +84,7 @@ export {
   type TableCreateIndexParams,
   type TableDownloadCsvParams,
   type TableDuplicateParams,
+  type TableGetCsvBackupParams,
   type TableGetFileParams,
   type TableGetStatisticsParams,
   type TableStreamRowsParams,

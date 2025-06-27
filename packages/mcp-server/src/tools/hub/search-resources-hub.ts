@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   tags: [],
   httpMethod: 'get',
   httpPath: '/v1/hub/{hub_id}/search-resources',
-  operationId: 'SearchHub',
+  operationId: 'SearchHubResources',
 };
 
 export const tool: Tool = {

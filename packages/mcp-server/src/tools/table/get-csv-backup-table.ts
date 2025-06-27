@@ -24,13 +24,17 @@ export const tool: Tool = {
       table_id: {
         type: 'string',
       },
+      date: {
+        type: 'string',
+        description: 'The date of the backup to retrieve',
+      },
     },
   },
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
   const { table_id, ...body } = args as any;
-  return asBinaryContentResult(await client.table.getCsvBackup(table_id));
+  return asBinaryContentResult(await client.table.getCsvBackup(table_id, body));
 };
 
 export default { metadata, tool, handler };
