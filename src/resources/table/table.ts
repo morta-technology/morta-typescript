@@ -199,8 +199,13 @@ export class TableResource extends APIResource {
   /**
    * Get a CSV backup of a table at a specific date
    */
-  getCsvBackup(tableID: string, options?: RequestOptions): APIPromise<Response> {
+  getCsvBackup(
+    tableID: string,
+    query: TableGetCsvBackupParams,
+    options?: RequestOptions,
+  ): APIPromise<Response> {
     return this._client.get(path`/v1/table/${tableID}/csv-backup`, {
+      query,
       ...options,
       headers: buildHeaders([{ Accept: 'application/octet-stream' }, options?.headers]),
       __binaryResponse: true,
@@ -752,6 +757,13 @@ export interface TableDuplicateParams {
   duplicatePermissions?: boolean;
 }
 
+export interface TableGetCsvBackupParams {
+  /**
+   * The date of the backup to retrieve
+   */
+  date: string;
+}
+
 export interface TableGetFileParams {
   /**
    * UUID of the column containing the cell.
@@ -852,6 +864,7 @@ export declare namespace TableResource {
     type TableCreateIndexParams as TableCreateIndexParams,
     type TableDownloadCsvParams as TableDownloadCsvParams,
     type TableDuplicateParams as TableDuplicateParams,
+    type TableGetCsvBackupParams as TableGetCsvBackupParams,
     type TableGetFileParams as TableGetFileParams,
     type TableGetStatisticsParams as TableGetStatisticsParams,
     type TableStreamRowsParams as TableStreamRowsParams,
