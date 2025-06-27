@@ -398,7 +398,7 @@ export class Morta {
   }
 
   protected authHeaders(opts: FinalRequestOptions): NullableHeaders | undefined {
-    return buildHeaders([{ Authorization: this.apiKey }]);
+    return buildHeaders([{ Authorization: `Bearer ${this.apiKey}` }]);
   }
 
   protected stringifyQuery(query: Record<string, unknown>): string {

@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.1.0 (2025-06-27)
+
+Full Changelog: [v1.0.0...v1.1.0](https://github.com/morta-technology/morta-typescript/compare/v1.0.0...v1.1.0)
+
+### Features
+
+* **api:** update via SDK Studio ([ab3be63](https://github.com/morta-technology/morta-typescript/commit/ab3be632da7e7d3672fb82a1c7ac74d40567ea33))
+* **api:** update via SDK Studio ([07ec5b4](https://github.com/morta-technology/morta-typescript/commit/07ec5b4386f6bd464ee9815d0d2ea1d3d1307c50))
+
+
+### Bug Fixes
+
+* **client:** get fetchOptions type more reliably ([45001ae](https://github.com/morta-technology/morta-typescript/commit/45001aec8444f96d3a0e33ca0b80b28ade217c86))
+
 ## 1.0.0 (2025-06-26)
 
 Full Changelog: [v0.0.1-alpha.0...v1.0.0](https://github.com/morta-technology/morta-typescript/compare/v0.0.1-alpha.0...v1.0.0)
