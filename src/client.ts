@@ -167,6 +167,7 @@ import {
   TableDownloadCsvResponse,
   TableDuplicateParams,
   TableDuplicateResponse,
+  TableGetCsvBackupParams,
   TableGetDuplicatedChildrenResponse,
   TableGetFileParams,
   TableGetStatisticsParams,
@@ -243,6 +244,8 @@ export interface ClientOptions {
    *
    * Note that request timeouts are retried by default, so in a worst-case scenario you may wait
    * much longer than this timeout before the promise succeeds or fails.
+   *
+   * @unit milliseconds
    */
   timeout?: number | undefined;
   /**
@@ -1012,6 +1015,7 @@ export declare namespace Morta {
     type TableCreateIndexParams as TableCreateIndexParams,
     type TableDownloadCsvParams as TableDownloadCsvParams,
     type TableDuplicateParams as TableDuplicateParams,
+    type TableGetCsvBackupParams as TableGetCsvBackupParams,
     type TableGetFileParams as TableGetFileParams,
     type TableGetStatisticsParams as TableGetStatisticsParams,
     type TableStreamRowsParams as TableStreamRowsParams,

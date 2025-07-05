@@ -38,17 +38,8 @@ describe('resource column', () => {
   test.skip('update: required and optional params', async () => {
     const response = await client.table.column.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-      aconexSynced: 0,
-      aconexWorkflowsSynced: 0,
       aggregate: 0,
       alterOptions: { dateConversionFormat: 'DD/MM/YYYY', runScriptOnAllCells: true },
-      asiteDocumentsSynced: 0,
-      asiteFormsSynced: 0,
-      autodeskBim360ChecklistsSynced: 0,
-      autodeskBim360IssuesSynced: 0,
-      autodeskBim360ModelsSynced: 0,
-      autodeskBim360Synced: 0,
-      autodeskBim360UsersSynced: 0,
       context: {
         processPublicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
         processResponsePublicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -66,6 +57,7 @@ describe('resource column', () => {
       headerTextColor: 'headerTextColor',
       isIndexed: true,
       isJoined: true,
+      isSynced: true,
       kind: 'text',
       kindOptions: {
         autopopulate: true,
@@ -78,16 +70,11 @@ describe('resource column', () => {
           viewId: 'viewId',
         },
       },
-      mortaSynced: 0,
       name: 'name',
-      procoreSynced: 0,
       publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-      reviztoIssuesSynced: 0,
       script: 'script',
       scriptEnabled: true,
       thousandSeparator: true,
-      viewpointRfisSynced: 0,
-      viewpointSynced: 0,
       width: 0,
     });
   });

@@ -30,8 +30,8 @@ export const tool: Tool = {
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
   const { hub_id, ...body } = args as any;
-  await client.hub.requestContributorAccess(hub_id);
-  return asTextContentResult('Successful tool call');
+  const response = await client.hub.requestContributorAccess(hub_id).asResponse();
+  return asTextContentResult(await response.text());
 };
 
 export default { metadata, tool, handler };

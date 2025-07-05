@@ -242,7 +242,7 @@ Methods:
 - <code title="delete /v1/table/{table_id}/rows">client.table.<a href="./src/resources/table/table.ts">deleteRows</a>(tableID) -> TableDeleteRowsResponse</code>
 - <code title="get /v1/table/{table_id}/csv">client.table.<a href="./src/resources/table/table.ts">downloadCsv</a>(tableID, { ...params }) -> string</code>
 - <code title="post /v1/table/{table_id}/duplicate">client.table.<a href="./src/resources/table/table.ts">duplicate</a>(tableID, { ...params }) -> TableDuplicateResponse</code>
-- <code title="get /v1/table/{table_id}/csv-backup">client.table.<a href="./src/resources/table/table.ts">getCsvBackup</a>(tableID) -> Response</code>
+- <code title="get /v1/table/{table_id}/csv-backup">client.table.<a href="./src/resources/table/table.ts">getCsvBackup</a>(tableID, { ...params }) -> Response</code>
 - <code title="get /v1/table/{table_id}/duplicated-children">client.table.<a href="./src/resources/table/table.ts">getDuplicatedChildren</a>(tableID) -> TableGetDuplicatedChildrenResponse</code>
 - <code title="get /v1/table/{table_id}/file">client.table.<a href="./src/resources/table/table.ts">getFile</a>(tableID, { ...params }) -> Response</code>
 - <code title="get /v1/table/{table_id}/stats">client.table.<a href="./src/resources/table/table.ts">getStatistics</a>(tableID, { ...params }) -> TableGetStatisticsResponse</code>

@@ -228,12 +228,6 @@ export const tool: Tool = {
       update_table_view_column: {
         type: 'object',
         properties: {
-          aconexSynced: {
-            type: 'integer',
-          },
-          aconexWorkflowsSynced: {
-            type: 'integer',
-          },
           aggregate: {
             type: 'integer',
           },
@@ -246,27 +240,6 @@ export const tool: Tool = {
                 type: 'object',
               },
             ],
-          },
-          asiteDocumentsSynced: {
-            type: 'integer',
-          },
-          asiteFormsSynced: {
-            type: 'integer',
-          },
-          autodeskBim360ChecklistsSynced: {
-            type: 'integer',
-          },
-          autodeskBim360IssuesSynced: {
-            type: 'integer',
-          },
-          autodeskBim360ModelsSynced: {
-            type: 'integer',
-          },
-          autodeskBim360Synced: {
-            type: 'integer',
-          },
-          autodeskBim360UsersSynced: {
-            type: 'integer',
           },
           context: {
             $ref: '#/$defs/base_request_context',
@@ -317,6 +290,9 @@ export const tool: Tool = {
           isJoined: {
             type: 'boolean',
           },
+          isSynced: {
+            type: 'boolean',
+          },
           kind: {
             type: 'string',
             enum: [
@@ -346,23 +322,14 @@ export const tool: Tool = {
           locked: {
             type: 'boolean',
           },
-          mortaSynced: {
-            type: 'integer',
-          },
           name: {
             type: 'string',
-          },
-          procoreSynced: {
-            type: 'integer',
           },
           publicId: {
             type: 'string',
           },
           required: {
             type: 'boolean',
-          },
-          reviztoIssuesSynced: {
-            type: 'integer',
           },
           script: {
             type: 'string',
@@ -387,12 +354,6 @@ export const tool: Tool = {
           },
           validationNoDuplicates: {
             type: 'boolean',
-          },
-          viewpointRfisSynced: {
-            type: 'integer',
-          },
-          viewpointSynced: {
-            type: 'integer',
           },
           width: {
             type: 'integer',

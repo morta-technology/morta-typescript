@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   tags: [],
   httpMethod: 'post',
   httpPath: '/v1/permissions/all',
-  operationId: 'CreateResourcePermissions',
+  operationId: 'BulkCreateResourcePermissions',
 };
 
 export const tool: Tool = {

@@ -462,9 +462,15 @@ export namespace DocumentGetDuplicatedChildrenResponse {
   export interface Data {
     createdAt?: string;
 
+    deletedAt?: string | null;
+
+    deletedBy?: string | null;
+
     link?: string;
 
     name?: string;
+
+    publicId?: string;
 
     user?: string;
   }

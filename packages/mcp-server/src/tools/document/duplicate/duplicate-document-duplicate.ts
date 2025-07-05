@@ -62,8 +62,8 @@ export const tool: Tool = {
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
   const { document_id, ...body } = args as any;
-  await client.document.duplicate.duplicate(document_id, body);
-  return asTextContentResult('Successful tool call');
+  const response = await client.document.duplicate.duplicate(document_id, body).asResponse();
+  return asTextContentResult(await response.text());
 };
 
 export default { metadata, tool, handler };

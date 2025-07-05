@@ -62,8 +62,8 @@ export const tool: Tool = {
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
   const { hub_id, ...body } = args as any;
-  await client.hub.createKnowledgeBase(hub_id, body);
-  return asTextContentResult('Successful tool call');
+  const response = await client.hub.createKnowledgeBase(hub_id, body).asResponse();
+  return asTextContentResult(await response.text());
 };
 
 export default { metadata, tool, handler };
