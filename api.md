@@ -94,20 +94,115 @@ Types:
 - <code><a href="./src/resources/hub/hub.ts">BaseRequestContext</a></code>
 - <code><a href="./src/resources/hub/hub.ts">SimpleHub</a></code>
 - <code><a href="./src/resources/hub/hub.ts">UserHub</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubCreateResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubRetrieveResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubUpdateResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubDeleteResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubAISearchResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubChangeUserRoleResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubCreateHeadingStylingResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubDeleteTopHeadingStylingResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubGetAIAnswersResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubGetDeletedDocumentsResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubGetDeletedTablesResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubGetDocumentsResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubGetDuplicatedChildrenResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubGetInvitedMembersResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubGetMembersResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubGetNotificationsResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubGetResourcesResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubGetSentNotificationsResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubGetTablesResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubGetTagsResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubGetVariablesResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubInviteMultipleUsersResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubPermanentlyDeleteResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubRemoveUserResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubRestoreResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubSearchResourcesResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubUpdateHeadingStylingResponse</a></code>
+- <code><a href="./src/resources/hub/hub.ts">HubUploadTemplateResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/hub">client.hub.<a href="./src/resources/hub/hub.ts">create</a>({ ...params }) -> HubCreateResponse</code>
+- <code title="get /v1/hub/{hub_id}">client.hub.<a href="./src/resources/hub/hub.ts">retrieve</a>(hubID) -> HubRetrieveResponse</code>
+- <code title="put /v1/hub/{hub_id}">client.hub.<a href="./src/resources/hub/hub.ts">update</a>(hubID, { ...params }) -> HubUpdateResponse</code>
+- <code title="delete /v1/hub/{hub_id}">client.hub.<a href="./src/resources/hub/hub.ts">delete</a>(hubID) -> HubDeleteResponse</code>
+- <code title="get /v1/hub/{hub_id}/search-ai">client.hub.<a href="./src/resources/hub/hub.ts">aiSearch</a>(hubID, { ...params }) -> HubAISearchResponse</code>
+- <code title="put /v1/hub/{hub_id}/change-user-role/{firebase_id}">client.hub.<a href="./src/resources/hub/hub.ts">changeUserRole</a>(firebaseID, { ...params }) -> HubChangeUserRoleResponse</code>
+- <code title="post /v1/hub/{hub_id}/add_heading_styling">client.hub.<a href="./src/resources/hub/hub.ts">createHeadingStyling</a>(hubID) -> HubCreateHeadingStylingResponse</code>
+- <code title="post /v1/hub/{hub_id}/knowledge-base">client.hub.<a href="./src/resources/hub/hub.ts">createKnowledgeBase</a>(hubID, { ...params }) -> void</code>
+- <code title="delete /v1/hub/{hub_id}/delete_top_style">client.hub.<a href="./src/resources/hub/hub.ts">deleteTopHeadingStyling</a>(hubID) -> HubDeleteTopHeadingStylingResponse</code>
+- <code title="post /v1/hub/{hub_id}/duplicate">client.hub.<a href="./src/resources/hub/hub.ts">duplicate</a>(hubID, { ...params }) -> void</code>
+- <code title="get /v1/hub/{hub_id}/ai-answers">client.hub.<a href="./src/resources/hub/hub.ts">getAIAnswers</a>(hubID) -> HubGetAIAnswersResponse</code>
+- <code title="get /v1/hub/{hub_id}/deleted-documents">client.hub.<a href="./src/resources/hub/hub.ts">getDeletedDocuments</a>(hubID) -> HubGetDeletedDocumentsResponse</code>
+- <code title="get /v1/hub/{hub_id}/deleted-tables">client.hub.<a href="./src/resources/hub/hub.ts">getDeletedTables</a>(hubID) -> HubGetDeletedTablesResponse</code>
+- <code title="get /v1/hub/{hub_id}/documents">client.hub.<a href="./src/resources/hub/hub.ts">getDocuments</a>(hubID) -> HubGetDocumentsResponse</code>
+- <code title="get /v1/hub/{hub_id}/duplicated-children">client.hub.<a href="./src/resources/hub/hub.ts">getDuplicatedChildren</a>(hubID) -> HubGetDuplicatedChildrenResponse</code>
+- <code title="get /v1/hub/{hub_id}/invited-members">client.hub.<a href="./src/resources/hub/hub.ts">getInvitedMembers</a>(hubID) -> HubGetInvitedMembersResponse</code>
+- <code title="get /v1/hub/{hub_id}/members">client.hub.<a href="./src/resources/hub/hub.ts">getMembers</a>(hubID) -> HubGetMembersResponse</code>
+- <code title="get /v1/hub/{hub_id}/notifications">client.hub.<a href="./src/resources/hub/hub.ts">getNotifications</a>(hubID) -> HubGetNotificationsResponse</code>
+- <code title="post /v1/hub/{hub_id}/resources">client.hub.<a href="./src/resources/hub/hub.ts">getResources</a>(hubID, { ...params }) -> HubGetResourcesResponse</code>
+- <code title="get /v1/hub/{hub_id}/sent-notifications">client.hub.<a href="./src/resources/hub/hub.ts">getSentNotifications</a>(hubID, { ...params }) -> HubGetSentNotificationsResponse</code>
+- <code title="get /v1/hub/{hub_id}/tables">client.hub.<a href="./src/resources/hub/hub.ts">getTables</a>(hubID) -> HubGetTablesResponse</code>
+- <code title="get /v1/hub/{hub_id}/tags">client.hub.<a href="./src/resources/hub/hub.ts">getTags</a>(hubID) -> HubGetTagsResponse</code>
+- <code title="get /v1/hub/{hub_id}/variables">client.hub.<a href="./src/resources/hub/hub.ts">getVariables</a>(hubID) -> HubGetVariablesResponse</code>
+- <code title="post /v1/hub/{hub_id}/invite-multiple">client.hub.<a href="./src/resources/hub/hub.ts">inviteMultipleUsers</a>(hubID, { ...params }) -> HubInviteMultipleUsersResponse</code>
+- <code title="delete /v1/hub/{hub_id}/permanent">client.hub.<a href="./src/resources/hub/hub.ts">permanentlyDelete</a>(hubID) -> HubPermanentlyDeleteResponse</code>
+- <code title="delete /v1/hub/{hub_id}/remove-user/{firebase_id}">client.hub.<a href="./src/resources/hub/hub.ts">removeUser</a>(firebaseID, { ...params }) -> HubRemoveUserResponse</code>
+- <code title="post /v1/hub/{hub_id}/request-contributor-access">client.hub.<a href="./src/resources/hub/hub.ts">requestContributorAccess</a>(hubID) -> void</code>
+- <code title="put /v1/hub/{hub_id}/restore">client.hub.<a href="./src/resources/hub/hub.ts">restore</a>(hubID) -> HubRestoreResponse</code>
+- <code title="get /v1/hub/{hub_id}/search-resources">client.hub.<a href="./src/resources/hub/hub.ts">searchResources</a>(hubID, { ...params }) -> HubSearchResourcesResponse</code>
+- <code title="post /v1/hub/{hub_id}/set-column-coloring">client.hub.<a href="./src/resources/hub/hub.ts">setColumnColoring</a>(hubID) -> void</code>
+- <code title="post /v1/hub/{hub_id}/set-column-format/{kind}">client.hub.<a href="./src/resources/hub/hub.ts">setColumnFormat</a>(kind, { ...params }) -> void</code>
+- <code title="post /v1/hub/{hub_id}/train-knowledge-base">client.hub.<a href="./src/resources/hub/hub.ts">trainKnowledgeBase</a>(hubID) -> void</code>
+- <code title="post /v1/hub/{hub_id}/style/{style_id}">client.hub.<a href="./src/resources/hub/hub.ts">updateHeadingStyling</a>(styleID, { ...params }) -> HubUpdateHeadingStylingResponse</code>
+- <code title="post /v1/hub/{hub_id}/upload-template">client.hub.<a href="./src/resources/hub/hub.ts">uploadTemplate</a>(hubID, { ...params }) -> HubUploadTemplateResponse</code>
 
 ## AIAnswer
+
+Types:
+
+- <code><a href="./src/resources/hub/ai-answer.ts">AIAnswerVoteResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/hub/{hub_id}/ai-answer/{answer_id}/vote">client.hub.aiAnswer.<a href="./src/resources/hub/ai-answer.ts">vote</a>(answerID, { ...params }) -> AIAnswerVoteResponse</code>
 
 ## Invite
 
 Types:
 
 - <code><a href="./src/resources/hub/invite.ts">InvitedMember</a></code>
+- <code><a href="./src/resources/hub/invite.ts">InviteCreateResponse</a></code>
+- <code><a href="./src/resources/hub/invite.ts">InviteUpdateResponse</a></code>
+- <code><a href="./src/resources/hub/invite.ts">InviteDeleteResponse</a></code>
+- <code><a href="./src/resources/hub/invite.ts">InviteResendResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/hub/{hub_id}/invite">client.hub.invite.<a href="./src/resources/hub/invite.ts">create</a>(hubID, { ...params }) -> InviteCreateResponse</code>
+- <code title="put /v1/hub/{hub_id}/invite/{invite_id}">client.hub.invite.<a href="./src/resources/hub/invite.ts">update</a>(inviteID, { ...params }) -> InviteUpdateResponse</code>
+- <code title="delete /v1/hub/{hub_id}/invite/{invite_id}">client.hub.invite.<a href="./src/resources/hub/invite.ts">delete</a>(inviteID, { ...params }) -> InviteDeleteResponse</code>
+- <code title="post /v1/hub/{hub_id}/invite/{invite_id}">client.hub.invite.<a href="./src/resources/hub/invite.ts">resend</a>(inviteID, { ...params }) -> InviteResendResponse</code>
 
 ## Secrets
 
 Types:
 
 - <code><a href="./src/resources/hub/secrets.ts">HubSecret</a></code>
+- <code><a href="./src/resources/hub/secrets.ts">SecretCreateResponse</a></code>
+- <code><a href="./src/resources/hub/secrets.ts">SecretUpdateResponse</a></code>
+- <code><a href="./src/resources/hub/secrets.ts">SecretListResponse</a></code>
+- <code><a href="./src/resources/hub/secrets.ts">SecretDeleteResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/hub/{hub_id}/secrets">client.hub.secrets.<a href="./src/resources/hub/secrets.ts">create</a>(hubID, { ...params }) -> SecretCreateResponse</code>
+- <code title="put /v1/hub/{hub_id}/secrets/{secret_id}">client.hub.secrets.<a href="./src/resources/hub/secrets.ts">update</a>(secretID, { ...params }) -> SecretUpdateResponse</code>
+- <code title="get /v1/hub/{hub_id}/secrets">client.hub.secrets.<a href="./src/resources/hub/secrets.ts">list</a>(hubID) -> SecretListResponse</code>
+- <code title="delete /v1/hub/{hub_id}/secrets/{secret_id}">client.hub.secrets.<a href="./src/resources/hub/secrets.ts">delete</a>(secretID, { ...params }) -> SecretDeleteResponse</code>
 
 # Table
 
@@ -321,20 +416,91 @@ Types:
 - <code><a href="./src/resources/document/document.ts">MortaDocument</a></code>
 - <code><a href="./src/resources/document/document.ts">MortaDocumentSection</a></code>
 - <code><a href="./src/resources/document/document.ts">SimpleDocument</a></code>
+- <code><a href="./src/resources/document/document.ts">DocumentCreateResponse</a></code>
+- <code><a href="./src/resources/document/document.ts">DocumentRetrieveResponse</a></code>
+- <code><a href="./src/resources/document/document.ts">DocumentUpdateResponse</a></code>
+- <code><a href="./src/resources/document/document.ts">DocumentDeleteResponse</a></code>
+- <code><a href="./src/resources/document/document.ts">DocumentCreateMultipleSectionsResponse</a></code>
+- <code><a href="./src/resources/document/document.ts">DocumentCreateSectionsResponse</a></code>
+- <code><a href="./src/resources/document/document.ts">DocumentGetDeletedSectionsResponse</a></code>
+- <code><a href="./src/resources/document/document.ts">DocumentGetDuplicatedChildrenResponse</a></code>
+- <code><a href="./src/resources/document/document.ts">DocumentRestoreResponse</a></code>
+- <code><a href="./src/resources/document/document.ts">DocumentSyncTemplateResponse</a></code>
+- <code><a href="./src/resources/document/document.ts">DocumentUpdateMultipleSectionsResponse</a></code>
+- <code><a href="./src/resources/document/document.ts">DocumentUpdateSectionOrderResponse</a></code>
+- <code><a href="./src/resources/document/document.ts">DocumentUpdateViewsPermissionsResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/document">client.document.<a href="./src/resources/document/document.ts">create</a>({ ...params }) -> DocumentCreateResponse</code>
+- <code title="get /v1/document/{document_id}">client.document.<a href="./src/resources/document/document.ts">retrieve</a>(documentID, { ...params }) -> DocumentRetrieveResponse</code>
+- <code title="put /v1/document/{document_id}">client.document.<a href="./src/resources/document/document.ts">update</a>(documentID, { ...params }) -> DocumentUpdateResponse</code>
+- <code title="delete /v1/document/{document_id}">client.document.<a href="./src/resources/document/document.ts">delete</a>(documentID) -> DocumentDeleteResponse</code>
+- <code title="post /v1/document/{document_id}/multiple-section">client.document.<a href="./src/resources/document/document.ts">createMultipleSections</a>(documentID, { ...params }) -> DocumentCreateMultipleSectionsResponse</code>
+- <code title="post /v1/document/{document_id}/sections">client.document.<a href="./src/resources/document/document.ts">createSections</a>(documentID, { ...params }) -> DocumentCreateSectionsResponse</code>
+- <code title="get /v1/document/{document_id}/export">client.document.<a href="./src/resources/document/document.ts">export</a>(documentID, { ...params }) -> Response</code>
+- <code title="get /v1/document/{document_id}/deletedsections">client.document.<a href="./src/resources/document/document.ts">getDeletedSections</a>(documentID, { ...params }) -> DocumentGetDeletedSectionsResponse</code>
+- <code title="get /v1/document/{document_id}/duplicated-children">client.document.<a href="./src/resources/document/document.ts">getDuplicatedChildren</a>(documentID) -> DocumentGetDuplicatedChildrenResponse</code>
+- <code title="put /v1/document/{document_id}/restore">client.document.<a href="./src/resources/document/document.ts">restore</a>(documentID) -> DocumentRestoreResponse</code>
+- <code title="get /v1/document/{document_id}/sync-template">client.document.<a href="./src/resources/document/document.ts">syncTemplate</a>(documentID) -> DocumentSyncTemplateResponse</code>
+- <code title="put /v1/document/{document_id}/update-multiple-section">client.document.<a href="./src/resources/document/document.ts">updateMultipleSections</a>(documentID, { ...params }) -> DocumentUpdateMultipleSectionsResponse</code>
+- <code title="put /v1/document/{document_id}/changesectionorder">client.document.<a href="./src/resources/document/document.ts">updateSectionOrder</a>(documentID, { ...params }) -> DocumentUpdateSectionOrderResponse</code>
+- <code title="put /v1/document/sync-views-permissions">client.document.<a href="./src/resources/document/document.ts">updateViewsPermissions</a>({ ...params }) -> DocumentUpdateViewsPermissionsResponse</code>
 
 ## Duplicate
+
+Types:
+
+- <code><a href="./src/resources/document/duplicate.ts">DuplicateGlobalResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/document/{document_id}/duplicate">client.document.duplicate.<a href="./src/resources/document/duplicate.ts">duplicate</a>(documentID, { ...params }) -> void</code>
+- <code title="post /v1/document/duplicate">client.document.duplicate.<a href="./src/resources/document/duplicate.ts">global</a>({ ...params }) -> DuplicateGlobalResponse</code>
 
 ## Section
 
 Types:
 
 - <code><a href="./src/resources/document/section/section.ts">CreateDocumentSection</a></code>
+- <code><a href="./src/resources/document/section/section.ts">SectionCreateResponse</a></code>
+- <code><a href="./src/resources/document/section/section.ts">SectionRetrieveResponse</a></code>
+- <code><a href="./src/resources/document/section/section.ts">SectionUpdateResponse</a></code>
+- <code><a href="./src/resources/document/section/section.ts">SectionDeleteResponse</a></code>
+- <code><a href="./src/resources/document/section/section.ts">SectionDuplicateResponse</a></code>
+- <code><a href="./src/resources/document/section/section.ts">SectionDuplicateAsyncResponse</a></code>
+- <code><a href="./src/resources/document/section/section.ts">SectionRestoreResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/document/{document_id}/section">client.document.section.<a href="./src/resources/document/section/section.ts">create</a>(documentID, { ...params }) -> SectionCreateResponse</code>
+- <code title="get /v1/document/{document_id}/section/{document_section_id}">client.document.section.<a href="./src/resources/document/section/section.ts">retrieve</a>(documentSectionID, { ...params }) -> SectionRetrieveResponse</code>
+- <code title="put /v1/document/{document_id}/section/{document_section_id}">client.document.section.<a href="./src/resources/document/section/section.ts">update</a>(documentSectionID, { ...params }) -> SectionUpdateResponse</code>
+- <code title="delete /v1/document/{document_id}/section/{document_section_id}">client.document.section.<a href="./src/resources/document/section/section.ts">delete</a>(documentSectionID, { ...params }) -> SectionDeleteResponse</code>
+- <code title="post /v1/document/{document_id}/section/{document_section_id}/duplicate">client.document.section.<a href="./src/resources/document/section/section.ts">duplicate</a>(documentSectionID, { ...params }) -> SectionDuplicateResponse</code>
+- <code title="post /v1/document/{document_id}/section/{document_section_id}/duplicate-async">client.document.section.<a href="./src/resources/document/section/section.ts">duplicateAsync</a>(documentSectionID, { ...params }) -> SectionDuplicateAsyncResponse</code>
+- <code title="put /v1/document/{document_id}/section/{document_section_id}/restore">client.document.section.<a href="./src/resources/document/section/section.ts">restore</a>(documentSectionID, { ...params }) -> SectionRestoreResponse</code>
 
 ### Response
 
 Types:
 
 - <code><a href="./src/resources/document/section/response.ts">DocumentResponse</a></code>
+- <code><a href="./src/resources/document/section/response.ts">ResponseCreateResponse</a></code>
+- <code><a href="./src/resources/document/section/response.ts">ResponseUpdateResponse</a></code>
+- <code><a href="./src/resources/document/section/response.ts">ResponseDeleteResponse</a></code>
+- <code><a href="./src/resources/document/section/response.ts">ResponseResetResponse</a></code>
+- <code><a href="./src/resources/document/section/response.ts">ResponseRestoreResponse</a></code>
+- <code><a href="./src/resources/document/section/response.ts">ResponseSubmitResponse</a></code>
+
+Methods:
+
+- <code title="post /v1/document/{document_id}/section/{document_section_id}/response">client.document.section.response.<a href="./src/resources/document/section/response.ts">create</a>(documentSectionID, { ...params }) -> ResponseCreateResponse</code>
+- <code title="put /v1/document/{document_id}/section/{document_section_id}/response/{document_response_id}">client.document.section.response.<a href="./src/resources/document/section/response.ts">update</a>(documentResponseID, { ...params }) -> ResponseUpdateResponse</code>
+- <code title="delete /v1/document/{document_id}/section/{document_section_id}/response/{document_response_id}">client.document.section.response.<a href="./src/resources/document/section/response.ts">delete</a>(documentResponseID, { ...params }) -> ResponseDeleteResponse</code>
+- <code title="put /v1/document/{document_id}/section/{document_section_id}/response/{document_response_id}/reset">client.document.section.response.<a href="./src/resources/document/section/response.ts">reset</a>(documentResponseID, { ...params }) -> ResponseResetResponse</code>
+- <code title="put /v1/document/{document_id}/section/{document_section_id}/response/{document_response_id}/restore">client.document.section.response.<a href="./src/resources/document/section/response.ts">restore</a>(documentResponseID, { ...params }) -> ResponseRestoreResponse</code>
+- <code title="put /v1/document/{document_id}/section/{document_section_id}/response/{document_response_id}/submit">client.document.section.response.<a href="./src/resources/document/section/response.ts">submit</a>(documentResponseID, { ...params }) -> ResponseSubmitResponse</code>
 
 # Notifications
 
