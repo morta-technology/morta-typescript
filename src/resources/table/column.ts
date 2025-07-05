@@ -112,27 +112,9 @@ export namespace SelectOptionsLookup {
 }
 
 export interface TableColumn {
-  aconexSynced?: number;
-
-  aconexWorkflowsSynced?: number;
-
   aggregate?: number;
 
   alterOptions?: TableColumnAlter | unknown;
-
-  asiteDocumentsSynced?: number;
-
-  asiteFormsSynced?: number;
-
-  autodeskBim360ChecklistsSynced?: number;
-
-  autodeskBim360IssuesSynced?: number;
-
-  autodeskBim360ModelsSynced?: number;
-
-  autodeskBim360Synced?: number;
-
-  autodeskBim360UsersSynced?: number;
 
   dateFormat?: string | null;
 
@@ -156,6 +138,8 @@ export interface TableColumn {
 
   isJoined?: boolean | null;
 
+  isSynced?: boolean;
+
   kind?:
     | 'text'
     | 'datetime'
@@ -178,25 +162,15 @@ export interface TableColumn {
 
   kindOptions?: SelectOptionsLookup;
 
-  mortaSynced?: number;
-
   name?: string;
 
-  procoreSynced?: number;
-
   publicId?: string;
-
-  reviztoIssuesSynced?: number;
 
   script?: string | null;
 
   scriptEnabled?: boolean;
 
   thousandSeparator?: boolean;
-
-  viewpointRfisSynced?: number;
-
-  viewpointSynced?: number;
 
   width?: number;
 }
@@ -244,27 +218,9 @@ export interface ColumnRestoreResponse {
 }
 
 export interface ColumnCreateParams {
-  aconexSynced?: number;
-
-  aconexWorkflowsSynced?: number;
-
   aggregate?: number;
 
   alterOptions?: TableColumnAlter | unknown;
-
-  asiteDocumentsSynced?: number;
-
-  asiteFormsSynced?: number;
-
-  autodeskBim360ChecklistsSynced?: number;
-
-  autodeskBim360IssuesSynced?: number;
-
-  autodeskBim360ModelsSynced?: number;
-
-  autodeskBim360Synced?: number;
-
-  autodeskBim360UsersSynced?: number;
 
   context?: HubAPI.BaseRequestContext;
 
@@ -290,6 +246,8 @@ export interface ColumnCreateParams {
 
   isJoined?: boolean | null;
 
+  isSynced?: boolean;
+
   kind?:
     | 'text'
     | 'datetime'
@@ -312,25 +270,15 @@ export interface ColumnCreateParams {
 
   kindOptions?: SelectOptionsLookup;
 
-  mortaSynced?: number;
-
   name?: string;
 
-  procoreSynced?: number;
-
   publicId?: string;
-
-  reviztoIssuesSynced?: number;
 
   script?: string | null;
 
   scriptEnabled?: boolean;
 
   thousandSeparator?: boolean;
-
-  viewpointRfisSynced?: number;
-
-  viewpointSynced?: number;
 
   width?: number;
 }
@@ -344,57 +292,12 @@ export interface ColumnUpdateParams {
   /**
    * Body param:
    */
-  aconexSynced?: number;
-
-  /**
-   * Body param:
-   */
-  aconexWorkflowsSynced?: number;
-
-  /**
-   * Body param:
-   */
   aggregate?: number;
 
   /**
    * Body param:
    */
   alterOptions?: TableColumnAlter | unknown;
-
-  /**
-   * Body param:
-   */
-  asiteDocumentsSynced?: number;
-
-  /**
-   * Body param:
-   */
-  asiteFormsSynced?: number;
-
-  /**
-   * Body param:
-   */
-  autodeskBim360ChecklistsSynced?: number;
-
-  /**
-   * Body param:
-   */
-  autodeskBim360IssuesSynced?: number;
-
-  /**
-   * Body param:
-   */
-  autodeskBim360ModelsSynced?: number;
-
-  /**
-   * Body param:
-   */
-  autodeskBim360Synced?: number;
-
-  /**
-   * Body param:
-   */
-  autodeskBim360UsersSynced?: number;
 
   /**
    * Body param:
@@ -459,6 +362,11 @@ export interface ColumnUpdateParams {
   /**
    * Body param:
    */
+  isSynced?: boolean;
+
+  /**
+   * Body param:
+   */
   kind?:
     | 'text'
     | 'datetime'
@@ -487,27 +395,12 @@ export interface ColumnUpdateParams {
   /**
    * Body param:
    */
-  mortaSynced?: number;
-
-  /**
-   * Body param:
-   */
   name?: string;
 
   /**
    * Body param:
    */
-  procoreSynced?: number;
-
-  /**
-   * Body param:
-   */
   publicId?: string;
-
-  /**
-   * Body param:
-   */
-  reviztoIssuesSynced?: number;
 
   /**
    * Body param:
@@ -523,16 +416,6 @@ export interface ColumnUpdateParams {
    * Body param:
    */
   thousandSeparator?: boolean;
-
-  /**
-   * Body param:
-   */
-  viewpointRfisSynced?: number;
-
-  /**
-   * Body param:
-   */
-  viewpointSynced?: number;
 
   /**
    * Body param:
