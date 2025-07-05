@@ -1,4 +1,36 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-export { Response, type DocumentResponse } from './response';
-export { Section, type CreateDocumentSection } from './section';
+export {
+  Response,
+  type DocumentResponse,
+  type ResponseCreateResponse,
+  type ResponseUpdateResponse,
+  type ResponseDeleteResponse,
+  type ResponseResetResponse,
+  type ResponseRestoreResponse,
+  type ResponseSubmitResponse,
+  type ResponseCreateParams,
+  type ResponseUpdateParams,
+  type ResponseDeleteParams,
+  type ResponseResetParams,
+  type ResponseRestoreParams,
+  type ResponseSubmitParams,
+} from './response';
+export {
+  Section,
+  type CreateDocumentSection,
+  type SectionCreateResponse,
+  type SectionRetrieveResponse,
+  type SectionUpdateResponse,
+  type SectionDeleteResponse,
+  type SectionDuplicateResponse,
+  type SectionDuplicateAsyncResponse,
+  type SectionRestoreResponse,
+  type SectionCreateParams,
+  type SectionRetrieveParams,
+  type SectionUpdateParams,
+  type SectionDeleteParams,
+  type SectionDuplicateParams,
+  type SectionDuplicateAsyncParams,
+  type SectionRestoreParams,
+} from './section';

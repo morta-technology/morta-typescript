@@ -202,6 +202,61 @@ The following tools are available in this MCP server.
 - `add_user_tags` (`write`): Add a tag to a specific user
 - `bulk_apply_user_tags` (`write`): Apply multiple tags to a specific user
 
+### Resource `hub`:
+
+- `create_hub` (`write`): Create a new hub with the specified name
+- `retrieve_hub` (`read`): Retrieve detailed information about a specific hub identified by its UUID
+- `update_hub` (`write`): Update an existing hub's details by hub ID
+- `delete_hub` (`write`): Delete a specific hub identified by its UUID
+- `ai_search_hub` (`read`): Perform an AI search operation within a specific hub, identified by its UUID
+- `change_user_role_hub` (`write`): Change the role of a user in a specific hub, identified by the hub's UUID and user's Firebase ID
+- `create_heading_styling_hub` (`write`): Create new heading styling for a specific hub
+- `create_knowledge_base_hub` (`write`): Create a new knowledge base entry for a hub
+- `delete_top_heading_styling_hub` (`write`): Delete the top heading styling for a specific hub
+- `duplicate_hub` (`write`): Create a duplicate of an existing hub
+- `get_ai_answers_hub` (`read`): Retrieve AI answers within a specific hub, identified by its UUID
+- `get_deleted_documents_hub` (`read`): Get all deleted documents associated with a specific hub, identified by its UUID
+- `get_deleted_tables_hub` (`read`): Retrieve all deleted tables from a specific hub, identified by its UUID. Only accessible by hub owners.
+- `get_documents_hub` (`read`): Get all documents associated with a specific hub, identified by its UUID
+- `get_duplicated_children_hub` (`read`): Get duplicated children of a hub
+- `get_invited_members_hub` (`read`): Retrieve all invited members for a specified hub
+- `get_members_hub` (`read`): Retrieve all members associated with a specified hub
+- `get_notifications_hub` (`read`): Retrieve all notifications associated with a specific hub. This endpoint is accessible only to users with owner-level permissions for the hub.
+- `get_resources_hub` (`write`): Retrieve resources associated with a specific hub identified by its UUID
+- `get_sent_notifications_hub` (`read`): Retrieve all sent notifications for a specified hub
+- `get_tables_hub` (`read`): Retrieve tables associated with a specific hub, identified by its UUID
+- `get_tags_hub` (`read`): Retrieve all tags associated with a specified hub
+- `get_variables_hub` (`read`): Retrieve all variables associated with a specified hub
+- `invite_multiple_users_hub` (`write`): Invite multiple users to join a hub, by email. If users already exist, they are added directly, otherwise, an invite is sent. Requires owner or admin permissions.
+- `permanently_delete_hub` (`write`): Permanently delete a specific hub identified by its UUID
+- `remove_user_hub` (`write`): Remove a user from a specific hub, identified by the hub's UUID and user's Firebase ID
+- `request_contributor_access_hub` (`write`): Request contributor access to a hub
+- `restore_hub` (`write`): Restore a specific hub, identified by its UUID, that has been previously deleted
+- `search_resources_hub` (`read`): Perform a search operation within a specific hub, identified by its UUID
+- `set_column_coloring_hub` (`write`): Set column coloring for a hub
+- `set_column_format_hub` (`write`): Set column date formatting for a hub
+- `train_knowledge_base_hub` (`write`): Train the knowledge base for a hub
+- `update_heading_styling_hub` (`write`): Update heading styling for a specific hub
+- `upload_template_hub` (`write`): Upload a template document for a hub
+
+### Resource `hub.ai_answer`:
+
+- `vote_hub_ai_answer` (`write`): Vote on an AI answer within a specific hub, identified by the hub's UUID and the answer's UUID
+
+### Resource `hub.invite`:
+
+- `create_hub_invite` (`write`): Invite a single user to join a hub by email. If the user already exists, they are added directly; otherwise, an invite is sent. Requires owner or admin permissions.
+- `update_hub_invite` (`write`): Update an existing invite in a hub
+- `delete_hub_invite` (`write`): Delete an invite to a hub
+- `resend_hub_invite` (`write`): Resend an invitation to a user for a hub. This is applicable for both new users and existing users who have previously been invited. Requires owner or admin permissions.
+
+### Resource `hub.secrets`:
+
+- `create_hub_secrets` (`write`): Create a new secret for a specified hub
+- `update_hub_secrets` (`write`): Update a specific secret in a hub
+- `list_hub_secrets` (`read`): Retrieve all secrets for a specified hub
+- `delete_hub_secrets` (`write`): Delete a specific secret from a hub
+
 ### Resource `table`:
 
 - `create_table` (`write`): Create a new document table within a hub.
@@ -285,6 +340,47 @@ The following tools are available in this MCP server.
 - `ai_formula_helper_views_table_columns` (`write`): Get AI formula helper for a specific column in a table view.
 - `distinct_views_table_columns` (`read`): Retrieve the unique/distinct values for a specific column in a table view.
 - `formula_info_views_table_columns` (`read`): Retrieve formula information for a specific column in a table view.
+
+### Resource `document`:
+
+- `create_document` (`write`): Create a new document in a specified hub
+- `retrieve_document` (`read`): Retrieve detailed information of a specific document by its UUID
+- `update_document` (`write`): Update an existing documents's details by document ID
+- `delete_document` (`write`): Delete a document identified by its UUID
+- `create_multiple_sections_document` (`write`): Create multiple new sections within a specified document, each with an optional parent section
+- `create_sections_document` (`write`): Create multiple new sections within a document
+- `export_document` (`read`): Export a specific document by its UUID
+- `get_deleted_sections_document` (`read`): Retrieve all deleted sections of a specific document, with an optional filter for a specific document section
+- `get_duplicated_children_document` (`read`): Get duplicated children of a document
+- `restore_document` (`write`): Restore a deleted document identified by its UUID
+- `sync_template_document` (`read`): Sync template changes to children of a document
+- `update_multiple_sections_document` (`write`): Update multiple existing document sections.
+- `update_section_order_document` (`write`): Update the order of document sections within a document.
+- `update_views_permissions_document` (`write`): Update permissions for all views using as reference the permissions in a document.
+
+### Resource `document.duplicate`:
+
+- `duplicate_document_duplicate` (`write`): Duplicate an existing document, potentially in a different hub
+- `global_document_duplicate` (`write`): Duplicate an existing document, optionally into a different hub
+
+### Resource `document.section`:
+
+- `create_document_section` (`write`): Create a new section within a specified document, with an option to set a parent section
+- `retrieve_document_section` (`read`): Retrieve a specific Document section.
+- `update_document_section` (`write`): Update an existing document section's details by document section ID
+- `delete_document_section` (`write`): Delete a specific document section.
+- `duplicate_document_section` (`write`): Duplicate a specific document section.
+- `duplicate_async_document_section` (`write`): Duplicate a specific document section asynchronously.
+- `restore_document_section` (`write`): Restore a previously deleted document section.
+
+### Resource `document.section.response`:
+
+- `create_section_document_response` (`write`): Create a new response for a document section.
+- `update_section_document_response` (`write`): Update an existing response for a document section.
+- `delete_section_document_response` (`write`): Delete a specific document response.
+- `reset_section_document_response` (`write`): Reset an existing document response to its initial state.
+- `restore_section_document_response` (`write`): Restore a previously deleted document response.
+- `submit_section_document_response` (`write`): Submit a document response, marking it as completed.
 
 ### Resource `notifications`:
 
