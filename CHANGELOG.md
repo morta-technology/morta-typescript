@@ -1,5 +1,23 @@
 # Changelog
 
+## 1.2.0 (2025-07-05)
+
+Full Changelog: [v1.1.0...v1.2.0](https://github.com/morta-technology/morta-typescript/compare/v1.1.0...v1.2.0)
+
+### Features
+
+* **api:** update via SDK Studio ([df82ca2](https://github.com/morta-technology/morta-typescript/commit/df82ca2dca74897b9536c889c3832471efe95737))
+* **api:** update via SDK Studio ([4508e5d](https://github.com/morta-technology/morta-typescript/commit/4508e5de2d0a7fe4812f4a6f31a78b0b7cb3cb65))
+* **api:** update via SDK Studio ([aba12bd](https://github.com/morta-technology/morta-typescript/commit/aba12bd135cf531435bd0ecb16d7cedbe739e62a))
+* **mcp:** fallback for void-typed methods ([515a52c](https://github.com/morta-technology/morta-typescript/commit/515a52cf8595a3c75e9b636ea4bd8275caef8bfa))
+
+
+### Chores
+
+* add docs to RequestOptions type ([29889e7](https://github.com/morta-technology/morta-typescript/commit/29889e7b8e4e6c3242db2808b05043f7cce73bf9))
+* **ci:** only run for pushes and fork pull requests ([e4b6cab](https://github.com/morta-technology/morta-typescript/commit/e4b6cab6af7cd6e29788539e6385d52a7317384f))
+* **client:** improve path param validation ([f0bd079](https://github.com/morta-technology/morta-typescript/commit/f0bd079bc462ef84497d1ddab47a234d789dfa80))
+
 ## 1.1.0 (2025-06-27)
 
 Full Changelog: [v1.0.0...v1.1.0](https://github.com/morta-technology/morta-typescript/compare/v1.0.0...v1.1.0)
