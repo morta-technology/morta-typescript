@@ -1,5 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { maybeFilter } from 'morta-mcp/filtering';
 import { asTextContentResult } from 'morta-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
@@ -17,7 +18,8 @@ export const metadata: Metadata = {
 
 export const tool: Tool = {
   name: 'duplicate_async_document_section',
-  description: 'Duplicate a specific document section asynchronously.',
+  description:
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nDuplicate a specific document section asynchronously.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      type: 'string'\n    },\n    metadata: {\n      type: 'object'\n    }\n  },\n  required: []\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -27,13 +29,21 @@ export const tool: Tool = {
       document_section_id: {
         type: 'string',
       },
+      jq_filter: {
+        type: 'string',
+        title: 'jq Filter',
+        description:
+          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
+      },
     },
   },
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
   const { document_section_id, ...body } = args as any;
-  return asTextContentResult(await client.document.section.duplicateAsync(document_section_id, body));
+  return asTextContentResult(
+    await maybeFilter(args, await client.document.section.duplicateAsync(document_section_id, body)),
+  );
 };
 
 export default { metadata, tool, handler };

@@ -17,7 +17,8 @@ export const metadata: Metadata = {
 
 export const tool: Tool = {
   name: 'update_views_table_columns',
-  description: 'Update a specific column in a table view.',
+  description:
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nUpdate a specific column in a table view.",
   inputSchema: {
     type: 'object',
     properties: {
