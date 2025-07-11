@@ -1,5 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { maybeFilter } from 'morta-mcp/filtering';
 import { asTextContentResult } from 'morta-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
@@ -17,7 +18,8 @@ export const metadata: Metadata = {
 
 export const tool: Tool = {
   name: 'list_views_table_rows',
-  description: 'Retrieve the actual data for a specific table view.',
+  description:
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nRetrieve the actual data for a specific table view.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      type: 'array',\n      items: {\n        type: 'object',\n        properties: {\n          publicId: {\n            type: 'string'\n          },\n          rowData: {\n            type: 'object'\n          },\n          sortOrder: {\n            type: 'number'\n          }\n        },\n        required: []\n      }\n    },\n    metadata: {\n      type: 'object',\n      properties: {\n        next_page_token: {\n          type: 'string'\n        },\n        size: {\n          type: 'integer'\n        },\n        total: {\n          type: 'integer'\n        }\n      },\n      required: []\n    }\n  },\n  required: []\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -47,13 +49,19 @@ export const tool: Tool = {
         description:
           'Sort the results by a field, this parameter takes the form `ColumnName:SortDirection`, for example to sort by price ascending `sort=Price:asc`. Sort direction can be either `asc` or `desc`. You can pass multiple sort parameters to add secondary and tertiary sorts etc., the sort will be applied in the order of the query string.',
       },
+      jq_filter: {
+        type: 'string',
+        title: 'jq Filter',
+        description:
+          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
+      },
     },
   },
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
   const { view_id, ...body } = args as any;
-  return asTextContentResult(await client.table.views.rows.list(view_id, body));
+  return asTextContentResult(await maybeFilter(args, await client.table.views.rows.list(view_id, body)));
 };
 
 export default { metadata, tool, handler };

@@ -17,7 +17,8 @@ export const metadata: Metadata = {
 
 export const tool: Tool = {
   name: 'duplicate_table_views',
-  description: 'Create a duplicate of an existing view for a specific table.',
+  description:
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nCreate a duplicate of an existing view for a specific table.",
   inputSchema: {
     type: 'object',
     properties: {

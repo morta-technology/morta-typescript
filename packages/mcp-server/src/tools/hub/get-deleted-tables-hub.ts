@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'get_deleted_tables_hub',
   description:
-    'Retrieve all deleted tables from a specific hub, identified by its UUID. Only accessible by hub owners.',
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nRetrieve all deleted tables from a specific hub, identified by its UUID. Only accessible by hub owners.",
   inputSchema: {
     type: 'object',
     properties: {
