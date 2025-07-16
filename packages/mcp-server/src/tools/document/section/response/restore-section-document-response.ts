@@ -1,10 +1,9 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
 import { maybeFilter } from 'morta-mcp/filtering';
-import { asTextContentResult } from 'morta-mcp/tools/types';
+import { Metadata, asTextContentResult } from 'morta-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { Metadata } from '../../../';
 import Morta from 'morta';
 
 export const metadata: Metadata = {
