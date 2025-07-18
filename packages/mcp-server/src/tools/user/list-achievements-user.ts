@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'list_achievements_user',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet the achievement badges of a user by their Firebase ID\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      type: 'object',\n      properties: {\n        createdProcesses: {\n          type: 'integer',\n          description: 'Number of processes created by the user'\n        },\n        createdTables: {\n          type: 'integer',\n          description: 'Number of tables created by the user'\n        }\n      },\n      required: []\n    },\n    metadata: {\n      type: 'object',\n      description: 'Metadata object'\n    }\n  },\n  required: []\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet the achievement badges of a user by their Firebase ID\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      type: 'object',\n      properties: {\n        createdProcesses: {\n          type: 'integer',\n          description: 'Number of processes created by the user'\n        },\n        createdTables: {\n          type: 'integer',\n          description: 'Number of tables created by the user'\n        }\n      }\n    },\n    metadata: {\n      type: 'object',\n      description: 'Metadata object'\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -32,6 +32,7 @@ export const tool: Tool = {
           'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
       },
     },
+    required: ['firebase_id'],
   },
 };
 

@@ -29,6 +29,7 @@ export const tool: Tool = {
         description: 'Flag to indicate whether to ignore cached options in the response.',
       },
     },
+    required: ['view_id'],
   },
 };
 

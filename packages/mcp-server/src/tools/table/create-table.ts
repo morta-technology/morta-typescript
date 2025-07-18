@@ -66,13 +66,13 @@ export const tool: Tool = {
               type: 'string',
             },
           },
-          required: [],
         },
       },
       type: {
         type: 'string',
       },
     },
+    required: ['columns', 'name', 'projectId'],
     $defs: {
       table_column: {
         type: 'object',
@@ -178,7 +178,6 @@ export const tool: Tool = {
             type: 'integer',
           },
         },
-        required: [],
       },
       table_column_alter: {
         type: 'object',
@@ -191,7 +190,6 @@ export const tool: Tool = {
             type: 'boolean',
           },
         },
-        required: [],
       },
       draftjs: {
         type: 'object',
@@ -311,10 +309,8 @@ export const tool: Tool = {
                 type: 'string',
               },
             },
-            required: [],
           },
         },
-        required: [],
       },
       base_request_context: {
         type: 'object',
@@ -332,7 +328,6 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
       table_join_imported_columns: {
         type: 'object',
@@ -344,7 +339,6 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
       table_column_join: {
         type: 'object',
@@ -356,7 +350,6 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
     },
   },

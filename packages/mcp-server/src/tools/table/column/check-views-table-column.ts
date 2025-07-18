@@ -28,6 +28,7 @@ export const tool: Tool = {
         type: 'string',
       },
     },
+    required: ['table_id', 'column_id'],
   },
 };
 

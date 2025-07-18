@@ -25,6 +25,7 @@ export const tool: Tool = {
         type: 'string',
       },
     },
+    required: ['hub_id'],
   },
 };
 
