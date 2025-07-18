@@ -112,6 +112,7 @@ export const tool: Tool = {
         type: 'boolean',
       },
     },
+    required: ['view_id'],
     $defs: {
       chart: {
         type: 'object',
@@ -171,7 +172,6 @@ export const tool: Tool = {
             enum: ['asc', 'desc'],
           },
         },
-        required: [],
       },
       colour: {
         type: 'object',
@@ -359,7 +359,6 @@ export const tool: Tool = {
             type: 'integer',
           },
         },
-        required: [],
       },
       table_column_alter: {
         type: 'object',
@@ -372,7 +371,6 @@ export const tool: Tool = {
             type: 'boolean',
           },
         },
-        required: [],
       },
       base_request_context: {
         type: 'object',
@@ -390,7 +388,6 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
       draftjs: {
         type: 'object',
@@ -510,10 +507,8 @@ export const tool: Tool = {
                 type: 'string',
               },
             },
-            required: [],
           },
         },
-        required: [],
       },
       filter: {
         type: 'object',

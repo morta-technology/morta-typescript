@@ -73,6 +73,7 @@ export const tool: Tool = {
         description: 'Sorting criteria for the table rows',
       },
     },
+    required: ['table_id'],
   },
 };
 

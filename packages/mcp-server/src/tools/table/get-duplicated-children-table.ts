@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'get_duplicated_children_table',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet duplicated children of a table\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      type: 'array',\n      items: {\n        type: 'object',\n        properties: {\n          createdAt: {\n            type: 'string',\n            format: 'date-time'\n          },\n          deletedAt: {\n            type: 'string',\n            format: 'date-time'\n          },\n          deletedBy: {\n            type: 'string'\n          },\n          link: {\n            type: 'string'\n          },\n          name: {\n            type: 'string'\n          },\n          publicId: {\n            type: 'string'\n          },\n          user: {\n            type: 'string'\n          }\n        },\n        required: []\n      }\n    },\n    metadata: {\n      type: 'object'\n    }\n  },\n  required: []\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet duplicated children of a table\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      type: 'array',\n      items: {\n        type: 'object',\n        properties: {\n          createdAt: {\n            type: 'string',\n            format: 'date-time'\n          },\n          deletedAt: {\n            type: 'string',\n            format: 'date-time'\n          },\n          deletedBy: {\n            type: 'string'\n          },\n          link: {\n            type: 'string'\n          },\n          name: {\n            type: 'string'\n          },\n          publicId: {\n            type: 'string'\n          },\n          user: {\n            type: 'string'\n          }\n        }\n      }\n    },\n    metadata: {\n      type: 'object'\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -32,6 +32,7 @@ export const tool: Tool = {
           'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
       },
     },
+    required: ['table_id'],
   },
 };
 

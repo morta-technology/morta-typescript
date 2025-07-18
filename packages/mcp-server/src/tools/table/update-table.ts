@@ -66,7 +66,6 @@ export const tool: Tool = {
               type: 'string',
             },
           },
-          required: [],
         },
       },
       keepColoursInSync: {
@@ -89,6 +88,7 @@ export const tool: Tool = {
         type: 'string',
       },
     },
+    required: ['table_id'],
     $defs: {
       base_request_context: {
         type: 'object',
@@ -106,7 +106,6 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
       table_join_imported_columns: {
         type: 'object',
@@ -118,7 +117,6 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
       table_column_join: {
         type: 'object',
@@ -130,7 +128,6 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
     },
   },

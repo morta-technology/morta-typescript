@@ -34,6 +34,7 @@ export const tool: Tool = {
         type: 'integer',
       },
     },
+    required: ['table_id'],
     $defs: {
       base_request_context: {
         type: 'object',
@@ -51,7 +52,6 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
     },
   },

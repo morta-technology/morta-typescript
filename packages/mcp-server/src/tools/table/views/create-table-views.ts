@@ -161,6 +161,7 @@ export const tool: Tool = {
         type: 'boolean',
       },
     },
+    required: ['table_id', 'name'],
     $defs: {
       chart: {
         type: 'object',
@@ -220,7 +221,6 @@ export const tool: Tool = {
             enum: ['asc', 'desc'],
           },
         },
-        required: [],
       },
       colour: {
         type: 'object',
@@ -365,7 +365,6 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
       filter: {
         type: 'object',

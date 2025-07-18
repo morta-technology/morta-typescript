@@ -128,6 +128,7 @@ export const tool: Tool = {
         type: 'integer',
       },
     },
+    required: ['table_id'],
     $defs: {
       table_column_alter: {
         type: 'object',
@@ -140,7 +141,6 @@ export const tool: Tool = {
             type: 'boolean',
           },
         },
-        required: [],
       },
       base_request_context: {
         type: 'object',
@@ -158,7 +158,6 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
       draftjs: {
         type: 'object',
@@ -278,10 +277,8 @@ export const tool: Tool = {
                 type: 'string',
               },
             },
-            required: [],
           },
         },
-        required: [],
       },
     },
   },

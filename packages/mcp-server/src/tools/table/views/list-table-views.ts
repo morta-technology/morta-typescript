@@ -29,6 +29,7 @@ export const tool: Tool = {
         description: 'Flag to indicate whether to ignore column data in the response.',
       },
     },
+    required: ['table_id'],
   },
 };
 
