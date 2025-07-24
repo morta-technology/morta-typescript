@@ -37,6 +37,9 @@ export const tool: Tool = {
     },
     required: ['hub_id', 'invite_id'],
   },
+  annotations: {
+    idempotentHint: true,
+  },
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {

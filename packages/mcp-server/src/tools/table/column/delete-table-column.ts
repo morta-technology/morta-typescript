@@ -37,6 +37,9 @@ export const tool: Tool = {
     },
     required: ['table_id', 'column_id'],
   },
+  annotations: {
+    idempotentHint: true,
+  },
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {

@@ -61,6 +61,7 @@ export const tool: Tool = {
     },
     required: ['email', 'name', 'password'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {

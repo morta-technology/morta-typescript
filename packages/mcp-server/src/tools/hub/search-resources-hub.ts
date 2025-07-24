@@ -42,6 +42,9 @@ export const tool: Tool = {
     },
     required: ['hub_id', 'search'],
   },
+  annotations: {
+    readOnlyHint: true,
+  },
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
