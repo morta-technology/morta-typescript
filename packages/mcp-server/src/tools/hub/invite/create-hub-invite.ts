@@ -47,6 +47,7 @@ export const tool: Tool = {
     },
     required: ['hub_id', 'email'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {

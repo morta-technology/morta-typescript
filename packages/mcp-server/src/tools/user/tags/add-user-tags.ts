@@ -37,6 +37,7 @@ export const tool: Tool = {
     },
     required: ['user_id', 'tagReferenceId'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {

@@ -41,6 +41,9 @@ export const tool: Tool = {
     },
     required: ['hub_id', 'firebase_id', 'role'],
   },
+  annotations: {
+    idempotentHint: true,
+  },
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {

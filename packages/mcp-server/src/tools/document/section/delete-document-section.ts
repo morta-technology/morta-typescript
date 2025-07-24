@@ -37,6 +37,9 @@ export const tool: Tool = {
     },
     required: ['document_id', 'document_section_id'],
   },
+  annotations: {
+    idempotentHint: true,
+  },
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {

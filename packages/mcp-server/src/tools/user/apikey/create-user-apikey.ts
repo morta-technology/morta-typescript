@@ -56,6 +56,7 @@ export const tool: Tool = {
     },
     required: ['accessLevel'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {

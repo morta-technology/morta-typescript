@@ -40,6 +40,7 @@ export const tool: Tool = {
     },
     required: ['view_id', 'column_id', 'text'],
   },
+  annotations: {},
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {

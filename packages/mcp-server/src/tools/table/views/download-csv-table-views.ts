@@ -46,6 +46,9 @@ export const tool: Tool = {
     },
     required: ['view_id'],
   },
+  annotations: {
+    readOnlyHint: true,
+  },
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {

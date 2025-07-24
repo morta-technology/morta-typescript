@@ -71,6 +71,9 @@ export const tool: Tool = {
     },
     required: ['resource_id', 'type'],
   },
+  annotations: {
+    readOnlyHint: true,
+  },
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {

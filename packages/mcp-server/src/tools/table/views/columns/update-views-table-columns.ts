@@ -312,6 +312,9 @@ export const tool: Tool = {
       },
     },
   },
+  annotations: {
+    idempotentHint: true,
+  },
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {

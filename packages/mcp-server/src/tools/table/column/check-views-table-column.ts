@@ -30,6 +30,9 @@ export const tool: Tool = {
     },
     required: ['table_id', 'column_id'],
   },
+  annotations: {
+    readOnlyHint: true,
+  },
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
