@@ -77,9 +77,9 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
-  const { resource_id, ...body } = args as any;
+  const { resource_id, jq_filter, ...body } = args as any;
   return asTextContentResult(
-    await maybeFilter(args, await client.notifications.listEvents(resource_id, body)),
+    await maybeFilter(jq_filter, await client.notifications.listEvents(resource_id, body)),
   );
 };
 

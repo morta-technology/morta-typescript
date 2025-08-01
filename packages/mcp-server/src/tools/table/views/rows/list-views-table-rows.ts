@@ -63,8 +63,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
-  const { view_id, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.table.views.rows.list(view_id, body)));
+  const { view_id, jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.table.views.rows.list(view_id, body)));
 };
 
 export default { metadata, tool, handler };

@@ -47,8 +47,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
-  const { answer_id, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.hub.aiAnswer.vote(answer_id, body)));
+  const { answer_id, jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.hub.aiAnswer.vote(answer_id, body)));
 };
 
 export default { metadata, tool, handler };

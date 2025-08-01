@@ -177,8 +177,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
-  const { document_id, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.document.update(document_id, body)));
+  const { document_id, jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.document.update(document_id, body)));
 };
 
 export default { metadata, tool, handler };

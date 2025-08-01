@@ -37,7 +37,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
-  return asTextContentResult(await maybeFilter(args, await client.user.listPublicHubs()));
+  const { jq_filter } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.user.listPublicHubs()));
 };
 
 export default { metadata, tool, handler };

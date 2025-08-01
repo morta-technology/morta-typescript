@@ -43,8 +43,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
-  const { tag_id, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.user.tags.delete(tag_id, body)));
+  const { tag_id, jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.user.tags.delete(tag_id, body)));
 };
 
 export default { metadata, tool, handler };

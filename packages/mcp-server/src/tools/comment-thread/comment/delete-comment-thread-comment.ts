@@ -43,9 +43,9 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
-  const { comment_id, ...body } = args as any;
+  const { comment_id, jq_filter, ...body } = args as any;
   return asTextContentResult(
-    await maybeFilter(args, await client.commentThread.comment.delete(comment_id, body)),
+    await maybeFilter(jq_filter, await client.commentThread.comment.delete(comment_id, body)),
   );
 };
 

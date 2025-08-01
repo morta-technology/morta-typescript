@@ -37,7 +37,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
-  return asTextContentResult(await maybeFilter(args, await client.notifications.listEventTypes()));
+  const { jq_filter } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.notifications.listEventTypes()));
 };
 
 export default { metadata, tool, handler };
