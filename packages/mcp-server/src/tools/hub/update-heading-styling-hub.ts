@@ -84,8 +84,10 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
-  const { style_id, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.hub.updateHeadingStyling(style_id, body)));
+  const { style_id, jq_filter, ...body } = args as any;
+  return asTextContentResult(
+    await maybeFilter(jq_filter, await client.hub.updateHeadingStyling(style_id, body)),
+  );
 };
 
 export default { metadata, tool, handler };

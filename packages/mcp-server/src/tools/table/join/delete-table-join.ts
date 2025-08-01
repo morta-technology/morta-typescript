@@ -43,8 +43,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
-  const { join_id, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.table.join.delete(join_id, body)));
+  const { join_id, jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.table.join.delete(join_id, body)));
 };
 
 export default { metadata, tool, handler };

@@ -43,9 +43,9 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
-  const { column_id, ...body } = args as any;
+  const { column_id, jq_filter, ...body } = args as any;
   return asTextContentResult(
-    await maybeFilter(args, await client.table.views.columns.formulaInfo(column_id, body)),
+    await maybeFilter(jq_filter, await client.table.views.columns.formulaInfo(column_id, body)),
   );
 };
 

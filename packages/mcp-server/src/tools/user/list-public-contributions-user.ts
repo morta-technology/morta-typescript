@@ -40,8 +40,10 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
-  const { firebase_id, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.user.listPublicContributions(firebase_id)));
+  const { firebase_id, jq_filter, ...body } = args as any;
+  return asTextContentResult(
+    await maybeFilter(jq_filter, await client.user.listPublicContributions(firebase_id)),
+  );
 };
 
 export default { metadata, tool, handler };

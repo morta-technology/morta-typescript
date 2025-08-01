@@ -125,8 +125,10 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
-  const { integration_name, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.table.sync.update(integration_name, body)));
+  const { integration_name, jq_filter, ...body } = args as any;
+  return asTextContentResult(
+    await maybeFilter(jq_filter, await client.table.sync.update(integration_name, body)),
+  );
 };
 
 export default { metadata, tool, handler };

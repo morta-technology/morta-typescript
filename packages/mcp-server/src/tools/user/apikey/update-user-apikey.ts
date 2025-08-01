@@ -65,8 +65,8 @@ export const tool: Tool = {
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
-  const { api_key_id, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(args, await client.user.apikey.update(api_key_id, body)));
+  const { api_key_id, jq_filter, ...body } = args as any;
+  return asTextContentResult(await maybeFilter(jq_filter, await client.user.apikey.update(api_key_id, body)));
 };
 
 export default { metadata, tool, handler };
