@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource response', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.document.section.response.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -22,7 +22,7 @@ describe('resource response', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.document.section.response.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -36,7 +36,7 @@ describe('resource response', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.document.section.response.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -51,7 +51,7 @@ describe('resource response', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.document.section.response.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -70,7 +70,7 @@ describe('resource response', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.document.section.response.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -85,7 +85,7 @@ describe('resource response', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.document.section.response.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -93,7 +93,7 @@ describe('resource response', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('reset: only required params', async () => {
     const responsePromise = client.document.section.response.reset('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -108,7 +108,7 @@ describe('resource response', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('reset: required and optional params', async () => {
     const response = await client.document.section.response.reset('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -116,7 +116,7 @@ describe('resource response', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('restore: only required params', async () => {
     const responsePromise = client.document.section.response.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -131,7 +131,7 @@ describe('resource response', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('restore: required and optional params', async () => {
     const response = await client.document.section.response.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -139,7 +139,7 @@ describe('resource response', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('submit: only required params', async () => {
     const responsePromise = client.document.section.response.submit('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -154,7 +154,7 @@ describe('resource response', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('submit: required and optional params', async () => {
     const response = await client.document.section.response.submit('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',

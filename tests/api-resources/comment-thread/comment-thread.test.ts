@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource commentThread', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.commentThread.create({
       commentText: 'commentText',
@@ -24,7 +24,7 @@ describe('resource commentThread', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.commentThread.create({
       commentText: 'commentText',
@@ -40,7 +40,7 @@ describe('resource commentThread', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.commentThread.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -52,7 +52,7 @@ describe('resource commentThread', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: only required params', async () => {
     const responsePromise = client.commentThread.list({
       reference_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -67,7 +67,7 @@ describe('resource commentThread', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: required and optional params', async () => {
     const response = await client.commentThread.list({
       reference_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -76,7 +76,7 @@ describe('resource commentThread', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.commentThread.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -88,7 +88,7 @@ describe('resource commentThread', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getStats: only required params', async () => {
     const responsePromise = client.commentThread.getStats({ reference_type: 'process_section' });
     const rawResponse = await responsePromise.asResponse();
@@ -100,7 +100,7 @@ describe('resource commentThread', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getStats: required and optional params', async () => {
     const response = await client.commentThread.getStats({
       reference_type: 'process_section',
@@ -108,7 +108,7 @@ describe('resource commentThread', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('reopen', async () => {
     const responsePromise = client.commentThread.reopen('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -120,7 +120,7 @@ describe('resource commentThread', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('resolve', async () => {
     const responsePromise = client.commentThread.resolve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();

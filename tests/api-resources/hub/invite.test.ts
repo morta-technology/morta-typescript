@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource invite', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.hub.invite.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       email: 'dev@stainless.com',
@@ -22,7 +22,7 @@ describe('resource invite', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.hub.invite.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       email: 'dev@stainless.com',
@@ -31,7 +31,7 @@ describe('resource invite', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.hub.invite.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -45,7 +45,7 @@ describe('resource invite', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.hub.invite.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -54,7 +54,7 @@ describe('resource invite', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.hub.invite.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -68,14 +68,14 @@ describe('resource invite', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.hub.invite.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('resend: only required params', async () => {
     const responsePromise = client.hub.invite.resend('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -89,7 +89,7 @@ describe('resource invite', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('resend: required and optional params', async () => {
     const response = await client.hub.invite.resend('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
