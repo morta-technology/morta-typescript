@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource duplicate', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('duplicate: only required params', async () => {
     const responsePromise = client.document.duplicate.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       targetProjectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -22,7 +22,7 @@ describe('resource duplicate', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('duplicate: required and optional params', async () => {
     const response = await client.document.duplicate.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       targetProjectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -37,7 +37,7 @@ describe('resource duplicate', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('global: only required params', async () => {
     const responsePromise = client.document.duplicate.global({
       processId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -51,7 +51,7 @@ describe('resource duplicate', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('global: required and optional params', async () => {
     const response = await client.document.duplicate.global({
       processId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',

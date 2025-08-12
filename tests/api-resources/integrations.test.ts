@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource integrations', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createPassthrough: only required params', async () => {
     const responsePromise = client.integrations.createPassthrough({
       method: 'GET',
@@ -24,7 +24,7 @@ describe('resource integrations', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createPassthrough: required and optional params', async () => {
     const response = await client.integrations.createPassthrough({
       method: 'GET',
@@ -42,8 +42,7 @@ describe('resource integrations', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
-  test.skip('createPassthroughDownload: required and optional params', async () => {
+  test('createPassthroughDownload: required and optional params', async () => {
     const response = await client.integrations.createPassthroughDownload({
       method: 'GET',
       path: 'path',
