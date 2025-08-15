@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'update_document',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nUpdate an existing documents's details by document ID\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      $ref: '#/$defs/simple_document'\n    },\n    metadata: {\n      type: 'object'\n    }\n  },\n  $defs: {\n    simple_document: {\n      type: 'object',\n      properties: {\n        allowComments: {\n          type: 'boolean'\n        },\n        children: {\n          type: 'array',\n          items: {\n            type: 'object',\n            properties: {\n              name: {\n                type: 'string'\n              },\n              publicId: {\n                type: 'string'\n              }\n            }\n          }\n        },\n        createdAt: {\n          type: 'string',\n          format: 'date-time'\n        },\n        deletedAt: {\n          type: 'string',\n          format: 'date-time'\n        },\n        description: {\n          type: 'object'\n        },\n        expandByDefault: {\n          type: 'boolean'\n        },\n        isDeleted: {\n          type: 'boolean'\n        },\n        isTemplate: {\n          type: 'boolean'\n        },\n        lockedTemplate: {\n          type: 'boolean'\n        },\n        logo: {\n          type: 'string'\n        },\n        name: {\n          type: 'string'\n        },\n        projectName: {\n          type: 'string'\n        },\n        projectPublicId: {\n          type: 'string'\n        },\n        publicId: {\n          type: 'string'\n        },\n        type: {\n          type: 'string'\n        },\n        updatedAt: {\n          type: 'string',\n          format: 'date-time'\n        },\n        variables: {\n          type: 'array',\n          items: {\n            type: 'string'\n          }\n        },\n        variableValues: {\n          type: 'array',\n          items: {\n            type: 'string'\n          }\n        }\n      }\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nUpdate an existing documents's details by document ID\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      $ref: '#/$defs/simple_document'\n    },\n    metadata: {\n      type: 'object',\n      additionalProperties: true\n    }\n  },\n  $defs: {\n    simple_document: {\n      type: 'object',\n      properties: {\n        allowComments: {\n          type: 'boolean'\n        },\n        children: {\n          type: 'array',\n          items: {\n            type: 'object',\n            properties: {\n              name: {\n                type: 'string'\n              },\n              publicId: {\n                type: 'string'\n              }\n            }\n          }\n        },\n        createdAt: {\n          type: 'string',\n          format: 'date-time'\n        },\n        deletedAt: {\n          type: 'string',\n          format: 'date-time'\n        },\n        description: {\n          type: 'object',\n          additionalProperties: true\n        },\n        expandByDefault: {\n          type: 'boolean'\n        },\n        isDeleted: {\n          type: 'boolean'\n        },\n        isTemplate: {\n          type: 'boolean'\n        },\n        lockedTemplate: {\n          type: 'boolean'\n        },\n        logo: {\n          type: 'string'\n        },\n        name: {\n          type: 'string'\n        },\n        projectName: {\n          type: 'string'\n        },\n        projectPublicId: {\n          type: 'string'\n        },\n        publicId: {\n          type: 'string'\n        },\n        type: {\n          type: 'string'\n        },\n        updatedAt: {\n          type: 'string',\n          format: 'date-time'\n        },\n        variables: {\n          type: 'array',\n          items: {\n            type: 'string'\n          }\n        },\n        variableValues: {\n          type: 'array',\n          items: {\n            type: 'string'\n          }\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -35,6 +35,7 @@ export const tool: Tool = {
         anyOf: [
           {
             type: 'object',
+            additionalProperties: true,
           },
           {
             $ref: '#/$defs/draftjs',
@@ -107,6 +108,7 @@ export const tool: Tool = {
                   properties: {
                     data: {
                       type: 'object',
+                      additionalProperties: true,
                     },
                     depth: {
                       type: 'integer',
@@ -162,6 +164,7 @@ export const tool: Tool = {
               },
               entityMap: {
                 type: 'object',
+                additionalProperties: true,
               },
             },
             required: ['blocks', 'entityMap'],

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'create_passthrough_integrations',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nMake a passthrough API call to an external source system.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      type: 'object',\n      properties: {\n        body: {\n          type: 'object'\n        },\n        contentType: {\n          type: 'string'\n        },\n        headers: {\n          type: 'object'\n        },\n        status: {\n          type: 'string'\n        }\n      }\n    },\n    metadata: {\n      type: 'object'\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nMake a passthrough API call to an external source system.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      type: 'object',\n      properties: {\n        body: {\n          type: 'object',\n          additionalProperties: true\n        },\n        contentType: {\n          type: 'string'\n        },\n        headers: {\n          type: 'object',\n          additionalProperties: true\n        },\n        status: {\n          type: 'string'\n        }\n      }\n    },\n    metadata: {\n      type: 'object',\n      additionalProperties: true\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -38,9 +38,11 @@ export const tool: Tool = {
       },
       data: {
         type: 'object',
+        additionalProperties: true,
       },
       headers: {
         type: 'object',
+        additionalProperties: true,
       },
       onBehalfUserId: {
         type: 'string',
