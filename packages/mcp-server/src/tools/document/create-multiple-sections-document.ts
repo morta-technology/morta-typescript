@@ -59,6 +59,7 @@ export const tool: Tool = {
               },
               {
                 type: 'object',
+                additionalProperties: true,
               },
             ],
           },
@@ -101,6 +102,7 @@ export const tool: Tool = {
                   properties: {
                     data: {
                       type: 'object',
+                      additionalProperties: true,
                     },
                     depth: {
                       type: 'integer',
@@ -156,6 +158,7 @@ export const tool: Tool = {
               },
               entityMap: {
                 type: 'object',
+                additionalProperties: true,
               },
             },
             required: ['blocks', 'entityMap'],

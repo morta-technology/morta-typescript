@@ -36,6 +36,7 @@ export const tool: Tool = {
           },
           {
             type: 'object',
+            additionalProperties: true,
           },
         ],
       },
@@ -52,6 +53,7 @@ export const tool: Tool = {
         anyOf: [
           {
             type: 'object',
+            additionalProperties: true,
           },
           {
             $ref: '#/$defs/draftjs',
@@ -201,6 +203,7 @@ export const tool: Tool = {
                   properties: {
                     data: {
                       type: 'object',
+                      additionalProperties: true,
                     },
                     depth: {
                       type: 'integer',
@@ -256,6 +259,7 @@ export const tool: Tool = {
               },
               entityMap: {
                 type: 'object',
+                additionalProperties: true,
               },
             },
             required: ['blocks', 'entityMap'],

@@ -33,6 +33,7 @@ export const tool: Tool = {
         anyOf: [
           {
             type: 'object',
+            additionalProperties: true,
           },
           {
             $ref: '#/$defs/chart',
@@ -66,6 +67,7 @@ export const tool: Tool = {
                 },
                 {
                   type: 'object',
+                  additionalProperties: true,
                 },
               ],
             },
@@ -104,6 +106,7 @@ export const tool: Tool = {
         anyOf: [
           {
             type: 'object',
+            additionalProperties: true,
           },
           {
             $ref: '#/$defs/draftjs',
@@ -265,10 +268,12 @@ export const tool: Tool = {
             type: 'array',
             items: {
               type: 'object',
+              additionalProperties: true,
             },
           },
           value: {
             type: 'object',
+            additionalProperties: true,
           },
         },
         required: ['backgroundColour', 'columnName', 'filterType', 'fontColour'],
@@ -286,6 +291,7 @@ export const tool: Tool = {
                   properties: {
                     data: {
                       type: 'object',
+                      additionalProperties: true,
                     },
                     depth: {
                       type: 'integer',
@@ -341,6 +347,7 @@ export const tool: Tool = {
               },
               entityMap: {
                 type: 'object',
+                additionalProperties: true,
               },
             },
             required: ['blocks', 'entityMap'],
@@ -403,6 +410,7 @@ export const tool: Tool = {
             type: 'array',
             items: {
               type: 'object',
+              additionalProperties: true,
             },
           },
           orGroup: {
@@ -410,6 +418,7 @@ export const tool: Tool = {
           },
           value: {
             type: 'object',
+            additionalProperties: true,
           },
         },
         required: ['columnName', 'filterType'],
