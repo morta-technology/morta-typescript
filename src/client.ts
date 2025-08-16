@@ -902,6 +902,7 @@ export class Morta {
   permissions: API.Permissions = new API.Permissions(this);
   integrations: API.Integrations = new API.Integrations(this);
 }
+
 Morta.UserResource = UserResource;
 Morta.Hub = Hub;
 Morta.TableResource = TableResource;
@@ -910,6 +911,7 @@ Morta.Notifications = Notifications;
 Morta.CommentThreadResource = CommentThreadResource;
 Morta.Permissions = Permissions;
 Morta.Integrations = Integrations;
+
 export declare namespace Morta {
   export type RequestOptions = Opts.RequestOptions;
 
