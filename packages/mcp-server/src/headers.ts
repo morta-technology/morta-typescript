@@ -17,7 +17,7 @@ export const parseAuthHeaders = (req: IncomingMessage): Partial<ClientOptions> =
   }
 
   const apiKey =
-    req.headers['x-morta-api-key'] instanceof Array ?
+    Array.isArray(req.headers['x-morta-api-key']) ?
       req.headers['x-morta-api-key'][0]
     : req.headers['x-morta-api-key'];
   return { apiKey };
