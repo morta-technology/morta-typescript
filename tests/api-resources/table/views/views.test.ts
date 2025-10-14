@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource views', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.table.views.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { name: 'x' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource views', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.table.views.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       name: 'x',
@@ -112,7 +112,7 @@ describe('resource views', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.table.views.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -124,7 +124,7 @@ describe('resource views', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -136,7 +136,7 @@ describe('resource views', () => {
     ).rejects.toThrow(Morta.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update', async () => {
     const responsePromise = client.table.views.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();
@@ -148,7 +148,7 @@ describe('resource views', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.table.views.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -160,7 +160,7 @@ describe('resource views', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -172,7 +172,7 @@ describe('resource views', () => {
     ).rejects.toThrow(Morta.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.table.views.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -184,7 +184,7 @@ describe('resource views', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('downloadCsv', async () => {
     const responsePromise = client.table.views.downloadCsv('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -196,7 +196,7 @@ describe('resource views', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('downloadCsv: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -208,7 +208,7 @@ describe('resource views', () => {
     ).rejects.toThrow(Morta.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('duplicate: only required params', async () => {
     const responsePromise = client.table.views.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -222,14 +222,14 @@ describe('resource views', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('duplicate: required and optional params', async () => {
     const response = await client.table.views.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('duplicateDefault', async () => {
     const responsePromise = client.table.views.duplicateDefault('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();
@@ -241,7 +241,7 @@ describe('resource views', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('previewRow: only required params', async () => {
     const responsePromise = client.table.views.previewRow('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       rowData: { foo: 'bar' },
@@ -255,7 +255,7 @@ describe('resource views', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('previewRow: required and optional params', async () => {
     const response = await client.table.views.previewRow('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       rowData: { foo: 'bar' },
@@ -268,7 +268,7 @@ describe('resource views', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('setDefault', async () => {
     const responsePromise = client.table.views.setDefault('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -280,7 +280,7 @@ describe('resource views', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('stats', async () => {
     const responsePromise = client.table.views.stats('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -292,7 +292,7 @@ describe('resource views', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('stats: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -308,8 +308,7 @@ describe('resource views', () => {
     ).rejects.toThrow(Morta.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
-  test.skip('streamRows: request options and params are passed correctly', async () => {
+  test('streamRows: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.table.views.streamRows(
@@ -326,7 +325,7 @@ describe('resource views', () => {
     ).rejects.toThrow(Morta.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('updateCells: only required params', async () => {
     const responsePromise = client.table.views.updateCells('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       cells: [{ columnName: 'x', rowId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', value: {} }],
@@ -340,7 +339,7 @@ describe('resource views', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('updateCells: required and optional params', async () => {
     const response = await client.table.views.updateCells('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       cells: [

@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource sync', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.table.sync.update('integration_name', {
       table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -22,7 +22,7 @@ describe('resource sync', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.table.sync.update('integration_name', {
       table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -48,7 +48,7 @@ describe('resource sync', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('deleteIntegration: only required params', async () => {
     const responsePromise = client.table.sync.deleteIntegration('integration_name', {
       table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -62,14 +62,14 @@ describe('resource sync', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('deleteIntegration: required and optional params', async () => {
     const response = await client.table.sync.deleteIntegration('integration_name', {
       table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getSyncInfo', async () => {
     const responsePromise = client.table.sync.getSyncInfo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -81,7 +81,7 @@ describe('resource sync', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retryIntegrationSync', async () => {
     const responsePromise = client.table.sync.retryIntegrationSync('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -93,7 +93,7 @@ describe('resource sync', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('syncWithIntegration: only required params', async () => {
     const responsePromise = client.table.sync.syncWithIntegration('integration_name', {
       table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -107,7 +107,7 @@ describe('resource sync', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('syncWithIntegration: required and optional params', async () => {
     const response = await client.table.sync.syncWithIntegration('integration_name', {
       table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',

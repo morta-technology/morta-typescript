@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource apikey', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.user.apikey.create({ accessLevel: 0 });
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource apikey', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.user.apikey.create({
       accessLevel: 0,
@@ -31,7 +31,7 @@ describe('resource apikey', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.user.apikey.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       accessLevel: 0,
@@ -45,7 +45,7 @@ describe('resource apikey', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.user.apikey.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       accessLevel: 0,
@@ -56,7 +56,7 @@ describe('resource apikey', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.user.apikey.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();

@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource hub', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.hub.create({ name: 'name' });
     const rawResponse = await responsePromise.asResponse();
@@ -20,12 +20,12 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.hub.create({ name: 'name' });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.hub.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -37,7 +37,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update', async () => {
     const responsePromise = client.hub.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();
@@ -49,7 +49,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.hub.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -61,7 +61,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('aiSearch: only required params', async () => {
     const responsePromise = client.hub.aiSearch('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { search: 'search' });
     const rawResponse = await responsePromise.asResponse();
@@ -73,7 +73,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('aiSearch: required and optional params', async () => {
     const response = await client.hub.aiSearch('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       search: 'search',
@@ -81,7 +81,7 @@ describe('resource hub', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('changeUserRole: only required params', async () => {
     const responsePromise = client.hub.changeUserRole('firebase_id', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -96,7 +96,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('changeUserRole: required and optional params', async () => {
     const response = await client.hub.changeUserRole('firebase_id', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -104,7 +104,7 @@ describe('resource hub', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createHeadingStyling', async () => {
     const responsePromise = client.hub.createHeadingStyling('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -116,7 +116,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createKnowledgeBase: only required params', async () => {
     const responsePromise = client.hub.createKnowledgeBase('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       source: 'source',
@@ -131,7 +131,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createKnowledgeBase: required and optional params', async () => {
     const response = await client.hub.createKnowledgeBase('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       source: 'source',
@@ -146,7 +146,7 @@ describe('resource hub', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('deleteTopHeadingStyling', async () => {
     const responsePromise = client.hub.deleteTopHeadingStyling('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -158,7 +158,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('duplicate', async () => {
     const responsePromise = client.hub.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();
@@ -170,7 +170,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getAIAnswers', async () => {
     const responsePromise = client.hub.getAIAnswers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -182,7 +182,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getDeletedDocuments', async () => {
     const responsePromise = client.hub.getDeletedDocuments('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -194,7 +194,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getDeletedTables', async () => {
     const responsePromise = client.hub.getDeletedTables('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -206,7 +206,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getDocuments', async () => {
     const responsePromise = client.hub.getDocuments('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -218,7 +218,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getDuplicatedChildren', async () => {
     const responsePromise = client.hub.getDuplicatedChildren('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -230,7 +230,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getInvitedMembers', async () => {
     const responsePromise = client.hub.getInvitedMembers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -242,7 +242,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getMembers', async () => {
     const responsePromise = client.hub.getMembers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -254,7 +254,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getNotifications', async () => {
     const responsePromise = client.hub.getNotifications('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -266,7 +266,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getResources', async () => {
     const responsePromise = client.hub.getResources('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();
@@ -278,7 +278,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getSentNotifications', async () => {
     const responsePromise = client.hub.getSentNotifications('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -290,7 +290,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getSentNotifications: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -302,7 +302,7 @@ describe('resource hub', () => {
     ).rejects.toThrow(Morta.NotFoundError);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getTables', async () => {
     const responsePromise = client.hub.getTables('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -314,7 +314,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getTags', async () => {
     const responsePromise = client.hub.getTags('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -326,7 +326,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('getVariables', async () => {
     const responsePromise = client.hub.getVariables('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -338,7 +338,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('inviteMultipleUsers', async () => {
     const responsePromise = client.hub.inviteMultipleUsers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();
@@ -350,7 +350,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('permanentlyDelete', async () => {
     const responsePromise = client.hub.permanentlyDelete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -362,7 +362,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('removeUser: only required params', async () => {
     const responsePromise = client.hub.removeUser('firebase_id', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -376,14 +376,14 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('removeUser: required and optional params', async () => {
     const response = await client.hub.removeUser('firebase_id', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('requestContributorAccess', async () => {
     const responsePromise = client.hub.requestContributorAccess('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -395,7 +395,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('restore', async () => {
     const responsePromise = client.hub.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -407,7 +407,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('searchResources: only required params', async () => {
     const responsePromise = client.hub.searchResources('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       search: 'search',
@@ -421,7 +421,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('searchResources: required and optional params', async () => {
     const response = await client.hub.searchResources('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       search: 'search',
@@ -429,7 +429,7 @@ describe('resource hub', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('setColumnColoring', async () => {
     const responsePromise = client.hub.setColumnColoring('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -441,7 +441,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('setColumnFormat: only required params', async () => {
     const responsePromise = client.hub.setColumnFormat('kind', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -455,14 +455,14 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('setColumnFormat: required and optional params', async () => {
     const response = await client.hub.setColumnFormat('kind', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('trainKnowledgeBase', async () => {
     const responsePromise = client.hub.trainKnowledgeBase('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -474,7 +474,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('updateHeadingStyling: only required params', async () => {
     const responsePromise = client.hub.updateHeadingStyling('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -488,7 +488,7 @@ describe('resource hub', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('updateHeadingStyling: required and optional params', async () => {
     const response = await client.hub.updateHeadingStyling('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -508,7 +508,7 @@ describe('resource hub', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('uploadTemplate', async () => {
     const responsePromise = client.hub.uploadTemplate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();

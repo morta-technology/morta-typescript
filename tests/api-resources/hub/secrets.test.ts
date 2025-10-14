@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource secrets', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.hub.secrets.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       name: 'name',
@@ -23,7 +23,7 @@ describe('resource secrets', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.hub.secrets.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       name: 'name',
@@ -31,7 +31,7 @@ describe('resource secrets', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.hub.secrets.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -47,7 +47,7 @@ describe('resource secrets', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.hub.secrets.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -56,7 +56,7 @@ describe('resource secrets', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.hub.secrets.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -68,7 +68,7 @@ describe('resource secrets', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.hub.secrets.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -82,7 +82,7 @@ describe('resource secrets', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.hub.secrets.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',

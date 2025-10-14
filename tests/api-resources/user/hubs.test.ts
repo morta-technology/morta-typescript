@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource hubs', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.user.hubs.list();
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource hubs', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listFavourites', async () => {
     const responsePromise = client.user.hubs.listFavourites();
     const rawResponse = await responsePromise.asResponse();
@@ -32,7 +32,7 @@ describe('resource hubs', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listTags', async () => {
     const responsePromise = client.user.hubs.listTags('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -44,7 +44,7 @@ describe('resource hubs', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('toggleFavourite', async () => {
     const responsePromise = client.user.hubs.toggleFavourite('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -56,7 +56,7 @@ describe('resource hubs', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('togglePin', async () => {
     const responsePromise = client.user.hubs.togglePin('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();

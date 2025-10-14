@@ -1,9 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { asTextContentResult } from 'morta-mcp/tools/types';
+import { Metadata, asTextContentResult } from 'morta-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { Metadata } from '../../';
 import Morta from 'morta';
 
 export const metadata: Metadata = {
@@ -34,6 +33,7 @@ export const tool: Tool = {
         anyOf: [
           {
             type: 'object',
+            additionalProperties: true,
           },
           {
             $ref: '#/$defs/chart',
@@ -67,6 +67,7 @@ export const tool: Tool = {
                 },
                 {
                   type: 'object',
+                  additionalProperties: true,
                 },
               ],
             },
@@ -105,6 +106,7 @@ export const tool: Tool = {
         anyOf: [
           {
             type: 'object',
+            additionalProperties: true,
           },
           {
             $ref: '#/$defs/draftjs',
@@ -161,6 +163,7 @@ export const tool: Tool = {
         type: 'boolean',
       },
     },
+    required: ['table_id', 'name'],
     $defs: {
       chart: {
         type: 'object',
@@ -220,7 +223,6 @@ export const tool: Tool = {
             enum: ['asc', 'desc'],
           },
         },
-        required: [],
       },
       colour: {
         type: 'object',
@@ -266,10 +268,12 @@ export const tool: Tool = {
             type: 'array',
             items: {
               type: 'object',
+              additionalProperties: true,
             },
           },
           value: {
             type: 'object',
+            additionalProperties: true,
           },
         },
         required: ['backgroundColour', 'columnName', 'filterType', 'fontColour'],
@@ -287,6 +291,7 @@ export const tool: Tool = {
                   properties: {
                     data: {
                       type: 'object',
+                      additionalProperties: true,
                     },
                     depth: {
                       type: 'integer',
@@ -342,6 +347,7 @@ export const tool: Tool = {
               },
               entityMap: {
                 type: 'object',
+                additionalProperties: true,
               },
             },
             required: ['blocks', 'entityMap'],
@@ -365,7 +371,6 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
       filter: {
         type: 'object',
@@ -405,6 +410,7 @@ export const tool: Tool = {
             type: 'array',
             items: {
               type: 'object',
+              additionalProperties: true,
             },
           },
           orGroup: {
@@ -412,6 +418,7 @@ export const tool: Tool = {
           },
           value: {
             type: 'object',
+            additionalProperties: true,
           },
         },
         required: ['columnName', 'filterType'],
@@ -448,6 +455,7 @@ export const tool: Tool = {
       },
     },
   },
+  annotations: {},
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {

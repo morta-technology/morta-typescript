@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource join', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create', async () => {
     const responsePromise = client.table.join.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();
@@ -20,7 +20,7 @@ describe('resource join', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.table.join.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -34,7 +34,7 @@ describe('resource join', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.table.join.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -51,7 +51,7 @@ describe('resource join', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.table.join.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -65,7 +65,7 @@ describe('resource join', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.table.join.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',

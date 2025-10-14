@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource permissions', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.permissions.create({
       attributeKind: 'user',
@@ -25,7 +25,7 @@ describe('resource permissions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.permissions.create({
       attributeKind: 'user',
@@ -43,7 +43,7 @@ describe('resource permissions', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.permissions.retrieve({
       resource: 'process',
@@ -58,7 +58,7 @@ describe('resource permissions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.permissions.retrieve({
       resource: 'process',
@@ -66,7 +66,7 @@ describe('resource permissions', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.permissions.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { role: 0 });
     const rawResponse = await responsePromise.asResponse();
@@ -78,7 +78,7 @@ describe('resource permissions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.permissions.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       role: 0,
@@ -91,7 +91,7 @@ describe('resource permissions', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.permissions.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -103,7 +103,7 @@ describe('resource permissions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createAll: only required params', async () => {
     const responsePromise = client.permissions.createAll({
       attributeKind: 'user',
@@ -120,7 +120,7 @@ describe('resource permissions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('createAll: required and optional params', async () => {
     const response = await client.permissions.createAll({
       attributeKind: 'user',
@@ -138,7 +138,7 @@ describe('resource permissions', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('request: only required params', async () => {
     const responsePromise = client.permissions.request('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -153,7 +153,7 @@ describe('resource permissions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('request: required and optional params', async () => {
     const response = await client.permissions.request('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -161,7 +161,7 @@ describe('resource permissions', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveTag: only required params', async () => {
     const responsePromise = client.permissions.retrieveTag({ tag_id: 'tag_id' });
     const rawResponse = await responsePromise.asResponse();
@@ -173,7 +173,7 @@ describe('resource permissions', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveTag: required and optional params', async () => {
     const response = await client.permissions.retrieveTag({ tag_id: 'tag_id' });
   });

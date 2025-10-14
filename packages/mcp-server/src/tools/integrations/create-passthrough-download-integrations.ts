@@ -1,9 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { asBinaryContentResult } from 'morta-mcp/tools/types';
+import { Metadata, asBinaryContentResult } from 'morta-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { Metadata } from '../';
 import Morta from 'morta';
 
 export const metadata: Metadata = {
@@ -37,14 +36,17 @@ export const tool: Tool = {
       },
       data: {
         type: 'object',
+        additionalProperties: true,
       },
       headers: {
         type: 'object',
+        additionalProperties: true,
       },
       onBehalfUserId: {
         type: 'string',
       },
     },
+    required: ['method', 'path', 'sourceSystem'],
     $defs: {
       base_request_context: {
         type: 'object',
@@ -62,10 +64,10 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
     },
   },
+  annotations: {},
 };
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {

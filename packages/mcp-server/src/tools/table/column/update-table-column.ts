@@ -1,9 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { asTextContentResult } from 'morta-mcp/tools/types';
+import { Metadata, asTextContentResult } from 'morta-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { Metadata } from '../../';
 import Morta from 'morta';
 
 export const metadata: Metadata = {
@@ -37,6 +36,7 @@ export const tool: Tool = {
           },
           {
             type: 'object',
+            additionalProperties: true,
           },
         ],
       },
@@ -53,6 +53,7 @@ export const tool: Tool = {
         anyOf: [
           {
             type: 'object',
+            additionalProperties: true,
           },
           {
             $ref: '#/$defs/draftjs',
@@ -131,6 +132,7 @@ export const tool: Tool = {
         type: 'integer',
       },
     },
+    required: ['table_id', 'column_id'],
     $defs: {
       table_column_alter: {
         type: 'object',
@@ -143,7 +145,6 @@ export const tool: Tool = {
             type: 'boolean',
           },
         },
-        required: [],
       },
       base_request_context: {
         type: 'object',
@@ -161,7 +162,6 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
       draftjs: {
         type: 'object',
@@ -176,6 +176,7 @@ export const tool: Tool = {
                   properties: {
                     data: {
                       type: 'object',
+                      additionalProperties: true,
                     },
                     depth: {
                       type: 'integer',
@@ -231,6 +232,7 @@ export const tool: Tool = {
               },
               entityMap: {
                 type: 'object',
+                additionalProperties: true,
               },
             },
             required: ['blocks', 'entityMap'],
@@ -281,12 +283,13 @@ export const tool: Tool = {
                 type: 'string',
               },
             },
-            required: [],
           },
         },
-        required: [],
       },
     },
+  },
+  annotations: {
+    idempotentHint: true,
   },
 };
 

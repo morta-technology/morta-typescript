@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource columns', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.table.views.columns.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -22,7 +22,7 @@ describe('resource columns', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.table.views.columns.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -76,7 +76,7 @@ describe('resource columns', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('add: only required params', async () => {
     const responsePromise = client.table.views.columns.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       locked: true,
@@ -92,7 +92,7 @@ describe('resource columns', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('add: required and optional params', async () => {
     const response = await client.table.views.columns.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       locked: true,
@@ -145,7 +145,7 @@ describe('resource columns', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('aiFormulaHelper: only required params', async () => {
     const responsePromise = client.table.views.columns.aiFormulaHelper(
       '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -160,7 +160,7 @@ describe('resource columns', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('aiFormulaHelper: required and optional params', async () => {
     const response = await client.table.views.columns.aiFormulaHelper(
       '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -168,7 +168,7 @@ describe('resource columns', () => {
     );
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('distinct: only required params', async () => {
     const responsePromise = client.table.views.columns.distinct('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -182,7 +182,7 @@ describe('resource columns', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('distinct: required and optional params', async () => {
     const response = await client.table.views.columns.distinct('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -191,7 +191,7 @@ describe('resource columns', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('formulaInfo: only required params', async () => {
     const responsePromise = client.table.views.columns.formulaInfo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -205,7 +205,7 @@ describe('resource columns', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('formulaInfo: required and optional params', async () => {
     const response = await client.table.views.columns.formulaInfo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',

@@ -1,9 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { asBinaryContentResult } from 'morta-mcp/tools/types';
+import { Metadata, asBinaryContentResult } from 'morta-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { Metadata } from '../';
 import Morta from 'morta';
 
 export const metadata: Metadata = {
@@ -39,6 +38,10 @@ export const tool: Tool = {
         description: 'Include table links in the export',
       },
     },
+    required: ['document_id'],
+  },
+  annotations: {
+    readOnlyHint: true,
   },
 };
 

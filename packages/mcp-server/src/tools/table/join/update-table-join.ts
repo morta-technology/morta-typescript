@@ -1,9 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { asTextContentResult } from 'morta-mcp/tools/types';
+import { Metadata, asTextContentResult } from 'morta-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
-import type { Metadata } from '../../';
 import Morta from 'morta';
 
 export const metadata: Metadata = {
@@ -49,6 +48,7 @@ export const tool: Tool = {
         type: 'string',
       },
     },
+    required: ['table_id', 'join_id'],
     $defs: {
       base_request_context: {
         type: 'object',
@@ -66,7 +66,6 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
       table_column_join: {
         type: 'object',
@@ -78,9 +77,11 @@ export const tool: Tool = {
             type: 'string',
           },
         },
-        required: [],
       },
     },
+  },
+  annotations: {
+    idempotentHint: true,
   },
 };
 

@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource user', () => {
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.user.create({
       email: 'dev@stainless.com',
@@ -24,7 +24,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.user.create({
       email: 'dev@stainless.com',
@@ -40,7 +40,7 @@ describe('resource user', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.user.retrieve('firebase_id');
     const rawResponse = await responsePromise.asResponse();
@@ -52,7 +52,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listAchievements', async () => {
     const responsePromise = client.user.listAchievements('firebase_id');
     const rawResponse = await responsePromise.asResponse();
@@ -64,7 +64,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listContributions', async () => {
     const responsePromise = client.user.listContributions('firebase_id');
     const rawResponse = await responsePromise.asResponse();
@@ -76,7 +76,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listOwnerHubs', async () => {
     const responsePromise = client.user.listOwnerHubs();
     const rawResponse = await responsePromise.asResponse();
@@ -88,7 +88,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listPinnedHubs', async () => {
     const responsePromise = client.user.listPinnedHubs('firebase_id');
     const rawResponse = await responsePromise.asResponse();
@@ -100,7 +100,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listPublicContributions', async () => {
     const responsePromise = client.user.listPublicContributions('firebase_id');
     const rawResponse = await responsePromise.asResponse();
@@ -112,7 +112,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listPublicHubs', async () => {
     const responsePromise = client.user.listPublicHubs();
     const rawResponse = await responsePromise.asResponse();
@@ -124,7 +124,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('listTemplates', async () => {
     const responsePromise = client.user.listTemplates();
     const rawResponse = await responsePromise.asResponse();
@@ -136,7 +136,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveByPublicID', async () => {
     const responsePromise = client.user.retrieveByPublicID('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -148,7 +148,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('retrieveMe', async () => {
     const responsePromise = client.user.retrieveMe();
     const rawResponse = await responsePromise.asResponse();
@@ -160,7 +160,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('search: only required params', async () => {
     const responsePromise = client.user.search({ query: 'query' });
     const rawResponse = await responsePromise.asResponse();
@@ -172,7 +172,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('search: required and optional params', async () => {
     const response = await client.user.search({
       query: 'query',
@@ -182,7 +182,7 @@ describe('resource user', () => {
     });
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('updateAccount', async () => {
     const responsePromise = client.user.updateAccount({});
     const rawResponse = await responsePromise.asResponse();
@@ -194,7 +194,7 @@ describe('resource user', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // skipped: tests are disabled for the time being
+  // Prism tests are disabled
   test.skip('updateProfile', async () => {
     const responsePromise = client.user.updateProfile({});
     const rawResponse = await responsePromise.asResponse();
