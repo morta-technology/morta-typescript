@@ -5,8 +5,8 @@
   "compilerOptions": {
     "rootDir": "./dist/src",
     "paths": {
-      "morta/*": ["dist/src/*"],
-      "morta": ["dist/src/index.ts"]
+      "morta/*": ["./dist/src/*"],
+      "morta": ["./dist/src/index.ts"]
     },
     "noEmit": false,
     "declaration": true,
