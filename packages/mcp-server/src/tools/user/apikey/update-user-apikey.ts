@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'update_user_apikey',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nUpdate an API key for the currently logged in user\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    apiKey: {\n      type: 'string',\n      description: 'Updated API key details'\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nUpdate an API key for the currently logged in user\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/apikey_update_response',\n  $defs: {\n    apikey_update_response: {\n      type: 'object',\n      properties: {\n        apiKey: {\n          type: 'string',\n          description: 'Updated API key details'\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {

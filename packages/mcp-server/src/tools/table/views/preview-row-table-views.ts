@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'preview_row_table_views',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nPreview the resulting row from given inputs in a specific table view.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      type: 'object',\n      properties: {\n        publicId: {\n          type: 'string'\n        },\n        rowData: {\n          type: 'object',\n          additionalProperties: true\n        },\n        sortOrder: {\n          type: 'integer'\n        }\n      }\n    },\n    metadata: {\n      type: 'object',\n      additionalProperties: true\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nPreview the resulting row from given inputs in a specific table view.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/view_preview_row_response',\n  $defs: {\n    view_preview_row_response: {\n      type: 'object',\n      properties: {\n        data: {\n          type: 'object',\n          properties: {\n            publicId: {\n              type: 'string'\n            },\n            rowData: {\n              type: 'object',\n              additionalProperties: true\n            },\n            sortOrder: {\n              type: 'integer'\n            }\n          }\n        },\n        metadata: {\n          type: 'object',\n          additionalProperties: true\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {

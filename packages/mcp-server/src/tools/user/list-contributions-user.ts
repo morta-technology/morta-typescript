@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'list_contributions_user',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet the number of contributions per day made by a user, identified by their Firebase ID\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      type: 'object',\n      description: 'Contributions per day, keyed by date',\n      additionalProperties: true\n    },\n    metadata: {\n      type: 'object',\n      description: 'Metadata object',\n      additionalProperties: true\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nGet the number of contributions per day made by a user, identified by their Firebase ID\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/user_list_contributions_response',\n  $defs: {\n    user_list_contributions_response: {\n      type: 'object',\n      properties: {\n        data: {\n          type: 'object',\n          description: 'Contributions per day, keyed by date',\n          additionalProperties: true\n        },\n        metadata: {\n          type: 'object',\n          description: 'Metadata object',\n          additionalProperties: true\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
