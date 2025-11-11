@@ -53,7 +53,7 @@ export const tool: Tool = {
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
   const { view_id, ...body } = args as any;
-  return asBinaryContentResult(await client.table.views.streamRows(view_id, body));
+  return asBinaryContentResult(await client.table.views.streamRows(view_id, body).asResponse());
 };
 
 export default { metadata, tool, handler };
