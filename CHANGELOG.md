@@ -1,5 +1,44 @@
 # Changelog
 
+## 1.4.0 (2025-11-26)
+
+Full Changelog: [v1.3.0...v1.4.0](https://github.com/morta-technology/morta-typescript/compare/v1.3.0...v1.4.0)
+
+### Features
+
+* **mcp:** add detail field to docs search tool ([d0c9feb](https://github.com/morta-technology/morta-typescript/commit/d0c9febc3677c0c3c888ec635d2528e160891706))
+* **mcp:** enable optional code execution tool on http mcp servers ([9420f6d](https://github.com/morta-technology/morta-typescript/commit/9420f6db1b2856dc770a2d3a86fa6ef0ab2f2be8))
+
+
+### Bug Fixes
+
+* **mcpb:** pin @anthropic-ai/mcpb version ([d6178a7](https://github.com/morta-technology/morta-typescript/commit/d6178a7eeb2760add54f645e7ebaeda13fa6c4e5))
+* **mcp:** return tool execution error on jq failure ([1d29f29](https://github.com/morta-technology/morta-typescript/commit/1d29f29f5e2828e5a250c9642c43e7a3e41ab97d))
+* **mcp:** use raw responses for binary content ([ff472d3](https://github.com/morta-technology/morta-typescript/commit/ff472d3b32b17933a95176773f80cb49be491c74))
+
+
+### Chores
+
+* extract some types in mcp docs ([77b8287](https://github.com/morta-technology/morta-typescript/commit/77b8287f18c9212f49179c76d9a8dd4835a267a4))
+* **internal:** codegen related update ([6807af2](https://github.com/morta-technology/morta-typescript/commit/6807af27a41621ddd9a2483c5aaa81b70a6e750c))
+* **internal:** codegen related update ([29e2d4e](https://github.com/morta-technology/morta-typescript/commit/29e2d4e9d97912ba9e903cd223d3f7ca22e53d27))
+* **internal:** codegen related update ([abb7ad4](https://github.com/morta-technology/morta-typescript/commit/abb7ad4cedcca1d053c7a8b72319b0b96587eb40))
+* **internal:** grammar fix (it's -&gt; its) ([272381e](https://github.com/morta-technology/morta-typescript/commit/272381e55888265d2bd066dd9f49cf5b8e810d04))
+* **internal:** use npm pack for build uploads ([a301f91](https://github.com/morta-technology/morta-typescript/commit/a301f919f4295f3652df9beab867b763054df8f0))
+* **jsdoc:** fix [@link](https://github.com/link) annotations to refer only to parts of the package‘s public interface ([48e6c94](https://github.com/morta-technology/morta-typescript/commit/48e6c945b2a7e6d855559a66ad3f953fdb26205b))
+* mcp code tool explicit error message when missing a run function ([6aa196e](https://github.com/morta-technology/morta-typescript/commit/6aa196ec3c1ee69358cfdfa38f0df64d6ab74739))
+* **mcp:** add friendlier MCP code tool errors on incorrect method invocations ([1a6e089](https://github.com/morta-technology/morta-typescript/commit/1a6e0896f492b38dc5e9cefd4e413f2d6affb5c1))
+* **mcp:** add line numbers to code tool errors ([f2dd39f](https://github.com/morta-technology/morta-typescript/commit/f2dd39f99b4ab34988e65e18c39a4920d9a0eb9a))
+* **mcp:** clarify http auth error ([946295b](https://github.com/morta-technology/morta-typescript/commit/946295b76cb663a4fa5a695bd761ee7c0a43b242))
+* **mcp:** upgrade jq-web ([229b4b5](https://github.com/morta-technology/morta-typescript/commit/229b4b58f550e13271efd2857877d3746ed43c6d))
+* use structured error when code execution tool errors ([471a6f4](https://github.com/morta-technology/morta-typescript/commit/471a6f4a84fbfe1850127dbf6c5b6cf9305d2546))
+
+
+### Documentation
+
+* **mcp:** add a README button for one-click add to Cursor ([8091d6a](https://github.com/morta-technology/morta-typescript/commit/8091d6aff41913d4e3ce439b171ef438a76518ff))
+* **mcp:** add a README link to add server to VS Code or Claude Code ([851ab8c](https://github.com/morta-technology/morta-typescript/commit/851ab8c922458bc0d41f7a2dcbc43d19a6a30fe7))
+
 ## 1.3.0 (2025-09-03)
 
 Full Changelog: [v1.2.0...v1.3.0](https://github.com/morta-technology/morta-typescript/compare/v1.2.0...v1.3.0)
