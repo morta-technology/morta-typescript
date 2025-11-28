@@ -7,10 +7,9 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "baseUrl": "./",
     "paths": {
-      "morta-mcp/*": ["src/*"],
-      "morta-mcp": ["src/index.ts"]
+      "morta-mcp/*": ["./src/*"],
+      "morta-mcp": ["./src/index.ts"]
     },
     "noEmit": true,
 

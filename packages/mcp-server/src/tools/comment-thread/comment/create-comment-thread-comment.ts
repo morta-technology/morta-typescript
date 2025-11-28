@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { maybeFilter } from 'morta-mcp/filtering';
-import { Metadata, asTextContentResult } from 'morta-mcp/tools/types';
+import { isJqError, maybeFilter } from 'morta-mcp/filtering';
+import { Metadata, asErrorResult, asTextContentResult } from 'morta-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import Morta from 'morta';
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'create_comment_thread_comment',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nCreate a new comment within a specific comment thread\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      $ref: '#/$defs/comment_model'\n    },\n    metadata: {\n      type: 'object',\n      properties: {\n        change: {\n          type: 'object',\n          description: 'Changes made in this operation',\n          additionalProperties: true\n        },\n        event: {\n          type: 'string',\n          description: 'Event type for the operation'\n        },\n        resourceId: {\n          type: 'string',\n          description: 'UUID of the newly created comment'\n        }\n      }\n    }\n  },\n  $defs: {\n    comment_model: {\n      type: 'object',\n      properties: {\n        commentText: {\n          type: 'string'\n        },\n        createdAt: {\n          type: 'string',\n          format: 'date-time'\n        },\n        deletedAt: {\n          type: 'string',\n          format: 'date-time'\n        },\n        isOwner: {\n          type: 'object',\n          additionalProperties: true\n        },\n        publicId: {\n          type: 'string'\n        },\n        updatedAt: {\n          type: 'string',\n          format: 'date-time'\n        },\n        user: {\n          $ref: '#/$defs/summary_user'\n        }\n      }\n    },\n    summary_user: {\n      type: 'object',\n      properties: {\n        email: {\n          type: 'string'\n        },\n        firebaseUserId: {\n          type: 'string'\n        },\n        name: {\n          type: 'string'\n        },\n        profilePicture: {\n          type: 'string'\n        },\n        publicId: {\n          type: 'string'\n        }\n      }\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nCreate a new comment within a specific comment thread\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/comment_create_response',\n  $defs: {\n    comment_create_response: {\n      type: 'object',\n      properties: {\n        data: {\n          $ref: '#/$defs/comment_model'\n        },\n        metadata: {\n          type: 'object',\n          properties: {\n            change: {\n              type: 'object',\n              description: 'Changes made in this operation',\n              additionalProperties: true\n            },\n            event: {\n              type: 'string',\n              description: 'Event type for the operation'\n            },\n            resourceId: {\n              type: 'string',\n              description: 'UUID of the newly created comment'\n            }\n          }\n        }\n      }\n    },\n    comment_model: {\n      type: 'object',\n      properties: {\n        commentText: {\n          type: 'string'\n        },\n        createdAt: {\n          type: 'string',\n          format: 'date-time'\n        },\n        deletedAt: {\n          type: 'string',\n          format: 'date-time'\n        },\n        isOwner: {\n          type: 'object',\n          additionalProperties: true\n        },\n        publicId: {\n          type: 'string'\n        },\n        updatedAt: {\n          type: 'string',\n          format: 'date-time'\n        },\n        user: {\n          $ref: '#/$defs/summary_user'\n        }\n      }\n    },\n    summary_user: {\n      type: 'object',\n      properties: {\n        email: {\n          type: 'string'\n        },\n        firebaseUserId: {\n          type: 'string'\n        },\n        name: {\n          type: 'string'\n        },\n        profilePicture: {\n          type: 'string'\n        },\n        publicId: {\n          type: 'string'\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -64,9 +64,16 @@ export const tool: Tool = {
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
   const { comment_thread_id, jq_filter, ...body } = args as any;
-  return asTextContentResult(
-    await maybeFilter(jq_filter, await client.commentThread.comment.create(comment_thread_id, body)),
-  );
+  try {
+    return asTextContentResult(
+      await maybeFilter(jq_filter, await client.commentThread.comment.create(comment_thread_id, body)),
+    );
+  } catch (error) {
+    if (isJqError(error)) {
+      return asErrorResult(error.message);
+    }
+    throw error;
+  }
 };
 
 export default { metadata, tool, handler };

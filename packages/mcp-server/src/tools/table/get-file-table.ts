@@ -41,7 +41,7 @@ export const tool: Tool = {
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
   const { table_id, ...body } = args as any;
-  return asBinaryContentResult(await client.table.getFile(table_id, body));
+  return asBinaryContentResult(await client.table.getFile(table_id, body).asResponse());
 };
 
 export default { metadata, tool, handler };

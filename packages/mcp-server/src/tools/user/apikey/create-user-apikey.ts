@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { maybeFilter } from 'morta-mcp/filtering';
-import { Metadata, asTextContentResult } from 'morta-mcp/tools/types';
+import { isJqError, maybeFilter } from 'morta-mcp/filtering';
+import { Metadata, asErrorResult, asTextContentResult } from 'morta-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import Morta from 'morta';
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'create_user_apikey',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nCreate an API key for the currently logged in user\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      $ref: '#/$defs/api_key'\n    },\n    metadata: {\n      type: 'object',\n      additionalProperties: true\n    }\n  },\n  $defs: {\n    api_key: {\n      type: 'object',\n      properties: {\n        accessLevel: {\n          type: 'integer'\n        },\n        documentRestrictions: {\n          type: 'array',\n          items: {\n            type: 'string'\n          }\n        },\n        hash: {\n          type: 'string'\n        },\n        name: {\n          type: 'string'\n        },\n        prefix: {\n          type: 'string'\n        },\n        projectRestrictions: {\n          type: 'array',\n          items: {\n            type: 'string'\n          }\n        },\n        publicId: {\n          type: 'string'\n        },\n        tableRestrictions: {\n          type: 'array',\n          items: {\n            type: 'string'\n          }\n        }\n      }\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nCreate an API key for the currently logged in user\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/apikey_create_response',\n  $defs: {\n    apikey_create_response: {\n      type: 'object',\n      properties: {\n        data: {\n          $ref: '#/$defs/api_key'\n        },\n        metadata: {\n          type: 'object',\n          additionalProperties: true\n        }\n      }\n    },\n    api_key: {\n      type: 'object',\n      properties: {\n        accessLevel: {\n          type: 'integer'\n        },\n        documentRestrictions: {\n          type: 'array',\n          items: {\n            type: 'string'\n          }\n        },\n        hash: {\n          type: 'string'\n        },\n        name: {\n          type: 'string'\n        },\n        prefix: {\n          type: 'string'\n        },\n        projectRestrictions: {\n          type: 'array',\n          items: {\n            type: 'string'\n          }\n        },\n        publicId: {\n          type: 'string'\n        },\n        tableRestrictions: {\n          type: 'array',\n          items: {\n            type: 'string'\n          }\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -61,7 +61,14 @@ export const tool: Tool = {
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
   const { jq_filter, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(jq_filter, await client.user.apikey.create(body)));
+  try {
+    return asTextContentResult(await maybeFilter(jq_filter, await client.user.apikey.create(body)));
+  } catch (error) {
+    if (isJqError(error)) {
+      return asErrorResult(error.message);
+    }
+    throw error;
+  }
 };
 
 export default { metadata, tool, handler };

@@ -72,7 +72,7 @@ export const tool: Tool = {
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return asBinaryContentResult(await client.integrations.createPassthroughDownload(body));
+  return asBinaryContentResult(await client.integrations.createPassthroughDownload(body).asResponse());
 };
 
 export default { metadata, tool, handler };

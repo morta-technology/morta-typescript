@@ -1,7 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { maybeFilter } from 'morta-mcp/filtering';
-import { Metadata, asTextContentResult } from 'morta-mcp/tools/types';
+import { isJqError, maybeFilter } from 'morta-mcp/filtering';
+import { Metadata, asErrorResult, asTextContentResult } from 'morta-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import Morta from 'morta';
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'get_statistics_table',
   description:
-    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nRetrieve statistics for table columns based on specified parameters.\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {\n    data: {\n      type: 'array',\n      items: {\n        $ref: '#/$defs/table_column_with_aggregation'\n      }\n    },\n    metadata: {\n      type: 'object',\n      additionalProperties: true\n    }\n  },\n  $defs: {\n    table_column_with_aggregation: {\n      type: 'object',\n      properties: {\n        aggregation: {\n          type: 'object',\n          properties: {\n            name: {\n              type: 'string'\n            },\n            value: {\n              type: 'number'\n            }\n          }\n        },\n        name: {\n          type: 'string'\n        },\n        publicId: {\n          type: 'string'\n        }\n      }\n    }\n  }\n}\n```",
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nRetrieve statistics for table columns based on specified parameters.\n\n# Response Schema\n```json\n{\n  $ref: '#/$defs/table_get_statistics_response',\n  $defs: {\n    table_get_statistics_response: {\n      type: 'object',\n      properties: {\n        data: {\n          type: 'array',\n          items: {\n            $ref: '#/$defs/table_column_with_aggregation'\n          }\n        },\n        metadata: {\n          type: 'object',\n          additionalProperties: true\n        }\n      }\n    },\n    table_column_with_aggregation: {\n      type: 'object',\n      properties: {\n        aggregation: {\n          type: 'object',\n          properties: {\n            name: {\n              type: 'string'\n            },\n            value: {\n              type: 'number'\n            }\n          }\n        },\n        name: {\n          type: 'string'\n        },\n        publicId: {\n          type: 'string'\n        }\n      }\n    }\n  }\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -50,7 +50,16 @@ export const tool: Tool = {
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
   const { table_id, jq_filter, ...body } = args as any;
-  return asTextContentResult(await maybeFilter(jq_filter, await client.table.getStatistics(table_id, body)));
+  try {
+    return asTextContentResult(
+      await maybeFilter(jq_filter, await client.table.getStatistics(table_id, body)),
+    );
+  } catch (error) {
+    if (isJqError(error)) {
+      return asErrorResult(error.message);
+    }
+    throw error;
+  }
 };
 
 export default { metadata, tool, handler };
