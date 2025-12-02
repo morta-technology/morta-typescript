@@ -1,6 +1,6 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import { Metadata, asTextContentResult } from 'morta-mcp/tools/types';
+import { Metadata, asErrorResult, asTextContentResult } from 'morta-mcp/tools/types';
 
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import Morta from 'morta';
@@ -322,7 +322,14 @@ export const tool: Tool = {
 
 export const handler = async (client: Morta, args: Record<string, unknown> | undefined) => {
   const { column_id, ...body } = args as any;
-  return asTextContentResult(await client.table.views.columns.update(column_id, body));
+  try {
+    return asTextContentResult(await client.table.views.columns.update(column_id, body));
+  } catch (error) {
+    if (error instanceof Morta.APIError) {
+      return asErrorResult(error.message);
+    }
+    throw error;
+  }
 };
 
 export default { metadata, tool, handler };
