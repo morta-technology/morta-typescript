@@ -73,7 +73,7 @@ export const handler = async (client: Morta, args: Record<string, unknown> | und
   try {
     return asTextContentResult(await maybeFilter(jq_filter, await client.commentThread.create(body)));
   } catch (error) {
-    if (isJqError(error)) {
+    if (error instanceof Morta.APIError || isJqError(error)) {
       return asErrorResult(error.message);
     }
     throw error;
