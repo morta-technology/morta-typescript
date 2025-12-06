@@ -47,7 +47,7 @@ export const handler = async (client: Morta, args: Record<string, unknown> | und
   try {
     return asTextContentResult(await maybeFilter(jq_filter, await client.hub.removeUser(firebase_id, body)));
   } catch (error) {
-    if (isJqError(error)) {
+    if (error instanceof Morta.APIError || isJqError(error)) {
       return asErrorResult(error.message);
     }
     throw error;
