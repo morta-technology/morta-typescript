@@ -1,5 +1,40 @@
 # Changelog
 
+## 2.0.0 (2025-12-19)
+
+Full Changelog: [v1.4.0...v2.0.0](https://github.com/morta-technology/morta-typescript/compare/v1.4.0...v2.0.0)
+
+### ⚠ BREAKING CHANGES
+
+* **mcp:** remove deprecated tool schemes
+* **mcp:** **Migration:** To migrate, simply modify the command used to invoke the MCP server. Currently, the only supported tool scheme is code mode. Now, starting the server with just `node /path/to/mcp/server` or `npx package-name` will invoke code tools: changing your command to one of these is likely all you will need to do.
+
+### Features
+
+* **mcp:** add typescript check to code execution tool ([4b53a32](https://github.com/morta-technology/morta-typescript/commit/4b53a32dab4bb1941a66089ddc8915e2a082bf64))
+* **mcp:** handle code mode calls in the Stainless API ([847c9ef](https://github.com/morta-technology/morta-typescript/commit/847c9efa9304ca888a6f8e5b81ed8359b725ae61))
+* **mcp:** return logs on code tool errors ([0fb9ab0](https://github.com/morta-technology/morta-typescript/commit/0fb9ab0e68bbcf98e7046a9c4c34400743fee34f))
+
+
+### Bug Fixes
+
+* **mcp:** add client instantiation options to code tool ([13450ff](https://github.com/morta-technology/morta-typescript/commit/13450ffd12e50b410a5d27f8ad2f35b968d31f77))
+* **mcp:** correct code tool API endpoint ([08b4c3e](https://github.com/morta-technology/morta-typescript/commit/08b4c3ed161d00513f98fac0c928b852629cda13))
+* **mcp:** pass base url to code tool ([bb80f34](https://github.com/morta-technology/morta-typescript/commit/bb80f34e07d053cbbbccf635c5679ddf2c638a73))
+* **mcp:** return correct lines on typescript errors ([e39cdbe](https://github.com/morta-technology/morta-typescript/commit/e39cdbeaed579aa96b3f4ed5cb459ce1598fa367))
+* **mcp:** return tool execution error on api error ([b53b4a1](https://github.com/morta-technology/morta-typescript/commit/b53b4a1b20ca864875efff3626ef8931f66b1cb4))
+
+
+### Chores
+
+* **client:** fix logger property type ([211926c](https://github.com/morta-technology/morta-typescript/commit/211926c08d370d1df06ea837e9c81890a19fc588))
+* **internal:** codegen related update ([eb44fcb](https://github.com/morta-technology/morta-typescript/commit/eb44fcba37b80e73454cce4be4a11f6e955e110b))
+* **internal:** codegen related update ([6aeb419](https://github.com/morta-technology/morta-typescript/commit/6aeb419bb8b21ef54e15540deaaf526b00a287e4))
+* **internal:** upgrade eslint ([8866d8f](https://github.com/morta-technology/morta-typescript/commit/8866d8f989d48d28eab84ca3d55e77d95d8e4852))
+* **mcp:** remove deprecated tool schemes ([5016078](https://github.com/morta-technology/morta-typescript/commit/5016078854bf6287b622dfe39e0a048e213ee9e0))
+* **mcp:** update lockfile ([fbefe37](https://github.com/morta-technology/morta-typescript/commit/fbefe377b62114c2c871e7ccd5b7fb44c18c7e01))
+* use latest @modelcontextprotocol/sdk ([80d4752](https://github.com/morta-technology/morta-typescript/commit/80d47520acb9a341bdd92d2886c4507324972de2))
+
 ## 1.4.0 (2025-11-26)
 
 Full Changelog: [v1.3.0...v1.4.0](https://github.com/morta-technology/morta-typescript/compare/v1.3.0...v1.4.0)
