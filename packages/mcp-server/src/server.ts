@@ -21,7 +21,7 @@ export const newMcpServer = () =>
   new McpServer(
     {
       name: 'morta_api',
-      version: '1.4.0',
+      version: '2.0.0',
     },
     { capabilities: { tools: {}, logging: {} } },
   );

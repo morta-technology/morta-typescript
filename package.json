@@ -1,6 +1,6 @@
 {
   "name": "morta",
-  "version": "1.4.0",
+  "version": "2.0.0",
   "description": "The official TypeScript library for the Morta API",
   "author": "Morta <>",
   "types": "dist/index.d.ts",
