@@ -11,7 +11,12 @@ describe('resource rows', () => {
   // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.table.views.rows.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
-      rows: [{ publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', rowData: { foo: 'bar' } }],
+      rows: [
+        {
+          publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+          rowData: { foo: 'bar' },
+        },
+      ],
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);
@@ -65,7 +70,13 @@ describe('resource rows', () => {
     await expect(
       client.table.views.rows.list(
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-        { alphabeticalColumnSort: true, filter: 'filter', page: 0, size: 0, sort: 'sort' },
+        {
+          alphabeticalColumnSort: true,
+          filter: 'filter',
+          page: 0,
+          size: 0,
+          sort: 'sort',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Morta.NotFoundError);

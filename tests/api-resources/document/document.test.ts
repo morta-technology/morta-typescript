@@ -119,8 +119,20 @@ describe('resource document', () => {
                 {
                   data: { foo: 'bar' },
                   depth: 0,
-                  entityRanges: [{ key: 0, length: 0, offset: 0 }],
-                  inlineStyleRanges: [{ length: 0, offset: 0, style: 'style' }],
+                  entityRanges: [
+                    {
+                      key: 0,
+                      length: 0,
+                      offset: 0,
+                    },
+                  ],
+                  inlineStyleRanges: [
+                    {
+                      length: 0,
+                      offset: 0,
+                      style: 'style',
+                    },
+                  ],
                   key: 'key',
                   text: 'text',
                   type: 'type',
@@ -159,7 +171,11 @@ describe('resource document', () => {
     await expect(
       client.document.export(
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-        { page_format: 'A1', page_orientation: 'portrait', table_links: true },
+        {
+          page_format: 'A1',
+          page_orientation: 'portrait',
+          table_links: true,
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Morta.NotFoundError);

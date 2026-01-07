@@ -285,7 +285,10 @@ describe('resource table', () => {
     await expect(
       client.table.getStatistics(
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-        { aggregation: { foo: 'string' }, filter: 'filter' },
+        {
+          aggregation: { foo: 'string' },
+          filter: 'filter',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Morta.NotFoundError);
@@ -332,7 +335,12 @@ describe('resource table', () => {
     await expect(
       client.table.streamRows(
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-        { filter: 'filter', page: 1, size: 1, sort: 'sort' },
+        {
+          filter: 'filter',
+          page: 1,
+          size: 1,
+          sort: 'sort',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Morta.NotFoundError);
@@ -353,7 +361,13 @@ describe('resource table', () => {
   // Prism tests are disabled
   test.skip('updateCells: only required params', async () => {
     const responsePromise = client.table.updateCells('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
-      cells: [{ columnName: 'x', rowId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', value: {} }],
+      cells: [
+        {
+          columnName: 'x',
+          rowId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+          value: {},
+        },
+      ],
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);

@@ -60,7 +60,13 @@ describe('resource notifications', () => {
       description: 'description',
       processes: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],
       tables: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],
-      triggers: [{ resource: 'resource', verb: 'verb', publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' }],
+      triggers: [
+        {
+          resource: 'resource',
+          verb: 'verb',
+          publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+        },
+      ],
     });
   });
 

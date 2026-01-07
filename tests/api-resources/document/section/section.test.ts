@@ -38,8 +38,20 @@ describe('resource section', () => {
             {
               data: { foo: 'bar' },
               depth: 0,
-              entityRanges: [{ key: 0, length: 0, offset: 0 }],
-              inlineStyleRanges: [{ length: 0, offset: 0, style: 'style' }],
+              entityRanges: [
+                {
+                  key: 0,
+                  length: 0,
+                  offset: 0,
+                },
+              ],
+              inlineStyleRanges: [
+                {
+                  length: 0,
+                  offset: 0,
+                  style: 'style',
+                },
+              ],
               key: 'key',
               text: 'text',
               type: 'type',
