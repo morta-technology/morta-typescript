@@ -11,7 +11,12 @@ describe('resource row', () => {
   // Prism tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.table.row.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
-      rows: [{ publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', rowData: { foo: 'bar' } }],
+      rows: [
+        {
+          publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+          rowData: { foo: 'bar' },
+        },
+      ],
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);

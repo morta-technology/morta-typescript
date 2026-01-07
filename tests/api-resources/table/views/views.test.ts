@@ -48,8 +48,20 @@ describe('resource views', () => {
                 {
                   data: { foo: 'bar' },
                   depth: 0,
-                  entityRanges: [{ key: 0, length: 0, offset: 0 }],
-                  inlineStyleRanges: [{ length: 0, offset: 0, style: 'style' }],
+                  entityRanges: [
+                    {
+                      key: 0,
+                      length: 0,
+                      offset: 0,
+                    },
+                  ],
+                  inlineStyleRanges: [
+                    {
+                      length: 0,
+                      offset: 0,
+                      style: 'style',
+                    },
+                  ],
                   key: 'key',
                   text: 'text',
                   type: 'type',
@@ -202,7 +214,11 @@ describe('resource views', () => {
     await expect(
       client.table.views.downloadCsv(
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-        { filter: 'filter', process_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', sort: 'sort' },
+        {
+          filter: 'filter',
+          process_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+          sort: 'sort',
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Morta.NotFoundError);
@@ -328,7 +344,13 @@ describe('resource views', () => {
   // Prism tests are disabled
   test.skip('updateCells: only required params', async () => {
     const responsePromise = client.table.views.updateCells('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
-      cells: [{ columnName: 'x', rowId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', value: {} }],
+      cells: [
+        {
+          columnName: 'x',
+          rowId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+          value: {},
+        },
+      ],
     });
     const rawResponse = await responsePromise.asResponse();
     expect(rawResponse).toBeInstanceOf(Response);

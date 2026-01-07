@@ -296,7 +296,11 @@ describe('resource hub', () => {
     await expect(
       client.hub.getSentNotifications(
         '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
-        { notification_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', page: 1, size: 1 },
+        {
+          notification_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+          page: 1,
+          size: 1,
+        },
         { path: '/_stainless_unknown_path' },
       ),
     ).rejects.toThrow(Morta.NotFoundError);
