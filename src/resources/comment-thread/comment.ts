@@ -151,12 +151,12 @@ export interface CommentUpdateParams {
   comment_thread_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   commentText: string;
 
   /**
-   * Body param:
+   * Body param
    */
   context?: HubAPI.BaseRequestContext;
 }

@@ -98,12 +98,12 @@ export interface SecretUpdateParams {
   hub_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   name: string;
 
   /**
-   * Body param:
+   * Body param
    */
   value: string;
 }

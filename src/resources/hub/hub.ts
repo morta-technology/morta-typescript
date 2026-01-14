@@ -1026,7 +1026,7 @@ export interface HubChangeUserRoleParams {
   hub_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   role: 'owner' | 'admin' | 'member';
 }
@@ -1123,42 +1123,42 @@ export interface HubUpdateHeadingStylingParams {
   hub_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   bold?: boolean;
 
   /**
-   * Body param:
+   * Body param
    */
   colour?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   context?: BaseRequestContext;
 
   /**
-   * Body param:
+   * Body param
    */
   fontSize?: number;
 
   /**
-   * Body param:
+   * Body param
    */
   italic?: boolean;
 
   /**
-   * Body param:
+   * Body param
    */
   numberingStyle?: number;
 
   /**
-   * Body param:
+   * Body param
    */
   startAt0?: boolean;
 
   /**
-   * Body param:
+   * Body param
    */
   underline?: boolean;
 }

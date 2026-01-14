@@ -209,37 +209,37 @@ export interface SectionUpdateParams {
   document_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   context?: HubAPI.BaseRequestContext;
 
   /**
-   * Body param:
+   * Body param
    */
   description?: unknown | DocumentAPI.Draftjs;
 
   /**
-   * Body param:
+   * Body param
    */
   name?: string | null;
 
   /**
-   * Body param:
+   * Body param
    */
   pageBreakBefore?: boolean | null;
 
   /**
-   * Body param:
+   * Body param
    */
   pdfIncludeDescription?: boolean | null;
 
   /**
-   * Body param:
+   * Body param
    */
   pdfIncludeSection?: boolean | null;
 
   /**
-   * Body param:
+   * Body param
    */
   plaintextDescription?: string | null;
 }
