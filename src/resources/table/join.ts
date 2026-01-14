@@ -75,27 +75,27 @@ export interface JoinUpdateParams {
   table_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   context?: HubAPI.BaseRequestContext;
 
   /**
-   * Body param:
+   * Body param
    */
   dataColumns?: Array<string>;
 
   /**
-   * Body param:
+   * Body param
    */
   isOneToMany?: boolean;
 
   /**
-   * Body param:
+   * Body param
    */
   joinColumns?: Array<TableColumnJoin>;
 
   /**
-   * Body param:
+   * Body param
    */
   joinViewId?: string;
 }

@@ -205,12 +205,12 @@ export interface ResponseCreateParams {
   document_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   context?: HubAPI.BaseRequestContext;
 
   /**
-   * Body param:
+   * Body param
    */
   type?: 'Flexible' | 'File Upload' | 'Table' | 'Signature' | 'Selection' | null;
 }
@@ -227,32 +227,32 @@ export interface ResponseUpdateParams {
   document_section_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   context?: HubAPI.BaseRequestContext;
 
   /**
-   * Body param:
+   * Body param
    */
   enableSubmission?: boolean | null;
 
   /**
-   * Body param:
+   * Body param
    */
   pdfIncludeResponse?: boolean | null;
 
   /**
-   * Body param:
+   * Body param
    */
   resetAfterResponse?: boolean | null;
 
   /**
-   * Body param:
+   * Body param
    */
   type?: 'Flexible' | 'File Upload' | 'Table' | 'Signature' | 'Selection' | null;
 
   /**
-   * Body param:
+   * Body param
    */
   typeOptions?: unknown;
 }
@@ -305,12 +305,12 @@ export interface ResponseSubmitParams {
   document_section_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   context?: HubAPI.BaseRequestContext;
 
   /**
-   * Body param:
+   * Body param
    */
   response?: unknown;
 }

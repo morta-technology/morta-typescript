@@ -33,12 +33,12 @@ export interface AIAnswerVoteParams {
   hub_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   comment?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   vote?: boolean;
 }
