@@ -1,5 +1,64 @@
 # Changelog
 
+## 2.0.0 (2026-03-01)
+
+Full Changelog: [v1.4.0...v2.0.0](https://github.com/morta-technology/morta-typescript/compare/v1.4.0...v2.0.0)
+
+### ⚠ BREAKING CHANGES
+
+* **mcp:** remove deprecated tool schemes
+* **mcp:** **Migration:** To migrate, simply modify the command used to invoke the MCP server. Currently, the only supported tool scheme is code mode. Now, starting the server with just `node /path/to/mcp/server` or `npx package-name` will invoke code tools: changing your command to one of these is likely all you will need to do.
+
+### Features
+
+* **mcp:** add typescript check to code execution tool ([4b53a32](https://github.com/morta-technology/morta-typescript/commit/4b53a32dab4bb1941a66089ddc8915e2a082bf64))
+* **mcp:** handle code mode calls in the Stainless API ([847c9ef](https://github.com/morta-technology/morta-typescript/commit/847c9efa9304ca888a6f8e5b81ed8359b725ae61))
+* **mcp:** return logs on code tool errors ([0fb9ab0](https://github.com/morta-technology/morta-typescript/commit/0fb9ab0e68bbcf98e7046a9c4c34400743fee34f))
+
+
+### Bug Fixes
+
+* **mcp:** add client instantiation options to code tool ([13450ff](https://github.com/morta-technology/morta-typescript/commit/13450ffd12e50b410a5d27f8ad2f35b968d31f77))
+* **mcp:** correct code tool API endpoint ([08b4c3e](https://github.com/morta-technology/morta-typescript/commit/08b4c3ed161d00513f98fac0c928b852629cda13))
+* **mcp:** correct code tool api output types ([ad349c7](https://github.com/morta-technology/morta-typescript/commit/ad349c75a166c66eef186cd0e2889c54264dbb07))
+* **mcp:** fix env parsing ([33e4453](https://github.com/morta-technology/morta-typescript/commit/33e44536890267e94695f9d3cba6d66349fae5eb))
+* **mcp:** fix options parsing ([4d8f6b4](https://github.com/morta-technology/morta-typescript/commit/4d8f6b4b7b625777fc3146299aeac47bd4dc151d))
+* **mcp:** pass base url to code tool ([bb80f34](https://github.com/morta-technology/morta-typescript/commit/bb80f34e07d053cbbbccf635c5679ddf2c638a73))
+* **mcp:** return correct lines on typescript errors ([e39cdbe](https://github.com/morta-technology/morta-typescript/commit/e39cdbeaed579aa96b3f4ed5cb459ce1598fa367))
+* **mcp:** return tool execution error on api error ([b53b4a1](https://github.com/morta-technology/morta-typescript/commit/b53b4a1b20ca864875efff3626ef8931f66b1cb4))
+* **mcp:** update code tool prompt ([425f949](https://github.com/morta-technology/morta-typescript/commit/425f9491709d9d13a1c795758889b0979030e529))
+
+
+### Chores
+
+* break long lines in snippets into multiline ([e2344a7](https://github.com/morta-technology/morta-typescript/commit/e2344a7ee5d309cf986e30685abc6ca916cfded6))
+* **ci:** upgrade `actions/github-script` ([dd7de79](https://github.com/morta-technology/morta-typescript/commit/dd7de79bfbe76743e17a743c59e7462c8a734389))
+* **client:** fix logger property type ([211926c](https://github.com/morta-technology/morta-typescript/commit/211926c08d370d1df06ea837e9c81890a19fc588))
+* fix typo in descriptions ([7e8076d](https://github.com/morta-technology/morta-typescript/commit/7e8076d4435ac8c04618633b5dcd9956df8936bb))
+* **internal:** codegen related update ([e7b1b57](https://github.com/morta-technology/morta-typescript/commit/e7b1b57e72e15b692bccfe46ba6e4f7dc2508184))
+* **internal:** codegen related update ([a07deb5](https://github.com/morta-technology/morta-typescript/commit/a07deb587abf272eb9063cc159de172e9898f388))
+* **internal:** codegen related update ([21dda86](https://github.com/morta-technology/morta-typescript/commit/21dda868ec1730ba48dd6ce0e811e20c2503ef1e))
+* **internal:** codegen related update ([42f6995](https://github.com/morta-technology/morta-typescript/commit/42f6995c862bfc75bc72b87d590a2a451bcd2b38))
+* **internal:** codegen related update ([f6a8892](https://github.com/morta-technology/morta-typescript/commit/f6a8892223c68e0b18fcdefdc5c2f88a22ff94f0))
+* **internal:** codegen related update ([eb44fcb](https://github.com/morta-technology/morta-typescript/commit/eb44fcba37b80e73454cce4be4a11f6e955e110b))
+* **internal:** codegen related update ([6aeb419](https://github.com/morta-technology/morta-typescript/commit/6aeb419bb8b21ef54e15540deaaf526b00a287e4))
+* **internal:** configure MCP Server hosting ([29c93ed](https://github.com/morta-technology/morta-typescript/commit/29c93ed135aab379c41844335c9faf14315d89bd))
+* **internal:** update `actions/checkout` version ([16a939b](https://github.com/morta-technology/morta-typescript/commit/16a939b4e98641df810a6bb7f7a88b07f0d913bd))
+* **internal:** update lock file ([501d61c](https://github.com/morta-technology/morta-typescript/commit/501d61c067f4eb863f9811ba83c4d9eb9a226c47))
+* **internal:** upgrade babel, qs, js-yaml ([65d0b98](https://github.com/morta-technology/morta-typescript/commit/65d0b98cf061bafaf56b79a1a5c974c286381099))
+* **internal:** upgrade eslint ([8866d8f](https://github.com/morta-technology/morta-typescript/commit/8866d8f989d48d28eab84ca3d55e77d95d8e4852))
+* **mcp:** add intent param to execute tool ([e0e2c07](https://github.com/morta-technology/morta-typescript/commit/e0e2c07643f8fa2a4b76f61adf55ef598cfc1261))
+* **mcp:** pass intent param to execute handler ([def529d](https://github.com/morta-technology/morta-typescript/commit/def529d39abe38477dfdc96b08839e22fba0b4f9))
+* **mcp:** remove deprecated tool schemes ([5016078](https://github.com/morta-technology/morta-typescript/commit/5016078854bf6287b622dfe39e0a048e213ee9e0))
+* **mcp:** update lockfile ([fbefe37](https://github.com/morta-technology/morta-typescript/commit/fbefe377b62114c2c871e7ccd5b7fb44c18c7e01))
+* **mcp:** upgrade dependencies ([74cda8d](https://github.com/morta-technology/morta-typescript/commit/74cda8df71177f70c49afb1133675160c945e334))
+* use latest @modelcontextprotocol/sdk ([80d4752](https://github.com/morta-technology/morta-typescript/commit/80d47520acb9a341bdd92d2886c4507324972de2))
+
+
+### Documentation
+
+* prominently feature MCP server setup in root SDK readmes ([096ab81](https://github.com/morta-technology/morta-typescript/commit/096ab8150f21bf3445cccefe0f4c2843c3f6cfc1))
+
 ## 1.4.0 (2025-11-26)
 
 Full Changelog: [v1.3.0...v1.4.0](https://github.com/morta-technology/morta-typescript/compare/v1.3.0...v1.4.0)
