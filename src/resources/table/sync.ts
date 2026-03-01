@@ -165,72 +165,72 @@ export interface SyncUpdateParams {
   table_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   companyId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   context?: HubAPI.BaseRequestContext;
 
   /**
-   * Body param:
+   * Body param
    */
   docTypes?: Array<string>;
 
   /**
-   * Body param:
+   * Body param
    */
   enterpriseId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   folderId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   hubId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   licenseId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   modelId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   projectId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   projectIds?: Array<string>;
 
   /**
-   * Body param:
+   * Body param
    */
   properties?: Array<string>;
 
   /**
-   * Body param:
+   * Body param
    */
   region?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   topFolderId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   type?:
     | 'Projects'
@@ -261,72 +261,72 @@ export interface SyncSyncWithIntegrationParams {
   table_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   companyId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   context?: HubAPI.BaseRequestContext;
 
   /**
-   * Body param:
+   * Body param
    */
   docTypes?: Array<string>;
 
   /**
-   * Body param:
+   * Body param
    */
   enterpriseId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   folderId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   hubId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   licenseId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   modelId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   projectId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   projectIds?: Array<string>;
 
   /**
-   * Body param:
+   * Body param
    */
   properties?: Array<string>;
 
   /**
-   * Body param:
+   * Body param
    */
   region?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   topFolderId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   type?:
     | 'Projects'

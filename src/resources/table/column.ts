@@ -290,82 +290,82 @@ export interface ColumnUpdateParams {
   table_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   aggregate?: number;
 
   /**
-   * Body param:
+   * Body param
    */
   alterOptions?: TableColumnAlter | unknown;
 
   /**
-   * Body param:
+   * Body param
    */
   context?: HubAPI.BaseRequestContext;
 
   /**
-   * Body param:
+   * Body param
    */
   dateFormat?: string | null;
 
   /**
-   * Body param:
+   * Body param
    */
   decimalPlaces?: number;
 
   /**
-   * Body param:
+   * Body param
    */
   description?: unknown | DocumentAPI.Draftjs;
 
   /**
-   * Body param:
+   * Body param
    */
   displayLink?: boolean;
 
   /**
-   * Body param:
+   * Body param
    */
   exportWidth?: number | null;
 
   /**
-   * Body param:
+   * Body param
    */
   formula?: string | null;
 
   /**
-   * Body param:
+   * Body param
    */
   formulaEnabled?: boolean;
 
   /**
-   * Body param:
+   * Body param
    */
   headerBackgroundColor?: string | null;
 
   /**
-   * Body param:
+   * Body param
    */
   headerTextColor?: string | null;
 
   /**
-   * Body param:
+   * Body param
    */
   isIndexed?: boolean;
 
   /**
-   * Body param:
+   * Body param
    */
   isJoined?: boolean | null;
 
   /**
-   * Body param:
+   * Body param
    */
   isSynced?: boolean;
 
   /**
-   * Body param:
+   * Body param
    */
   kind?:
     | 'text'
@@ -388,37 +388,37 @@ export interface ColumnUpdateParams {
     | 'duration';
 
   /**
-   * Body param:
+   * Body param
    */
   kindOptions?: SelectOptionsLookup;
 
   /**
-   * Body param:
+   * Body param
    */
   name?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   publicId?: string;
 
   /**
-   * Body param:
+   * Body param
    */
   script?: string | null;
 
   /**
-   * Body param:
+   * Body param
    */
   scriptEnabled?: boolean;
 
   /**
-   * Body param:
+   * Body param
    */
   thousandSeparator?: boolean;
 
   /**
-   * Body param:
+   * Body param
    */
   width?: number;
 }

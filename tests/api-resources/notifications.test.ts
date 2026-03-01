@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource notifications', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.notifications.create({
       description: 'description',
@@ -25,7 +25,7 @@ describe('resource notifications', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.notifications.create({
       description: 'description',
@@ -38,7 +38,7 @@ describe('resource notifications', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.notifications.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       webhookUrl: 'webhookUrl',
@@ -52,7 +52,7 @@ describe('resource notifications', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.notifications.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       webhookUrl: 'webhookUrl',
@@ -60,11 +60,17 @@ describe('resource notifications', () => {
       description: 'description',
       processes: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],
       tables: ['182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e'],
-      triggers: [{ resource: 'resource', verb: 'verb', publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' }],
+      triggers: [
+        {
+          resource: 'resource',
+          verb: 'verb',
+          publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
+        },
+      ],
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.notifications.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -76,7 +82,7 @@ describe('resource notifications', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listEventTypes', async () => {
     const responsePromise = client.notifications.listEventTypes();
     const rawResponse = await responsePromise.asResponse();
@@ -88,7 +94,7 @@ describe('resource notifications', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listEvents: only required params', async () => {
     const responsePromise = client.notifications.listEvents('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       type: 'process',
@@ -102,7 +108,7 @@ describe('resource notifications', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('listEvents: required and optional params', async () => {
     const response = await client.notifications.listEvents('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       type: 'process',

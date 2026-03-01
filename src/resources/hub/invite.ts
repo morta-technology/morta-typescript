@@ -113,12 +113,12 @@ export interface InviteUpdateParams {
   hub_id: string;
 
   /**
-   * Body param:
+   * Body param
    */
   projectRole?: 'member' | 'admin' | 'owner';
 
   /**
-   * Body param:
+   * Body param
    */
   tags?: Array<string>;
 }
