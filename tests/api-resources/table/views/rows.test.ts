@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource rows', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.table.views.rows.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       rows: [
@@ -27,7 +27,7 @@ describe('resource rows', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.table.views.rows.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       rows: [
@@ -52,7 +52,7 @@ describe('resource rows', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list', async () => {
     const responsePromise = client.table.views.rows.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -64,7 +64,7 @@ describe('resource rows', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('list: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -82,7 +82,7 @@ describe('resource rows', () => {
     ).rejects.toThrow(Morta.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.table.views.rows.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -94,7 +94,7 @@ describe('resource rows', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('add: only required params', async () => {
     const responsePromise = client.table.views.rows.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       rows: [{ rowData: { foo: 'bar' } }],
@@ -108,7 +108,7 @@ describe('resource rows', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('add: required and optional params', async () => {
     const response = await client.table.views.rows.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       rows: [
@@ -132,7 +132,7 @@ describe('resource rows', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('upsert: only required params', async () => {
     const responsePromise = client.table.views.rows.upsert('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       rows: [{ rowData: { foo: 'bar' } }],
@@ -147,7 +147,7 @@ describe('resource rows', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('upsert: required and optional params', async () => {
     const response = await client.table.views.rows.upsert('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       rows: [

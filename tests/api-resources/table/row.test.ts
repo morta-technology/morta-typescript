@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource row', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.table.row.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       rows: [
@@ -27,7 +27,7 @@ describe('resource row', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.table.row.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       rows: [
@@ -52,7 +52,7 @@ describe('resource row', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('add: only required params', async () => {
     const responsePromise = client.table.row.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       rows: [{ rowData: { foo: 'bar' } }],
@@ -66,7 +66,7 @@ describe('resource row', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('add: required and optional params', async () => {
     const response = await client.table.row.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       rows: [
@@ -90,7 +90,7 @@ describe('resource row', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('getRows', async () => {
     const responsePromise = client.table.row.getRows('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -102,7 +102,7 @@ describe('resource row', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('getRows: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -124,7 +124,7 @@ describe('resource row', () => {
     ).rejects.toThrow(Morta.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('upsert: only required params', async () => {
     const responsePromise = client.table.row.upsert('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       rows: [{ rowData: { foo: 'bar' } }],
@@ -139,7 +139,7 @@ describe('resource row', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('upsert: required and optional params', async () => {
     const response = await client.table.row.upsert('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       rows: [
