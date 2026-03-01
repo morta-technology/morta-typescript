@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource section', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.document.section.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       name: 'name',
@@ -22,7 +22,7 @@ describe('resource section', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.document.section.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       name: 'name',
@@ -65,7 +65,7 @@ describe('resource section', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: only required params', async () => {
     const responsePromise = client.document.section.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -79,7 +79,7 @@ describe('resource section', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: required and optional params', async () => {
     const response = await client.document.section.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -87,7 +87,7 @@ describe('resource section', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: only required params', async () => {
     const responsePromise = client.document.section.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -101,7 +101,7 @@ describe('resource section', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update: required and optional params', async () => {
     const response = await client.document.section.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -120,7 +120,7 @@ describe('resource section', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete: only required params', async () => {
     const responsePromise = client.document.section.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -134,14 +134,14 @@ describe('resource section', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete: required and optional params', async () => {
     const response = await client.document.section.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('duplicate: only required params', async () => {
     const responsePromise = client.document.section.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -155,14 +155,14 @@ describe('resource section', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('duplicate: required and optional params', async () => {
     const response = await client.document.section.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('duplicateAsync: only required params', async () => {
     const responsePromise = client.document.section.duplicateAsync('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -176,14 +176,14 @@ describe('resource section', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('duplicateAsync: required and optional params', async () => {
     const response = await client.document.section.duplicateAsync('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('restore: only required params', async () => {
     const responsePromise = client.document.section.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -197,7 +197,7 @@ describe('resource section', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('restore: required and optional params', async () => {
     const response = await client.document.section.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',

@@ -39,14 +39,14 @@ For clients with a configuration JSON, it might look something like this:
 If you use Cursor, you can install the MCP server by using the button below. You will need to set your environment variables
 in Cursor's `mcp.json`, which can be found in Cursor Settings > Tools & MCP > New MCP Server.
 
-[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=morta-mcp&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyIteSIsIm1vcnRhLW1jcCJdLCJlbnYiOnsiTU9SVEFfQVBJX0tFWSI6IlNldCB5b3VyIE1PUlRBX0FQSV9LRVkgaGVyZS4ifX0)
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](https://cursor.com/en-US/install-mcp?name=morta-mcp&config=eyJuYW1lIjoibW9ydGEtbWNwIiwidHJhbnNwb3J0IjoiaHR0cCIsInVybCI6Imh0dHBzOi8vbW9ydGEtbWNwLnN0bG1jcC5jb20iLCJoZWFkZXJzIjp7IngtbW9ydGEtYXBpLWtleSI6Ik15IEFQSSBLZXkifX0)
 
 ### VS Code
 
 If you use MCP, you can install the MCP server by clicking the link below. You will need to set your environment variables
 in VS Code's `mcp.json`, which can be found via Command Palette > MCP: Open User Configuration.
 
-[Open VS Code](https://vscode.stainless.com/mcp/%7B%22name%22%3A%22morta-mcp%22%2C%22command%22%3A%22npx%22%2C%22args%22%3A%5B%22-y%22%2C%22morta-mcp%22%5D%2C%22env%22%3A%7B%22MORTA_API_KEY%22%3A%22Set%20your%20MORTA_API_KEY%20here.%22%7D%7D)
+[Open VS Code](https://vscode.stainless.com/mcp/%7B%22name%22%3A%22morta-mcp%22%2C%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fmorta-mcp.stlmcp.com%22%2C%22headers%22%3A%7B%22x-morta-api-key%22%3A%22My%20API%20Key%22%7D%7D)
 
 ### Claude Code
 
@@ -54,7 +54,7 @@ If you use Claude Code, you can install the MCP server by running the command be
 environment variables in Claude Code's `.claude.json`, which can be found in your home directory.
 
 ```
-claude mcp add morta_mcp_api --env MORTA_API_KEY="Your MORTA_API_KEY here." -- npx -y morta-mcp
+claude mcp add morta_mcp_api --header "x-morta-api-key: My API Key" --transport http https://morta-mcp.stlmcp.com
 ```
 
 ## Code Mode

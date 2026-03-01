@@ -8,7 +8,7 @@ const client = new Morta({
 });
 
 describe('resource document', () => {
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: only required params', async () => {
     const responsePromise = client.document.create({
       name: 'name',
@@ -24,7 +24,7 @@ describe('resource document', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('create: required and optional params', async () => {
     const response = await client.document.create({
       name: 'name',
@@ -39,7 +39,7 @@ describe('resource document', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve', async () => {
     const responsePromise = client.document.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -51,7 +51,7 @@ describe('resource document', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('retrieve: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -63,7 +63,7 @@ describe('resource document', () => {
     ).rejects.toThrow(Morta.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('update', async () => {
     const responsePromise = client.document.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();
@@ -75,7 +75,7 @@ describe('resource document', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('delete', async () => {
     const responsePromise = client.document.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -87,7 +87,7 @@ describe('resource document', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createMultipleSections: only required params', async () => {
     const responsePromise = client.document.createMultipleSections('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       sections: [{ name: 'name' }],
@@ -101,7 +101,7 @@ describe('resource document', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createMultipleSections: required and optional params', async () => {
     const response = await client.document.createMultipleSections('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       sections: [
@@ -154,7 +154,7 @@ describe('resource document', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('createSections', async () => {
     const responsePromise = client.document.createSections('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {});
     const rawResponse = await responsePromise.asResponse();
@@ -166,7 +166,8 @@ describe('resource document', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  test('export: request options and params are passed correctly', async () => {
+  // Mock server tests are disabled
+  test.skip('export: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
       client.document.export(
@@ -181,7 +182,7 @@ describe('resource document', () => {
     ).rejects.toThrow(Morta.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('getDeletedSections', async () => {
     const responsePromise = client.document.getDeletedSections('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -193,7 +194,7 @@ describe('resource document', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('getDeletedSections: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -205,7 +206,7 @@ describe('resource document', () => {
     ).rejects.toThrow(Morta.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('getDuplicatedChildren', async () => {
     const responsePromise = client.document.getDuplicatedChildren('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -217,7 +218,7 @@ describe('resource document', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('restore', async () => {
     const responsePromise = client.document.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -229,7 +230,7 @@ describe('resource document', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('syncTemplate', async () => {
     const responsePromise = client.document.syncTemplate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -241,7 +242,7 @@ describe('resource document', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('updateMultipleSections: only required params', async () => {
     const responsePromise = client.document.updateMultipleSections('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       sections: [{ publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' }],
@@ -255,7 +256,7 @@ describe('resource document', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('updateMultipleSections: required and optional params', async () => {
     const response = await client.document.updateMultipleSections('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {
       sections: [
@@ -284,7 +285,7 @@ describe('resource document', () => {
     });
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('updateSectionOrder', async () => {
     const responsePromise = client.document.updateSectionOrder('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');
     const rawResponse = await responsePromise.asResponse();
@@ -296,7 +297,7 @@ describe('resource document', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('updateSectionOrder: request options and params are passed correctly', async () => {
     // ensure the request options are being passed correctly by passing an invalid HTTP method in order to cause an error
     await expect(
@@ -322,7 +323,7 @@ describe('resource document', () => {
     ).rejects.toThrow(Morta.NotFoundError);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('updateViewsPermissions: only required params', async () => {
     const responsePromise = client.document.updateViewsPermissions({
       resource_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
@@ -336,7 +337,7 @@ describe('resource document', () => {
     expect(dataAndResponse.response).toBe(rawResponse);
   });
 
-  // Prism tests are disabled
+  // Mock server tests are disabled
   test.skip('updateViewsPermissions: required and optional params', async () => {
     const response = await client.document.updateViewsPermissions({
       resource_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',
