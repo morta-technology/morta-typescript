@@ -1865,7 +1865,7 @@ const EMBEDDED_METHODS: MethodEntry[] = [
       typescript: {
         method: 'client.hub.uploadTemplate',
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.uploadTemplate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          "import fs from 'fs';\nimport Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.uploadTemplate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
     },
   },
