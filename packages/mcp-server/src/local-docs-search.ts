@@ -63,18 +63,18 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve_me\n\n`client.user.retrieveMe(): { data?: user; metadata?: object; }`\n\n**get** `/v1/user/me`\n\nGet info on the current user\n\n### Returns\n\n- `{ data?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: api_key[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: user[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: user_hub | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }; metadata?: object; }`\n\n  - `data?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: { accessLevel?: number; documentRestrictions?: string[]; hash?: string; name?: string; prefix?: string; projectRestrictions?: string[]; publicId?: string; tableRestrictions?: string[]; }[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: api_key[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: user[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: user_hub | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: { email?: string; name?: string; } | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.retrieveMe();\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
-        example: 'curl https://api.morta.io/v1/user/me \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+      typescript: {
+        method: 'client.user.retrieveMe',
+        example:
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.retrieveMe();\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.retrieve_me',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.retrieve_me()\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.retrieveMe',
-        example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.retrieveMe();\n\nconsole.log(response.data);",
+      http: {
+        example: 'curl https://api.morta.io/v1/user/me \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -92,19 +92,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve\n\n`client.user.retrieve(firebase_id: string): { data?: user; metadata?: object; }`\n\n**get** `/v1/user/{firebase_id}`\n\nGet information on a specific user\n\n### Parameters\n\n- `firebase_id: string`\n\n### Returns\n\n- `{ data?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: api_key[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: user[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: user_hub | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }; metadata?: object; }`\n\n  - `data?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: { accessLevel?: number; documentRestrictions?: string[]; hash?: string; name?: string; prefix?: string; projectRestrictions?: string[]; publicId?: string; tableRestrictions?: string[]; }[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: api_key[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: user[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: user_hub | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: { email?: string; name?: string; } | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst user = await client.user.retrieve('firebase_id');\n\nconsole.log(user);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.retrieve',
         example:
-          'curl https://api.morta.io/v1/user/$FIREBASE_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst user = await client.user.retrieve('firebase_id');\n\nconsole.log(user.data);",
       },
       python: {
         method: 'user.retrieve',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nuser = client.user.retrieve(\n    "firebase_id",\n)\nprint(user.data)',
       },
-      typescript: {
-        method: 'client.user.retrieve',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst user = await client.user.retrieve('firebase_id');\n\nconsole.log(user.data);",
+          'curl https://api.morta.io/v1/user/$FIREBASE_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -122,19 +122,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve_by_public_id\n\n`client.user.retrieveByPublicID(public_id: string): { data?: user; metadata?: object; }`\n\n**get** `/v1/user/public/{public_id}`\n\nGet information on a specific user by their public ID\n\n### Parameters\n\n- `public_id: string`\n\n### Returns\n\n- `{ data?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: api_key[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: user[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: user_hub | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }; metadata?: object; }`\n\n  - `data?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: { accessLevel?: number; documentRestrictions?: string[]; hash?: string; name?: string; prefix?: string; projectRestrictions?: string[]; publicId?: string; tableRestrictions?: string[]; }[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: api_key[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: user[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: user_hub | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: { email?: string; name?: string; } | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.retrieveByPublicID('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.retrieveByPublicID',
         example:
-          'curl https://api.morta.io/v1/user/public/$PUBLIC_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.retrieveByPublicID('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.retrieve_by_public_id',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.retrieve_by_public_id(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.retrieveByPublicID',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.retrieveByPublicID('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/user/public/$PUBLIC_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -151,19 +151,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_achievements\n\n`client.user.listAchievements(firebase_id: string): { data?: object; metadata?: object; }`\n\n**get** `/v1/user/{firebase_id}/achievements`\n\nGet the achievement badges of a user by their Firebase ID\n\n### Parameters\n\n- `firebase_id: string`\n\n### Returns\n\n- `{ data?: { createdProcesses?: number; createdTables?: number; }; metadata?: object; }`\n\n  - `data?: { createdProcesses?: number; createdTables?: number; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.listAchievements('firebase_id');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.listAchievements',
         example:
-          'curl https://api.morta.io/v1/user/$FIREBASE_ID/achievements \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.listAchievements('firebase_id');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.list_achievements',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.list_achievements(\n    "firebase_id",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.listAchievements',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.listAchievements('firebase_id');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/user/$FIREBASE_ID/achievements \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -181,19 +181,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_pinned_hubs\n\n`client.user.listPinnedHubs(firebase_id: string): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/user/{firebase_id}/pinned-hubs`\n\nGet the hubs pinned by a user identified by their Firebase ID\n\n### Parameters\n\n- `firebase_id: string`\n\n### Returns\n\n- `{ data?: { contributors?: number; name?: string; primaryColour?: string; publicId?: string; views?: number; }[]; metadata?: object; }`\n\n  - `data?: { contributors?: number; name?: string; primaryColour?: string; publicId?: string; views?: number; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.listPinnedHubs('firebase_id');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.listPinnedHubs',
         example:
-          'curl https://api.morta.io/v1/user/$FIREBASE_ID/pinned-hubs \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.listPinnedHubs('firebase_id');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.list_pinned_hubs',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.list_pinned_hubs(\n    "firebase_id",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.listPinnedHubs',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.listPinnedHubs('firebase_id');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/user/$FIREBASE_ID/pinned-hubs \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -210,19 +210,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_contributions\n\n`client.user.listContributions(firebase_id: string): { data?: object; metadata?: object; }`\n\n**get** `/v1/user/{firebase_id}/contributions`\n\nGet the number of contributions per day made by a user, identified by their Firebase ID\n\n### Parameters\n\n- `firebase_id: string`\n\n### Returns\n\n- `{ data?: object; metadata?: object; }`\n\n  - `data?: object`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.listContributions('firebase_id');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.listContributions',
         example:
-          'curl https://api.morta.io/v1/user/$FIREBASE_ID/contributions \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.listContributions('firebase_id');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.list_contributions',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.list_contributions(\n    "firebase_id",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.listContributions',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.listContributions('firebase_id');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/user/$FIREBASE_ID/contributions \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -240,19 +240,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_public_contributions\n\n`client.user.listPublicContributions(firebase_id: string): { data?: event[]; metadata?: object; }`\n\n**get** `/v1/user/{firebase_id}/public-contributions`\n\nGet the public contributions made by a user, identified by their Firebase ID\n\n### Parameters\n\n- `firebase_id: string`\n\n### Returns\n\n- `{ data?: { change?: object; changeId?: string; channel?: string; context?: object; contextProcessId?: number; contextProcessResponseId?: number; contextProcessSectionId?: number; contextTableColumnId?: number; contextTableId?: number; contextTableViewId?: number; createdAt?: string; projectId?: number; publicId?: string; resource?: string; resourcePublicId?: string; userId?: number; verb?: string; }[]; metadata?: object; }`\n\n  - `data?: { change?: object; changeId?: string; channel?: string; context?: object; contextProcessId?: number; contextProcessResponseId?: number; contextProcessSectionId?: number; contextTableColumnId?: number; contextTableId?: number; contextTableViewId?: number; createdAt?: string; projectId?: number; publicId?: string; resource?: string; resourcePublicId?: string; userId?: number; verb?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.listPublicContributions('firebase_id');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.listPublicContributions',
         example:
-          'curl https://api.morta.io/v1/user/$FIREBASE_ID/public-contributions \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.listPublicContributions('firebase_id');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.list_public_contributions',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.list_public_contributions(\n    "firebase_id",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.listPublicContributions',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.listPublicContributions('firebase_id');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/user/$FIREBASE_ID/public-contributions \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -281,19 +281,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.user.create(email: string, name: string, password: string, optOutAiEmail?: boolean, optOutDuplicationEmail?: boolean, optOutHubEmail?: boolean, optOutSyncEmail?: boolean, optOutWelcomeEmail?: boolean, projectId?: string, template?: string): { data?: user; metadata?: object; }`\n\n**post** `/v1/user`\n\nCreate a new user\n\n### Parameters\n\n- `email: string`\n\n- `name: string`\n\n- `password: string`\n\n- `optOutAiEmail?: boolean`\n\n- `optOutDuplicationEmail?: boolean`\n\n- `optOutHubEmail?: boolean`\n\n- `optOutSyncEmail?: boolean`\n\n- `optOutWelcomeEmail?: boolean`\n\n- `projectId?: string`\n\n- `template?: string`\n\n### Returns\n\n- `{ data?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: api_key[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: user[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: user_hub | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }; metadata?: object; }`\n\n  - `data?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: { accessLevel?: number; documentRestrictions?: string[]; hash?: string; name?: string; prefix?: string; projectRestrictions?: string[]; publicId?: string; tableRestrictions?: string[]; }[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: api_key[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: user[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: user_hub | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: { email?: string; name?: string; } | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst user = await client.user.create({\n  email: 'dev@stainless.com',\n  name: 'name',\n  password: 'password',\n});\n\nconsole.log(user);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.create',
         example:
-          'curl https://api.morta.io/v1/user \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "email": "dev@stainless.com",\n          "name": "name",\n          "password": "password"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst user = await client.user.create({\n  email: 'dev@stainless.com',\n  name: 'name',\n  password: 'password',\n});\n\nconsole.log(user.data);",
       },
       python: {
         method: 'user.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nuser = client.user.create(\n    email="dev@stainless.com",\n    name="name",\n    password="password",\n)\nprint(user.data)',
       },
-      typescript: {
-        method: 'client.user.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst user = await client.user.create({\n  email: 'dev@stainless.com',\n  name: 'name',\n  password: 'password',\n});\n\nconsole.log(user.data);",
+          'curl https://api.morta.io/v1/user \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "email": "dev@stainless.com",\n          "name": "name",\n          "password": "password"\n        }\'',
       },
     },
   },
@@ -323,19 +323,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update_profile\n\n`client.user.updateProfile(allowSupportAccess?: boolean, bio?: string, linkedin?: string, location?: string, name?: string, organisation?: string, profilePicture?: string, twitter?: string, university?: string, universityDegree?: string, website?: string): { data?: user; metadata?: object; }`\n\n**put** `/v1/user`\n\nUpdate the profile of the currently logged in user\n\n### Parameters\n\n- `allowSupportAccess?: boolean`\n\n- `bio?: string`\n\n- `linkedin?: string`\n\n- `location?: string`\n\n- `name?: string`\n\n- `organisation?: string`\n\n- `profilePicture?: string`\n\n- `twitter?: string`\n\n- `university?: string`\n\n- `universityDegree?: string`\n\n- `website?: string`\n\n### Returns\n\n- `{ data?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: api_key[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: user[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: user_hub | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }; metadata?: object; }`\n\n  - `data?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: { accessLevel?: number; documentRestrictions?: string[]; hash?: string; name?: string; prefix?: string; projectRestrictions?: string[]; publicId?: string; tableRestrictions?: string[]; }[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: api_key[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: user[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: user_hub | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: { email?: string; name?: string; } | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.updateProfile();\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.updateProfile',
         example:
-          "curl https://api.morta.io/v1/user \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.updateProfile();\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.update_profile',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.update_profile()\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.updateProfile',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.updateProfile();\n\nconsole.log(response.data);",
+          "curl https://api.morta.io/v1/user \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -352,19 +352,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_owner_hubs\n\n`client.user.listOwnerHubs(): { data?: home_hub[]; metadata?: object; }`\n\n**get** `/v1/user/owner-hubs`\n\nGet all hubs where the user is the owner or an admin\n\n### Returns\n\n- `{ data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; hideProcessCreated?: boolean; isDeleted?: boolean; mfaRequired?: boolean; name?: string; primaryColour?: string; publicId?: string; wordTemplate?: string; }[]; metadata?: object; }`\n\n  - `data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; hideProcessCreated?: boolean; isDeleted?: boolean; mfaRequired?: boolean; name?: string; primaryColour?: string; publicId?: string; wordTemplate?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.listOwnerHubs();\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.listOwnerHubs',
         example:
-          'curl https://api.morta.io/v1/user/owner-hubs \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.listOwnerHubs();\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.list_owner_hubs',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.list_owner_hubs()\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.listOwnerHubs',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.listOwnerHubs();\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/user/owner-hubs \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -381,19 +381,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_public_hubs\n\n`client.user.listPublicHubs(): { data?: home_hub[]; metadata?: object; }`\n\n**get** `/v1/user/public-hubs`\n\nGet all public hubs where the user is a member\n\n### Returns\n\n- `{ data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; hideProcessCreated?: boolean; isDeleted?: boolean; mfaRequired?: boolean; name?: string; primaryColour?: string; publicId?: string; wordTemplate?: string; }[]; metadata?: object; }`\n\n  - `data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; hideProcessCreated?: boolean; isDeleted?: boolean; mfaRequired?: boolean; name?: string; primaryColour?: string; publicId?: string; wordTemplate?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.listPublicHubs();\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.listPublicHubs',
         example:
-          'curl https://api.morta.io/v1/user/public-hubs \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.listPublicHubs();\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.list_public_hubs',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.list_public_hubs()\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.listPublicHubs',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.listPublicHubs();\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/user/public-hubs \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -411,18 +411,18 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## search\n\n`client.user.search(query: string, process_id?: string, project_id?: string, table_view_id?: string): { data?: summary_user[]; metadata?: object; }`\n\n**get** `/v1/user/search`\n\nSearch for users by hub or process\n\n### Parameters\n\n- `query: string`\n  Query string for searching users\n\n- `process_id?: string`\n  Process ID to restrict search\n\n- `project_id?: string`\n  Hub ID to restrict search\n\n- `table_view_id?: string`\n  Table View ID to restrict search\n\n### Returns\n\n- `{ data?: { email?: string; firebaseUserId?: string; name?: string; profilePicture?: string; publicId?: string; }[]; metadata?: object; }`\n\n  - `data?: { email?: string; firebaseUserId?: string; name?: string; profilePicture?: string; publicId?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.search({ query: 'query' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
-        example: 'curl https://api.morta.io/v1/user/search \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+      typescript: {
+        method: 'client.user.search',
+        example:
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.search({ query: 'query' });\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.search',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.search(\n    query="query",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.search',
-        example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.search({ query: 'query' });\n\nconsole.log(response.data);",
+      http: {
+        example: 'curl https://api.morta.io/v1/user/search \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -450,19 +450,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update_account\n\n`client.user.updateAccount(allowSupportAccess?: boolean, oldPassword?: string, optOutAiEmail?: boolean, optOutDuplicationEmail?: boolean, optOutHubEmail?: boolean, optOutSyncEmail?: boolean, optOutWelcomeEmail?: boolean, password?: string, passwordConfirm?: string, twoFactorCode?: string): { data?: object; metadata?: object; }`\n\n**put** `/v1/user/account`\n\nUpdate the account details for the currently logged in user\n\n### Parameters\n\n- `allowSupportAccess?: boolean`\n\n- `oldPassword?: string`\n\n- `optOutAiEmail?: boolean`\n\n- `optOutDuplicationEmail?: boolean`\n\n- `optOutHubEmail?: boolean`\n\n- `optOutSyncEmail?: boolean`\n\n- `optOutWelcomeEmail?: boolean`\n\n- `password?: string`\n\n- `passwordConfirm?: string`\n\n- `twoFactorCode?: string`\n\n### Returns\n\n- `{ data?: { id?: number; aconexConnected?: boolean; allowSupportAccess?: boolean; allowSupportAccesss?: boolean; apiKeys?: object[]; asiteConnected?: boolean; authToken?: string; authTokenExpiresAt?: string; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; eligibleForFreeTrial?: boolean; email?: string; firebaseUserId?: string; freeTrialDaysRemaining?: number; hasPassword?: object; is2FaEnabled?: object; isOnFreeTrial?: boolean; isSuperAdmin?: boolean; kind?: string; lastLoginAt?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: object[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionLevel?: number; subscriptionManagerUser?: object | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }; metadata?: object; }`\n\n  - `data?: { id?: number; aconexConnected?: boolean; allowSupportAccess?: boolean; allowSupportAccesss?: boolean; apiKeys?: { accessLevel?: number; documentRestrictions?: string[]; hash?: string; name?: string; prefix?: string; projectRestrictions?: string[]; publicId?: string; tableRestrictions?: string[]; }[]; asiteConnected?: boolean; authToken?: string; authTokenExpiresAt?: string; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; eligibleForFreeTrial?: boolean; email?: string; firebaseUserId?: string; freeTrialDaysRemaining?: number; hasPassword?: object; is2FaEnabled?: object; isOnFreeTrial?: boolean; isSuperAdmin?: boolean; kind?: string; lastLoginAt?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: { aconexConnected?: boolean; allowSupportAccesss?: boolean; apiKeys?: object[]; asiteConnected?: boolean; autodeskConnected?: boolean; bio?: string; constructionSoftware?: string[]; createdAt?: string; email?: string; firebaseUserId?: string; kind?: string; linkedin?: string; location?: string; managedSubscriptionUsers?: object[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionManagerUser?: object | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }[]; name?: string; numberOfManagedSubscriptionUsers?: number; onScalePlan?: boolean; optOutAiEmail?: boolean; optOutDuplicationEmail?: boolean; optOutHubEmail?: boolean; optOutSyncEmail?: boolean; optOutWelcomeEmail?: boolean; organisation?: string; phone?: string; procoreConnected?: boolean; profilePicture?: string; projectsWorkedOn?: string[]; publicId?: string; reviztoConnected?: boolean; specialisms?: string[]; subscriptionLevel?: number; subscriptionManagerUser?: { email?: string; name?: string; } | object; subscriptionQuota?: number; tags?: object; twitter?: string; university?: string; universityDegree?: string; viewpointConnected?: boolean; website?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.updateAccount();\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.updateAccount',
         example:
-          "curl https://api.morta.io/v1/user/account \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.updateAccount();\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.update_account',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.update_account()\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.updateAccount',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.updateAccount();\n\nconsole.log(response.data);",
+          "curl https://api.morta.io/v1/user/account \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -478,19 +478,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_templates\n\n`client.user.listTemplates(): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/user/templates`\n\nGet all templates the currently logged in user has access to\n\n### Returns\n\n- `{ data?: { createdBy?: object; }[]; metadata?: object; }`\n\n  - `data?: { createdBy?: { email?: string; firebaseUserId?: string; name?: string; profilePicture?: string; publicId?: string; }; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.listTemplates();\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.listTemplates',
         example:
-          'curl https://api.morta.io/v1/user/templates \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.listTemplates();\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.list_templates',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.list_templates()\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.listTemplates',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.listTemplates();\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/user/templates \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -514,19 +514,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.user.apikey.create(accessLevel: 0 | 1, documentRestrictions?: string[], name?: string, projectRestrictions?: string[], tableRestrictions?: string[]): { data?: api_key; metadata?: object; }`\n\n**post** `/v1/user/apikey`\n\nCreate an API key for the currently logged in user\n\n### Parameters\n\n- `accessLevel: 0 | 1`\n\n- `documentRestrictions?: string[]`\n\n- `name?: string`\n\n- `projectRestrictions?: string[]`\n\n- `tableRestrictions?: string[]`\n\n### Returns\n\n- `{ data?: { accessLevel?: number; documentRestrictions?: string[]; hash?: string; name?: string; prefix?: string; projectRestrictions?: string[]; publicId?: string; tableRestrictions?: string[]; }; metadata?: object; }`\n\n  - `data?: { accessLevel?: number; documentRestrictions?: string[]; hash?: string; name?: string; prefix?: string; projectRestrictions?: string[]; publicId?: string; tableRestrictions?: string[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst apikey = await client.user.apikey.create({ accessLevel: 0 });\n\nconsole.log(apikey);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.apikey.create',
         example:
-          'curl https://api.morta.io/v1/user/apikey \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "accessLevel": 0\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst apikey = await client.user.apikey.create({ accessLevel: 0 });\n\nconsole.log(apikey.data);",
       },
       python: {
         method: 'user.apikey.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\napikey = client.user.apikey.create(\n    access_level=0,\n)\nprint(apikey.data)',
       },
-      typescript: {
-        method: 'client.user.apikey.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst apikey = await client.user.apikey.create({ accessLevel: 0 });\n\nconsole.log(apikey.data);",
+          'curl https://api.morta.io/v1/user/apikey \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "accessLevel": 0\n        }\'',
       },
     },
   },
@@ -550,19 +550,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.user.apikey.update(api_key_id: string, accessLevel: 0 | 1, documentRestrictions?: string[], name?: string, projectRestrictions?: string[], tableRestrictions?: string[]): { apiKey?: string; }`\n\n**put** `/v1/user/apikey/{api_key_id}`\n\nUpdate an API key for the currently logged in user\n\n### Parameters\n\n- `api_key_id: string`\n\n- `accessLevel: 0 | 1`\n\n- `documentRestrictions?: string[]`\n\n- `name?: string`\n\n- `projectRestrictions?: string[]`\n\n- `tableRestrictions?: string[]`\n\n### Returns\n\n- `{ apiKey?: string; }`\n\n  - `apiKey?: string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst apikey = await client.user.apikey.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { accessLevel: 0 });\n\nconsole.log(apikey);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.apikey.update',
         example:
-          'curl https://api.morta.io/v1/user/apikey/$API_KEY_ID \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "accessLevel": 0\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst apikey = await client.user.apikey.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  accessLevel: 0,\n});\n\nconsole.log(apikey.apiKey);",
       },
       python: {
         method: 'user.apikey.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\napikey = client.user.apikey.update(\n    api_key_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    access_level=0,\n)\nprint(apikey.api_key)',
       },
-      typescript: {
-        method: 'client.user.apikey.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst apikey = await client.user.apikey.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  accessLevel: 0,\n});\n\nconsole.log(apikey.apiKey);",
+          'curl https://api.morta.io/v1/user/apikey/$API_KEY_ID \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "accessLevel": 0\n        }\'',
       },
     },
   },
@@ -579,19 +579,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.user.apikey.delete(api_key_id: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/user/apikey/{api_key_id}`\n\nDelete an API key for the currently logged in user\n\n### Parameters\n\n- `api_key_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst apikey = await client.user.apikey.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(apikey);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.apikey.delete',
         example:
-          'curl https://api.morta.io/v1/user/apikey/$API_KEY_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst apikey = await client.user.apikey.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(apikey.data);",
       },
       python: {
         method: 'user.apikey.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\napikey = client.user.apikey.delete(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(apikey.data)',
       },
-      typescript: {
-        method: 'client.user.apikey.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst apikey = await client.user.apikey.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(apikey.data);",
+          'curl https://api.morta.io/v1/user/apikey/$API_KEY_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -608,18 +608,18 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list\n\n`client.user.hubs.list(): { data?: home_hub[]; metadata?: object; }`\n\n**get** `/v1/user/hubs`\n\nGet all hubs the currently logged in user is part of\n\n### Returns\n\n- `{ data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; hideProcessCreated?: boolean; isDeleted?: boolean; mfaRequired?: boolean; name?: string; primaryColour?: string; publicId?: string; wordTemplate?: string; }[]; metadata?: object; }`\n\n  - `data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; hideProcessCreated?: boolean; isDeleted?: boolean; mfaRequired?: boolean; name?: string; primaryColour?: string; publicId?: string; wordTemplate?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst hubs = await client.user.hubs.list();\n\nconsole.log(hubs);\n```",
     perLanguage: {
-      http: {
-        example: 'curl https://api.morta.io/v1/user/hubs \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+      typescript: {
+        method: 'client.user.hubs.list',
+        example:
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst hubs = await client.user.hubs.list();\n\nconsole.log(hubs.data);",
       },
       python: {
         method: 'user.hubs.list',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nhubs = client.user.hubs.list()\nprint(hubs.data)',
       },
-      typescript: {
-        method: 'client.user.hubs.list',
-        example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst hubs = await client.user.hubs.list();\n\nconsole.log(hubs.data);",
+      http: {
+        example: 'curl https://api.morta.io/v1/user/hubs \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -636,19 +636,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_favourites\n\n`client.user.hubs.listFavourites(): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/user/hubs/favourites`\n\nGet all favourite hubs the currently logged in user is part of\n\n### Returns\n\n- `{ data?: { isDeleted?: boolean; name?: string; projectRole?: string; publicId?: string; }[]; metadata?: object; }`\n\n  - `data?: { isDeleted?: boolean; name?: string; projectRole?: string; publicId?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.hubs.listFavourites();\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.hubs.listFavourites',
         example:
-          'curl https://api.morta.io/v1/user/hubs/favourites \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.hubs.listFavourites();\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.hubs.list_favourites',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.hubs.list_favourites()\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.hubs.listFavourites',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.hubs.listFavourites();\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/user/hubs/favourites \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -666,19 +666,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## toggle_favourite\n\n`client.user.hubs.toggleFavourite(hub_id: string): { data?: object[]; metadata?: object; }`\n\n**put** `/v1/user/hubs/{hub_id}/favourite`\n\nChange whether the hub is a favourite for the currently logged in user\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { isDeleted?: boolean; name?: string; projectRole?: string; publicId?: string; }[]; metadata?: object; }`\n\n  - `data?: { isDeleted?: boolean; name?: string; projectRole?: string; publicId?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.hubs.toggleFavourite('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.hubs.toggleFavourite',
         example:
-          'curl https://api.morta.io/v1/user/hubs/$HUB_ID/favourite \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.hubs.toggleFavourite('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.hubs.toggle_favourite',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.hubs.toggle_favourite(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.hubs.toggleFavourite',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.hubs.toggleFavourite('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/user/hubs/$HUB_ID/favourite \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -696,19 +696,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## toggle_pin\n\n`client.user.hubs.togglePin(hub_id: string): { data?: object[]; metadata?: object; }`\n\n**put** `/v1/user/hubs/{hub_id}/pin`\n\nChange whether the hub is pinned for the currently logged in user\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { contributors?: number; name?: string; primaryColour?: string; publicId?: string; views?: number; }[]; metadata?: object; }`\n\n  - `data?: { contributors?: number; name?: string; primaryColour?: string; publicId?: string; views?: number; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.hubs.togglePin('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.hubs.togglePin',
         example:
-          'curl https://api.morta.io/v1/user/hubs/$HUB_ID/pin \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.hubs.togglePin('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.hubs.toggle_pin',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.hubs.toggle_pin(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.hubs.togglePin',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.hubs.togglePin('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/user/hubs/$HUB_ID/pin \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -726,19 +726,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_tags\n\n`client.user.hubs.listTags(hub_id: string): { data?: tag[]; metadata?: object; }`\n\n**put** `/v1/user/hubs/{hub_id}/tags`\n\nGet all tags for current user in a hub\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { documentTableId?: string; projectPublicId?: string; publicId?: string; referencePublicId?: string; value?: object; }[]; metadata?: object; }`\n\n  - `data?: { documentTableId?: string; projectPublicId?: string; publicId?: string; referencePublicId?: string; value?: object; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.hubs.listTags('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.hubs.listTags',
         example:
-          'curl https://api.morta.io/v1/user/hubs/$HUB_ID/tags \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.hubs.listTags('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.hubs.list_tags',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.hubs.list_tags(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.hubs.listTags',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.hubs.listTags('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/user/hubs/$HUB_ID/tags \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -756,19 +756,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## add\n\n`client.user.tags.add(user_id: string, tagReferenceId: string): { data?: tag; metadata?: object; }`\n\n**post** `/v1/user/{user_id}/tags`\n\nAdd a tag to a specific user\n\n### Parameters\n\n- `user_id: string`\n\n- `tagReferenceId: string`\n\n### Returns\n\n- `{ data?: { documentTableId?: string; projectPublicId?: string; publicId?: string; referencePublicId?: string; value?: object; }; metadata?: object; }`\n\n  - `data?: { documentTableId?: string; projectPublicId?: string; publicId?: string; referencePublicId?: string; value?: object; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.tags.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { tagReferenceId: 'tagReferenceId' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.tags.add',
         example:
-          'curl https://api.morta.io/v1/user/$USER_ID/tags \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "tagReferenceId": "tagReferenceId"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.tags.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  tagReferenceId: 'tagReferenceId',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.tags.add',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.tags.add(\n    user_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    tag_reference_id="tagReferenceId",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.tags.add',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.tags.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  tagReferenceId: 'tagReferenceId',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/user/$USER_ID/tags \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "tagReferenceId": "tagReferenceId"\n        }\'',
       },
     },
   },
@@ -786,19 +786,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## bulk_apply\n\n`client.user.tags.bulkApply(user_id: string, projectId: string, tableId: string, tagReferenceIds: string[]): { data?: tag[]; metadata?: object; }`\n\n**put** `/v1/user/{user_id}/tags`\n\nApply multiple tags to a specific user\n\n### Parameters\n\n- `user_id: string`\n\n- `projectId: string`\n\n- `tableId: string`\n\n- `tagReferenceIds: string[]`\n\n### Returns\n\n- `{ data?: { documentTableId?: string; projectPublicId?: string; publicId?: string; referencePublicId?: string; value?: object; }[]; metadata?: object; }`\n\n  - `data?: { documentTableId?: string; projectPublicId?: string; publicId?: string; referencePublicId?: string; value?: object; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.user.tags.bulkApply('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  projectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  tableId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  tagReferenceIds: ['string'],\n});\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.tags.bulkApply',
         example:
-          'curl https://api.morta.io/v1/user/$USER_ID/tags \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "projectId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "tableId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "tagReferenceIds": [\n            "string"\n          ]\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.tags.bulkApply('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  projectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  tableId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  tagReferenceIds: ['string'],\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'user.tags.bulk_apply',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.user.tags.bulk_apply(\n    user_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    project_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    tag_reference_ids=["string"],\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.user.tags.bulkApply',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.user.tags.bulkApply('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  projectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  tableId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  tagReferenceIds: ['string'],\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/user/$USER_ID/tags \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "projectId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "tableId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "tagReferenceIds": [\n            "string"\n          ]\n        }\'',
       },
     },
   },
@@ -815,19 +815,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.user.tags.delete(user_id: string, tag_id: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/user/{user_id}/tags/{tag_id}`\n\nDelete a tag from a specific user\n\n### Parameters\n\n- `user_id: string`\n\n- `tag_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst tag = await client.user.tags.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { user_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(tag);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.user.tags.delete',
         example:
-          'curl https://api.morta.io/v1/user/$USER_ID/tags/$TAG_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst tag = await client.user.tags.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  user_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(tag.data);",
       },
       python: {
         method: 'user.tags.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ntag = client.user.tags.delete(\n    tag_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    user_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(tag.data)',
       },
-      typescript: {
-        method: 'client.user.tags.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst tag = await client.user.tags.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  user_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(tag.data);",
+          'curl https://api.morta.io/v1/user/$USER_ID/tags/$TAG_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -845,18 +845,18 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve\n\n`client.hub.retrieve(hub_id: string): { data?: object; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}`\n\nRetrieve detailed information about a specific hub identified by its UUID\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { folders?: { childFolders?: object[]; name?: string; }[]; projectDetails?: object; role?: string; }; metadata?: object; }`\n\n  - `data?: { folders?: { childFolders?: { name?: string; }[]; name?: string; }[]; projectDetails?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: { bold?: boolean; colour?: string; fontSize?: number; italic?: boolean; level?: number; numberingStyle?: number; publicId?: string; startAt0?: boolean; underline?: boolean; }[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: { createdAt?: string; favourite?: boolean; projectRole?: string; updatedAt?: string; user?: object; }[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }; role?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst hub = await client.hub.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(hub);\n```",
     perLanguage: {
-      http: {
-        example: 'curl https://api.morta.io/v1/hub/$HUB_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+      typescript: {
+        method: 'client.hub.retrieve',
+        example:
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst hub = await client.hub.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(hub.data);",
       },
       python: {
         method: 'hub.retrieve',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nhub = client.hub.retrieve(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(hub.data)',
       },
-      typescript: {
-        method: 'client.hub.retrieve',
-        example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst hub = await client.hub.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(hub.data);",
+      http: {
+        example: 'curl https://api.morta.io/v1/hub/$HUB_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -873,19 +873,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.hub.delete(hub_id: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/hub/{hub_id}`\n\nDelete a specific hub identified by its UUID\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst hub = await client.hub.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(hub);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.delete',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst hub = await client.hub.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(hub.data);",
       },
       python: {
         method: 'hub.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nhub = client.hub.delete(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(hub.data)',
       },
-      typescript: {
-        method: 'client.hub.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst hub = await client.hub.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(hub.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -930,19 +930,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.hub.update(hub_id: string, aiSearchEnabled?: boolean, allowDocumentExport?: boolean, allowTableExport?: boolean, bulkUpdateText?: object | { replaceText: string; searchText: string; }, defaultBanner?: string, defaultDateFormat?: string, defaultDatetimeFormat?: string, defaultHeaderBackgroundColor?: string, defaultHeaderTextColor?: string, defaultProcessId?: string, domainsAccess?: string[], fontColour?: string, hideProcessCreated?: boolean, logo?: string, mfaRequired?: boolean, name?: string, primaryColour?: string, processTitleAlignment?: 'left' | 'center' | 'right', processTitleBold?: boolean, processTitleColour?: string, processTitleFontSize?: number, processTitleItalic?: boolean, processTitleUnderline?: boolean, public?: boolean, wordTemplate?: string): { data?: simple_hub; metadata?: object; }`\n\n**put** `/v1/hub/{hub_id}`\n\nUpdate an existing hub's details by hub ID\n\n### Parameters\n\n- `hub_id: string`\n\n- `aiSearchEnabled?: boolean`\n\n- `allowDocumentExport?: boolean`\n\n- `allowTableExport?: boolean`\n\n- `bulkUpdateText?: object | { replaceText: string; searchText: string; }`\n\n- `defaultBanner?: string`\n\n- `defaultDateFormat?: string`\n\n- `defaultDatetimeFormat?: string`\n\n- `defaultHeaderBackgroundColor?: string`\n\n- `defaultHeaderTextColor?: string`\n\n- `defaultProcessId?: string`\n\n- `domainsAccess?: string[]`\n\n- `fontColour?: string`\n\n- `hideProcessCreated?: boolean`\n\n- `logo?: string`\n\n- `mfaRequired?: boolean`\n\n- `name?: string`\n\n- `primaryColour?: string`\n\n- `processTitleAlignment?: 'left' | 'center' | 'right'`\n\n- `processTitleBold?: boolean`\n\n- `processTitleColour?: string`\n\n- `processTitleFontSize?: number`\n\n- `processTitleItalic?: boolean`\n\n- `processTitleUnderline?: boolean`\n\n- `public?: boolean`\n\n- `wordTemplate?: string`\n\n### Returns\n\n- `{ data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: object[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: object[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }; metadata?: object; }`\n\n  - `data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: { bold?: boolean; colour?: string; fontSize?: number; italic?: boolean; level?: number; numberingStyle?: number; publicId?: string; startAt0?: boolean; underline?: boolean; }[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: { createdAt?: string; favourite?: boolean; projectRole?: string; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; kind?: string; name?: string; publicId?: string; }; }[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst hub = await client.hub.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(hub);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.update',
         example:
-          "curl https://api.morta.io/v1/hub/$HUB_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst hub = await client.hub.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(hub.data);",
       },
       python: {
         method: 'hub.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nhub = client.hub.update(\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(hub.data)',
       },
-      typescript: {
-        method: 'client.hub.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst hub = await client.hub.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(hub.data);",
+          "curl https://api.morta.io/v1/hub/$HUB_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -969,19 +969,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_resources\n\n`client.hub.getResources(hub_id: string, adminView?: boolean, excludeProcesses?: boolean, excludeTables?: boolean, onlyAdmin?: boolean, onlyDeleted?: boolean, projectPermissions?: boolean, typeId?: string): { data?: object[]; metadata?: object; }`\n\n**post** `/v1/hub/{hub_id}/resources`\n\nRetrieve resources associated with a specific hub identified by its UUID\n\n### Parameters\n\n- `hub_id: string`\n\n- `adminView?: boolean`\n\n- `excludeProcesses?: boolean`\n\n- `excludeTables?: boolean`\n\n- `onlyAdmin?: boolean`\n\n- `onlyDeleted?: boolean`\n\n- `projectPermissions?: boolean`\n\n- `typeId?: string`\n\n### Returns\n\n- `{ data?: { name?: string; process?: { createdAt?: string; deletedAt?: string; logo?: string; name?: string; publicId?: string; type?: string; updatedAt?: string; }; table?: { createdAt?: string; defaultViewId?: string; deletedAt?: string; isDeleted?: boolean; joins?: table_join[]; logo?: string; name?: string; publicId?: string; type?: string; updatedAt?: string; }; type?: string; }[]; metadata?: object; }`\n\n  - `data?: { name?: string; process?: { createdAt?: string; deletedAt?: string; logo?: string; name?: string; publicId?: string; type?: string; updatedAt?: string; }; table?: { createdAt?: string; defaultViewId?: string; deletedAt?: string; isDeleted?: boolean; joins?: { dataColumns?: table_join_imported_columns[]; isOneToMany?: boolean; joinColumns?: table_column_join[]; joinTableId?: string; joinViewId?: string; publicId?: string; }[]; logo?: string; name?: string; publicId?: string; type?: string; updatedAt?: string; }; type?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.getResources('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.getResources',
         example:
-          "curl https://api.morta.io/v1/hub/$HUB_ID/resources \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getResources('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.get_resources',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.get_resources(\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.getResources',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getResources('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          "curl https://api.morta.io/v1/hub/$HUB_ID/resources \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -999,19 +999,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## search_resources\n\n`client.hub.searchResources(hub_id: string, search: string, process_public_id?: string): { data?: answer; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/search-resources`\n\nPerform a search operation within a specific hub, identified by its UUID\n\n### Parameters\n\n- `hub_id: string`\n\n- `search: string`\n  Search query string\n\n- `process_public_id?: string`\n  Optional UUID of a document to restrict the search within a specific document\n\n### Returns\n\n- `{ data?: { answer?: string; answerComment?: string; answerVote?: boolean; contextUrls?: string[]; createdAt?: string; question?: string; updatedAt?: string; user?: user_hub; }; metadata?: object; }`\n\n  - `data?: { answer?: string; answerComment?: string; answerVote?: boolean; contextUrls?: string[]; createdAt?: string; question?: string; updatedAt?: string; user?: { email?: string; name?: string; }; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.searchResources('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { search: 'search' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.searchResources',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/search-resources \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.searchResources('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  search: 'search',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.search_resources',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.search_resources(\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    search="search",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.searchResources',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.searchResources('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  search: 'search',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/search-resources \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1029,19 +1029,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## ai_search\n\n`client.hub.aiSearch(hub_id: string, search: string, process_public_id?: string): { data?: answer; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/search-ai`\n\nPerform an AI search operation within a specific hub, identified by its UUID\n\n### Parameters\n\n- `hub_id: string`\n\n- `search: string`\n  Search query string\n\n- `process_public_id?: string`\n  Optional UUID of a document to restrict the search within a specific document\n\n### Returns\n\n- `{ data?: { answer?: string; answerComment?: string; answerVote?: boolean; contextUrls?: string[]; createdAt?: string; question?: string; updatedAt?: string; user?: user_hub; }; metadata?: object; }`\n\n  - `data?: { answer?: string; answerComment?: string; answerVote?: boolean; contextUrls?: string[]; createdAt?: string; question?: string; updatedAt?: string; user?: { email?: string; name?: string; }; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.aiSearch('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { search: 'search' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.aiSearch',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/search-ai \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.aiSearch('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  search: 'search',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.ai_search',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.ai_search(\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    search="search",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.aiSearch',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.aiSearch('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  search: 'search',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/search-ai \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1059,19 +1059,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_ai_answers\n\n`client.hub.getAIAnswers(hub_id: string): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/ai-answers`\n\nRetrieve AI answers within a specific hub, identified by its UUID\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { answer?: string; answerComment?: string; answerVote?: boolean; contextUrls?: string[]; createdAt?: string; question?: string; updatedAt?: string; user?: object; }[]; metadata?: object; }`\n\n  - `data?: { answer?: string; answerComment?: string; answerVote?: boolean; contextUrls?: string[]; createdAt?: string; question?: string; updatedAt?: string; user?: { email?: string; name?: string; }; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.getAIAnswers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.getAIAnswers',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/ai-answers \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getAIAnswers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.get_ai_answers',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.get_ai_answers(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.getAIAnswers',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getAIAnswers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/ai-answers \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1088,19 +1088,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## permanently_delete\n\n`client.hub.permanentlyDelete(hub_id: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/hub/{hub_id}/permanent`\n\nPermanently delete a specific hub identified by its UUID\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.permanentlyDelete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.permanentlyDelete',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/permanent \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.permanentlyDelete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.permanently_delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.permanently_delete(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.permanentlyDelete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.permanentlyDelete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/permanent \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1117,19 +1117,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## restore\n\n`client.hub.restore(hub_id: string): { data?: string; metadata?: object; }`\n\n**put** `/v1/hub/{hub_id}/restore`\n\nRestore a specific hub, identified by its UUID, that has been previously deleted\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.restore',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/restore \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.restore',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.restore(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.restore',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/restore \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1147,19 +1147,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_documents\n\n`client.hub.getDocuments(hub_id: string): { data?: simple_document[]; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/documents`\n\nGet all documents associated with a specific hub, identified by its UUID\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; children?: object[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }[]; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; children?: { name?: string; publicId?: string; }[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.getDocuments('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.getDocuments',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/documents \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getDocuments('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.get_documents',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.get_documents(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.getDocuments',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getDocuments('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/documents \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1177,19 +1177,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_deleted_documents\n\n`client.hub.getDeletedDocuments(hub_id: string): { data?: simple_document[]; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/deleted-documents`\n\nGet all deleted documents associated with a specific hub, identified by its UUID\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; children?: object[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }[]; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; children?: { name?: string; publicId?: string; }[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.getDeletedDocuments('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.getDeletedDocuments',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/deleted-documents \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getDeletedDocuments('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.get_deleted_documents',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.get_deleted_documents(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.getDeletedDocuments',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getDeletedDocuments('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/deleted-documents \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1208,19 +1208,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## change_user_role\n\n`client.hub.changeUserRole(hub_id: string, firebase_id: string, role: 'owner' | 'admin' | 'member'): { data?: simple_hub; metadata?: object; }`\n\n**put** `/v1/hub/{hub_id}/change-user-role/{firebase_id}`\n\nChange the role of a user in a specific hub, identified by the hub's UUID and user's Firebase ID\n\n### Parameters\n\n- `hub_id: string`\n\n- `firebase_id: string`\n\n- `role: 'owner' | 'admin' | 'member'`\n\n### Returns\n\n- `{ data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: object[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: object[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }; metadata?: object; }`\n\n  - `data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: { bold?: boolean; colour?: string; fontSize?: number; italic?: boolean; level?: number; numberingStyle?: number; publicId?: string; startAt0?: boolean; underline?: boolean; }[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: { createdAt?: string; favourite?: boolean; projectRole?: string; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; kind?: string; name?: string; publicId?: string; }; }[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.changeUserRole('firebase_id', { hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', role: 'owner' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.changeUserRole',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/change-user-role/$FIREBASE_ID \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "role": "owner"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.changeUserRole('firebase_id', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  role: 'owner',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.change_user_role',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.change_user_role(\n    firebase_id="firebase_id",\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    role="owner",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.changeUserRole',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.changeUserRole('firebase_id', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  role: 'owner',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/change-user-role/$FIREBASE_ID \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "role": "owner"\n        }\'',
       },
     },
   },
@@ -1238,19 +1238,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## remove_user\n\n`client.hub.removeUser(hub_id: string, firebase_id: string): { data?: simple_hub; metadata?: object; }`\n\n**delete** `/v1/hub/{hub_id}/remove-user/{firebase_id}`\n\nRemove a user from a specific hub, identified by the hub's UUID and user's Firebase ID\n\n### Parameters\n\n- `hub_id: string`\n\n- `firebase_id: string`\n\n### Returns\n\n- `{ data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: object[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: object[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }; metadata?: object; }`\n\n  - `data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: { bold?: boolean; colour?: string; fontSize?: number; italic?: boolean; level?: number; numberingStyle?: number; publicId?: string; startAt0?: boolean; underline?: boolean; }[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: { createdAt?: string; favourite?: boolean; projectRole?: string; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; kind?: string; name?: string; publicId?: string; }; }[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.removeUser('firebase_id', { hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.removeUser',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/remove-user/$FIREBASE_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.removeUser('firebase_id', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.remove_user',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.remove_user(\n    firebase_id="firebase_id",\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.removeUser',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.removeUser('firebase_id', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/remove-user/$FIREBASE_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1268,19 +1268,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.hub.create(name: string): { data?: simple_hub; metadata?: object; }`\n\n**post** `/v1/hub`\n\nCreate a new hub with the specified name\n\n### Parameters\n\n- `name: string`\n\n### Returns\n\n- `{ data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: object[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: object[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }; metadata?: object; }`\n\n  - `data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: { bold?: boolean; colour?: string; fontSize?: number; italic?: boolean; level?: number; numberingStyle?: number; publicId?: string; startAt0?: boolean; underline?: boolean; }[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: { createdAt?: string; favourite?: boolean; projectRole?: string; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; kind?: string; name?: string; publicId?: string; }; }[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst hub = await client.hub.create({ name: 'name' });\n\nconsole.log(hub);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.create',
         example:
-          'curl https://api.morta.io/v1/hub \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "name": "name"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst hub = await client.hub.create({ name: 'name' });\n\nconsole.log(hub.data);",
       },
       python: {
         method: 'hub.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nhub = client.hub.create(\n    name="name",\n)\nprint(hub.data)',
       },
-      typescript: {
-        method: 'client.hub.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst hub = await client.hub.create({ name: 'name' });\n\nconsole.log(hub.data);",
+          'curl https://api.morta.io/v1/hub \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "name": "name"\n        }\'',
       },
     },
   },
@@ -1297,19 +1297,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_tables\n\n`client.hub.getTables(hub_id: string): { data?: table[]; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/tables`\n\nRetrieve tables associated with a specific hub, identified by its UUID\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: table_column[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: table_join[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: project[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: object; type?: string; updatedAt?: string; }[]; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: { dataColumns?: table_join_imported_columns[]; isOneToMany?: boolean; joinColumns?: table_column_join[]; joinTableId?: string; joinViewId?: string; publicId?: string; }[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: { name?: string; publicId?: string; }[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: { name?: string; publicId?: string; }; type?: string; updatedAt?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.getTables('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.getTables',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/tables \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getTables('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.get_tables',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.get_tables(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.getTables',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getTables('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/tables \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1327,19 +1327,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_deleted_tables\n\n`client.hub.getDeletedTables(hub_id: string): { data?: table[]; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/deleted-tables`\n\nRetrieve all deleted tables from a specific hub, identified by its UUID. Only accessible by hub owners.\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: table_column[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: table_join[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: project[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: object; type?: string; updatedAt?: string; }[]; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: { dataColumns?: table_join_imported_columns[]; isOneToMany?: boolean; joinColumns?: table_column_join[]; joinTableId?: string; joinViewId?: string; publicId?: string; }[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: { name?: string; publicId?: string; }[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: { name?: string; publicId?: string; }; type?: string; updatedAt?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.getDeletedTables('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.getDeletedTables',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/deleted-tables \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getDeletedTables('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.get_deleted_tables',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.get_deleted_tables(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.getDeletedTables',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getDeletedTables('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/deleted-tables \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1362,19 +1362,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## invite_multiple_users\n\n`client.hub.inviteMultipleUsers(hub_id: string, emails?: string[], projectRole?: 'member' | 'admin' | 'owner', tags?: string[]): { data?: string; metadata?: object; }`\n\n**post** `/v1/hub/{hub_id}/invite-multiple`\n\nInvite multiple users to join a hub, by email. If users already exist, they are added directly, otherwise, an invite is sent. Requires owner or admin permissions.\n\n### Parameters\n\n- `hub_id: string`\n\n- `emails?: string[]`\n\n- `projectRole?: 'member' | 'admin' | 'owner'`\n\n- `tags?: string[]`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.inviteMultipleUsers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.inviteMultipleUsers',
         example:
-          "curl https://api.morta.io/v1/hub/$HUB_ID/invite-multiple \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.inviteMultipleUsers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.invite_multiple_users',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.invite_multiple_users(\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.inviteMultipleUsers',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.inviteMultipleUsers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          "curl https://api.morta.io/v1/hub/$HUB_ID/invite-multiple \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -1393,19 +1393,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_notifications\n\n`client.hub.getNotifications(hub_id: string): { data?: notification[]; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/notifications`\n\nRetrieve all notifications associated with a specific hub. This endpoint is accessible only to users with owner-level permissions for the hub.\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { actions: action[]; publicId: string; triggers: trigger[]; createdAt?: string; description?: string; processes?: document[]; tables?: table1[]; user?: summary_user; }[]; metadata?: object; }`\n\n  - `data?: { actions: { kind: string; publicId: string; customHeaders?: object[]; webhookUrl?: string; }[]; publicId: string; triggers: { publicId: string; resource: string; verb: string; }[]; createdAt?: string; description?: string; processes?: { name?: string; publicId?: string; }[]; tables?: { defaultViewId?: string; name?: string; publicId?: string; }[]; user?: { email?: string; firebaseUserId?: string; name?: string; profilePicture?: string; publicId?: string; }; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.getNotifications('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.getNotifications',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/notifications \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getNotifications('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.get_notifications',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.get_notifications(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.getNotifications',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getNotifications('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/notifications \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1423,19 +1423,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_sent_notifications\n\n`client.hub.getSentNotifications(hub_id: string, notification_id?: string, page?: number, size?: number): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/sent-notifications`\n\nRetrieve all sent notifications for a specified hub\n\n### Parameters\n\n- `hub_id: string`\n\n- `notification_id?: string`\n  UUID of a specific notification to filter the executions\n\n- `page?: number`\n  Page number of the notification executions\n\n- `size?: number`\n  Number of notification executions per page\n\n### Returns\n\n- `{ data?: { publicId: string; createdAt?: string; description?: string; isSuccess?: boolean; notification?: { actions: action[]; publicId: string; triggers: trigger[]; createdAt?: string; description?: string; processes?: document[]; tables?: table1[]; }; updatedAt?: string; }[]; metadata?: object; }`\n\n  - `data?: { publicId: string; createdAt?: string; description?: string; isSuccess?: boolean; notification?: { actions: { kind: string; publicId: string; customHeaders?: object[]; webhookUrl?: string; }[]; publicId: string; triggers: { publicId: string; resource: string; verb: string; }[]; createdAt?: string; description?: string; processes?: { name?: string; publicId?: string; }[]; tables?: { defaultViewId?: string; name?: string; publicId?: string; }[]; }; updatedAt?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.getSentNotifications('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.getSentNotifications',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/sent-notifications \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getSentNotifications('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.get_sent_notifications',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.get_sent_notifications(\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.getSentNotifications',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getSentNotifications('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/sent-notifications \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1453,19 +1453,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_tags\n\n`client.hub.getTags(hub_id: string): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/tags`\n\nRetrieve all tags associated with a specified hub\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { cells?: { id?: string; column?: object; value?: string; }[]; name?: string; publicId?: string; }[]; metadata?: object; }`\n\n  - `data?: { cells?: { id?: string; column?: { name?: string; publicId?: string; }; value?: string; }[]; name?: string; publicId?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.getTags('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.getTags',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/tags \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getTags('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.get_tags',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.get_tags(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.getTags',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getTags('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/tags \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1483,19 +1483,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_variables\n\n`client.hub.getVariables(hub_id: string): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/variables`\n\nRetrieve all variables associated with a specified hub\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { cells?: { id?: string; column?: object; value?: string; }[]; name?: string; publicId?: string; }[]; metadata?: object; }`\n\n  - `data?: { cells?: { id?: string; column?: { name?: string; publicId?: string; }; value?: string; }[]; name?: string; publicId?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.getVariables('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.getVariables',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/variables \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getVariables('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.get_variables',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.get_variables(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.getVariables',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getVariables('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/variables \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1513,19 +1513,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_members\n\n`client.hub.getMembers(hub_id: string): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/members`\n\nRetrieve all members associated with a specified hub\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { createdAt?: string; favourite?: boolean; projectRole?: string; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; kind?: string; name?: string; profilePicture?: string; publicId?: string; tags?: object; }; }[]; metadata?: object; }`\n\n  - `data?: { createdAt?: string; favourite?: boolean; projectRole?: string; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; kind?: string; name?: string; profilePicture?: string; publicId?: string; tags?: object; }; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.getMembers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.getMembers',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/members \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getMembers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.get_members',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.get_members(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.getMembers',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getMembers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/members \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1543,19 +1543,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_invited_members\n\n`client.hub.getInvitedMembers(hub_id: string): { data?: invited_member[]; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/invited-members`\n\nRetrieve all invited members for a specified hub\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { createdAt?: string; email?: string; invitedBy?: summary_user; projectRole?: string; publicId?: string; tags?: tag[]; }[]; metadata?: object; }`\n\n  - `data?: { createdAt?: string; email?: string; invitedBy?: { email?: string; firebaseUserId?: string; name?: string; profilePicture?: string; publicId?: string; }; projectRole?: string; publicId?: string; tags?: { documentTableId?: string; projectPublicId?: string; publicId?: string; referencePublicId?: string; value?: object; }[]; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.getInvitedMembers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.getInvitedMembers',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/invited-members \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getInvitedMembers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.get_invited_members',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.get_invited_members(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.getInvitedMembers',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getInvitedMembers('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/invited-members \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1573,19 +1573,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_heading_styling\n\n`client.hub.createHeadingStyling(hub_id: string): { data?: simple_hub; metadata?: object; }`\n\n**post** `/v1/hub/{hub_id}/add_heading_styling`\n\nCreate new heading styling for a specific hub\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: object[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: object[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }; metadata?: object; }`\n\n  - `data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: { bold?: boolean; colour?: string; fontSize?: number; italic?: boolean; level?: number; numberingStyle?: number; publicId?: string; startAt0?: boolean; underline?: boolean; }[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: { createdAt?: string; favourite?: boolean; projectRole?: string; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; kind?: string; name?: string; publicId?: string; }; }[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.createHeadingStyling('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.createHeadingStyling',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/add_heading_styling \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.createHeadingStyling('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.create_heading_styling',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.create_heading_styling(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.createHeadingStyling',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.createHeadingStyling('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/add_heading_styling \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1614,19 +1614,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update_heading_styling\n\n`client.hub.updateHeadingStyling(hub_id: string, style_id: string, bold?: boolean, colour?: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, fontSize?: number, italic?: boolean, numberingStyle?: number, startAt0?: boolean, underline?: boolean): { data?: simple_hub; metadata?: object; }`\n\n**post** `/v1/hub/{hub_id}/style/{style_id}`\n\nUpdate heading styling for a specific hub\n\n### Parameters\n\n- `hub_id: string`\n\n- `style_id: string`\n\n- `bold?: boolean`\n\n- `colour?: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `fontSize?: number`\n\n- `italic?: boolean`\n\n- `numberingStyle?: number`\n\n- `startAt0?: boolean`\n\n- `underline?: boolean`\n\n### Returns\n\n- `{ data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: object[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: object[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }; metadata?: object; }`\n\n  - `data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: { bold?: boolean; colour?: string; fontSize?: number; italic?: boolean; level?: number; numberingStyle?: number; publicId?: string; startAt0?: boolean; underline?: boolean; }[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: { createdAt?: string; favourite?: boolean; projectRole?: string; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; kind?: string; name?: string; publicId?: string; }; }[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.updateHeadingStyling('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.updateHeadingStyling',
         example:
-          "curl https://api.morta.io/v1/hub/$HUB_ID/style/$STYLE_ID \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.updateHeadingStyling('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.update_heading_styling',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.update_heading_styling(\n    style_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.updateHeadingStyling',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.updateHeadingStyling('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          "curl https://api.morta.io/v1/hub/$HUB_ID/style/$STYLE_ID \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -1644,19 +1644,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete_top_heading_styling\n\n`client.hub.deleteTopHeadingStyling(hub_id: string): { data?: simple_hub; metadata?: object; }`\n\n**delete** `/v1/hub/{hub_id}/delete_top_style`\n\nDelete the top heading styling for a specific hub\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: object[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: object[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }; metadata?: object; }`\n\n  - `data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: { bold?: boolean; colour?: string; fontSize?: number; italic?: boolean; level?: number; numberingStyle?: number; publicId?: string; startAt0?: boolean; underline?: boolean; }[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: { createdAt?: string; favourite?: boolean; projectRole?: string; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; kind?: string; name?: string; publicId?: string; }; }[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.deleteTopHeadingStyling('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.deleteTopHeadingStyling',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/delete_top_style \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.deleteTopHeadingStyling('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.delete_top_heading_styling',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.delete_top_heading_styling(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.deleteTopHeadingStyling',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.deleteTopHeadingStyling('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/delete_top_style \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1677,19 +1677,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## duplicate\n\n`client.hub.duplicate(hub_id: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, duplicatePermissions?: boolean, lockResource?: boolean): void`\n\n**post** `/v1/hub/{hub_id}/duplicate`\n\nCreate a duplicate of an existing hub\n\n### Parameters\n\n- `hub_id: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `duplicatePermissions?: boolean`\n\n- `lockResource?: boolean`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nawait client.hub.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.duplicate',
         example:
-          "curl https://api.morta.io/v1/hub/$HUB_ID/duplicate \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.hub.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');",
       },
       python: {
         method: 'hub.duplicate',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nclient.hub.duplicate(\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)',
       },
-      typescript: {
-        method: 'client.hub.duplicate',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.hub.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');",
+          "curl https://api.morta.io/v1/hub/$HUB_ID/duplicate \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -1711,19 +1711,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_knowledge_base\n\n`client.hub.createKnowledgeBase(hub_id: string, source: string, text: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, link?: string): void`\n\n**post** `/v1/hub/{hub_id}/knowledge-base`\n\nCreate a new knowledge base entry for a hub\n\n### Parameters\n\n- `hub_id: string`\n\n- `source: string`\n\n- `text: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `link?: string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nawait client.hub.createKnowledgeBase('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { source: 'source', text: 'text' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.createKnowledgeBase',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/knowledge-base \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "source": "source",\n          "text": "text"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.hub.createKnowledgeBase('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  source: 'source',\n  text: 'text',\n});",
       },
       python: {
         method: 'hub.create_knowledge_base',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nclient.hub.create_knowledge_base(\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    source="source",\n    text="text",\n)',
       },
-      typescript: {
-        method: 'client.hub.createKnowledgeBase',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.hub.createKnowledgeBase('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  source: 'source',\n  text: 'text',\n});",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/knowledge-base \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "source": "source",\n          "text": "text"\n        }\'',
       },
     },
   },
@@ -1739,19 +1739,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## train_knowledge_base\n\n`client.hub.trainKnowledgeBase(hub_id: string): void`\n\n**post** `/v1/hub/{hub_id}/train-knowledge-base`\n\nTrain the knowledge base for a hub\n\n### Parameters\n\n- `hub_id: string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nawait client.hub.trainKnowledgeBase('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.trainKnowledgeBase',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/train-knowledge-base \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.hub.trainKnowledgeBase('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');",
       },
       python: {
         method: 'hub.train_knowledge_base',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nclient.hub.train_knowledge_base(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)',
       },
-      typescript: {
-        method: 'client.hub.trainKnowledgeBase',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.hub.trainKnowledgeBase('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/train-knowledge-base \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1767,19 +1767,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## set_column_coloring\n\n`client.hub.setColumnColoring(hub_id: string): void`\n\n**post** `/v1/hub/{hub_id}/set-column-coloring`\n\nSet column coloring for a hub\n\n### Parameters\n\n- `hub_id: string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nawait client.hub.setColumnColoring('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.setColumnColoring',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/set-column-coloring \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.hub.setColumnColoring('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');",
       },
       python: {
         method: 'hub.set_column_coloring',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nclient.hub.set_column_coloring(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)',
       },
-      typescript: {
-        method: 'client.hub.setColumnColoring',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.hub.setColumnColoring('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/set-column-coloring \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1795,19 +1795,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## set_column_format\n\n`client.hub.setColumnFormat(hub_id: string, kind: string): void`\n\n**post** `/v1/hub/{hub_id}/set-column-format/{kind}`\n\nSet column date formatting for a hub\n\n### Parameters\n\n- `hub_id: string`\n\n- `kind: string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nawait client.hub.setColumnFormat('kind', { hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.setColumnFormat',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/set-column-format/$KIND \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.hub.setColumnFormat('kind', { hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });",
       },
       python: {
         method: 'hub.set_column_format',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nclient.hub.set_column_format(\n    kind="kind",\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)',
       },
-      typescript: {
-        method: 'client.hub.setColumnFormat',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.hub.setColumnFormat('kind', { hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/set-column-format/$KIND \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1823,19 +1823,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## request_contributor_access\n\n`client.hub.requestContributorAccess(hub_id: string): void`\n\n**post** `/v1/hub/{hub_id}/request-contributor-access`\n\nRequest contributor access to a hub\n\n### Parameters\n\n- `hub_id: string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nawait client.hub.requestContributorAccess('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.requestContributorAccess',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/request-contributor-access \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.hub.requestContributorAccess('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');",
       },
       python: {
         method: 'hub.request_contributor_access',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nclient.hub.request_contributor_access(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)',
       },
-      typescript: {
-        method: 'client.hub.requestContributorAccess',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.hub.requestContributorAccess('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/request-contributor-access \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1853,19 +1853,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## upload_template\n\n`client.hub.uploadTemplate(hub_id: string, file?: string): { data?: simple_hub; metadata?: object; }`\n\n**post** `/v1/hub/{hub_id}/upload-template`\n\nUpload a template document for a hub\n\n### Parameters\n\n- `hub_id: string`\n\n- `file?: string`\n\n### Returns\n\n- `{ data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: object[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: object[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }; metadata?: object; }`\n\n  - `data?: { aiSearchEnabled?: boolean; allowDocumentExport?: boolean; allowTableExport?: boolean; createdAt?: string; defaultBanner?: string; defaultDateFormat?: string; defaultDatetimeFormat?: string; defaultHeaderBackgroundColor?: string; defaultHeaderTextColor?: string; defaultProcessId?: string; deletedAt?: string; domainsAccess?: string[]; fontColour?: string; headingStyles?: { bold?: boolean; colour?: string; fontSize?: number; italic?: boolean; level?: number; numberingStyle?: number; publicId?: string; startAt0?: boolean; underline?: boolean; }[]; hideProcessCreated?: boolean; image?: string; isDeleted?: boolean; logo?: string; mfaRequired?: boolean; name?: string; primaryColour?: string; processTitleAlignment?: string; processTitleBold?: boolean; processTitleColour?: string; processTitleFontSize?: number; processTitleItalic?: boolean; processTitleUnderline?: boolean; projectList?: { createdAt?: string; favourite?: boolean; projectRole?: string; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; kind?: string; name?: string; publicId?: string; }; }[]; public?: boolean; publicId?: string; updatedAt?: string; wordTemplate?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.uploadTemplate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.uploadTemplate',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/upload-template \\\n    -H \'Content-Type: multipart/form-data\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import fs from 'fs';\nimport Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.uploadTemplate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.upload_template',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.upload_template(\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.uploadTemplate',
+      http: {
         example:
-          "import fs from 'fs';\nimport Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.uploadTemplate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/upload-template \\\n    -H \'Content-Type: multipart/form-data\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1883,19 +1883,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_duplicated_children\n\n`client.hub.getDuplicatedChildren(hub_id: string): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/duplicated-children`\n\nGet duplicated children of a hub\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { createdAt?: string; deletedAt?: string; deletedBy?: string; link?: string; name?: string; publicId?: string; user?: string; }[]; metadata?: object; }`\n\n  - `data?: { createdAt?: string; deletedAt?: string; deletedBy?: string; link?: string; name?: string; publicId?: string; user?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.getDuplicatedChildren('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.getDuplicatedChildren',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/duplicated-children \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getDuplicatedChildren('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.get_duplicated_children',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.get_duplicated_children(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.getDuplicatedChildren',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.getDuplicatedChildren('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/duplicated-children \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -1913,19 +1913,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## vote\n\n`client.hub.aiAnswer.vote(hub_id: string, answer_id: string, comment?: string, vote?: boolean): { data?: string; metadata?: object; }`\n\n**post** `/v1/hub/{hub_id}/ai-answer/{answer_id}/vote`\n\nVote on an AI answer within a specific hub, identified by the hub's UUID and the answer's UUID\n\n### Parameters\n\n- `hub_id: string`\n\n- `answer_id: string`\n\n- `comment?: string`\n\n- `vote?: boolean`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.aiAnswer.vote('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.aiAnswer.vote',
         example:
-          "curl https://api.morta.io/v1/hub/$HUB_ID/ai-answer/$ANSWER_ID/vote \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.aiAnswer.vote('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.ai_answer.vote',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.ai_answer.vote(\n    answer_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.aiAnswer.vote',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.aiAnswer.vote('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          "curl https://api.morta.io/v1/hub/$HUB_ID/ai-answer/$ANSWER_ID/vote \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -1948,19 +1948,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.hub.invite.create(hub_id: string, email: string, projectRole?: 'member' | 'admin' | 'owner', tags?: string[]): { data?: string; metadata?: object; }`\n\n**post** `/v1/hub/{hub_id}/invite`\n\nInvite a single user to join a hub by email. If the user already exists, they are added directly; otherwise, an invite is sent. Requires owner or admin permissions.\n\n### Parameters\n\n- `hub_id: string`\n\n- `email: string`\n\n- `projectRole?: 'member' | 'admin' | 'owner'`\n\n- `tags?: string[]`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst invite = await client.hub.invite.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { email: 'dev@stainless.com' });\n\nconsole.log(invite);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.invite.create',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/invite \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "email": "dev@stainless.com"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst invite = await client.hub.invite.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  email: 'dev@stainless.com',\n});\n\nconsole.log(invite.data);",
       },
       python: {
         method: 'hub.invite.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ninvite = client.hub.invite.create(\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    email="dev@stainless.com",\n)\nprint(invite.data)',
       },
-      typescript: {
-        method: 'client.hub.invite.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst invite = await client.hub.invite.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  email: 'dev@stainless.com',\n});\n\nconsole.log(invite.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/invite \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "email": "dev@stainless.com"\n        }\'',
       },
     },
   },
@@ -1978,19 +1978,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## resend\n\n`client.hub.invite.resend(hub_id: string, invite_id: string): { data?: string; metadata?: object; }`\n\n**post** `/v1/hub/{hub_id}/invite/{invite_id}`\n\nResend an invitation to a user for a hub. This is applicable for both new users and existing users who have previously been invited. Requires owner or admin permissions.\n\n### Parameters\n\n- `hub_id: string`\n\n- `invite_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.hub.invite.resend('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.invite.resend',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/invite/$INVITE_ID \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.invite.resend('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'hub.invite.resend',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.hub.invite.resend(\n    invite_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.hub.invite.resend',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.hub.invite.resend('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/invite/$INVITE_ID \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2007,19 +2007,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.hub.invite.delete(hub_id: string, invite_id: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/hub/{hub_id}/invite/{invite_id}`\n\nDelete an invite to a hub\n\n### Parameters\n\n- `hub_id: string`\n\n- `invite_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst invite = await client.hub.invite.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(invite);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.invite.delete',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/invite/$INVITE_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst invite = await client.hub.invite.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(invite.data);",
       },
       python: {
         method: 'hub.invite.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ninvite = client.hub.invite.delete(\n    invite_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(invite.data)',
       },
-      typescript: {
-        method: 'client.hub.invite.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst invite = await client.hub.invite.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(invite.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/invite/$INVITE_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2042,19 +2042,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.hub.invite.update(hub_id: string, invite_id: string, projectRole?: 'member' | 'admin' | 'owner', tags?: string[]): { data?: invited_member; metadata?: object; }`\n\n**put** `/v1/hub/{hub_id}/invite/{invite_id}`\n\nUpdate an existing invite in a hub\n\n### Parameters\n\n- `hub_id: string`\n\n- `invite_id: string`\n\n- `projectRole?: 'member' | 'admin' | 'owner'`\n\n- `tags?: string[]`\n\n### Returns\n\n- `{ data?: { createdAt?: string; email?: string; invitedBy?: summary_user; projectRole?: string; publicId?: string; tags?: tag[]; }; metadata?: object; }`\n\n  - `data?: { createdAt?: string; email?: string; invitedBy?: { email?: string; firebaseUserId?: string; name?: string; profilePicture?: string; publicId?: string; }; projectRole?: string; publicId?: string; tags?: { documentTableId?: string; projectPublicId?: string; publicId?: string; referencePublicId?: string; value?: object; }[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst invite = await client.hub.invite.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(invite);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.invite.update',
         example:
-          "curl https://api.morta.io/v1/hub/$HUB_ID/invite/$INVITE_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst invite = await client.hub.invite.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(invite.data);",
       },
       python: {
         method: 'hub.invite.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ninvite = client.hub.invite.update(\n    invite_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(invite.data)',
       },
-      typescript: {
-        method: 'client.hub.invite.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst invite = await client.hub.invite.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(invite.data);",
+          "curl https://api.morta.io/v1/hub/$HUB_ID/invite/$INVITE_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -2072,19 +2072,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list\n\n`client.hub.secrets.list(hub_id: string): { data?: hub_secret[]; metadata?: object; }`\n\n**get** `/v1/hub/{hub_id}/secrets`\n\nRetrieve all secrets for a specified hub\n\n### Parameters\n\n- `hub_id: string`\n\n### Returns\n\n- `{ data?: { createdAt?: string; name?: string; publicId?: string; updatedAt?: string; value?: string; }[]; metadata?: object; }`\n\n  - `data?: { createdAt?: string; name?: string; publicId?: string; updatedAt?: string; value?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst secrets = await client.hub.secrets.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(secrets);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.secrets.list',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/secrets \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst secrets = await client.hub.secrets.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(secrets.data);",
       },
       python: {
         method: 'hub.secrets.list',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nsecrets = client.hub.secrets.list(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(secrets.data)',
       },
-      typescript: {
-        method: 'client.hub.secrets.list',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst secrets = await client.hub.secrets.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(secrets.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/secrets \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2102,19 +2102,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.hub.secrets.create(hub_id: string, name: string, value: string): { data?: hub_secret; metadata?: object; }`\n\n**post** `/v1/hub/{hub_id}/secrets`\n\nCreate a new secret for a specified hub\n\n### Parameters\n\n- `hub_id: string`\n\n- `name: string`\n\n- `value: string`\n\n### Returns\n\n- `{ data?: { createdAt?: string; name?: string; publicId?: string; updatedAt?: string; value?: string; }; metadata?: object; }`\n\n  - `data?: { createdAt?: string; name?: string; publicId?: string; updatedAt?: string; value?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst secret = await client.hub.secrets.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { name: 'name', value: 'value' });\n\nconsole.log(secret);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.secrets.create',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/secrets \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "name": "name",\n          "value": "value"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst secret = await client.hub.secrets.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  name: 'name',\n  value: 'value',\n});\n\nconsole.log(secret.data);",
       },
       python: {
         method: 'hub.secrets.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nsecret = client.hub.secrets.create(\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    name="name",\n    value="value",\n)\nprint(secret.data)',
       },
-      typescript: {
-        method: 'client.hub.secrets.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst secret = await client.hub.secrets.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  name: 'name',\n  value: 'value',\n});\n\nconsole.log(secret.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/secrets \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "name": "name",\n          "value": "value"\n        }\'',
       },
     },
   },
@@ -2131,19 +2131,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.hub.secrets.delete(hub_id: string, secret_id: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/hub/{hub_id}/secrets/{secret_id}`\n\nDelete a specific secret from a hub\n\n### Parameters\n\n- `hub_id: string`\n\n- `secret_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst secret = await client.hub.secrets.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(secret);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.secrets.delete',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/secrets/$SECRET_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst secret = await client.hub.secrets.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(secret.data);",
       },
       python: {
         method: 'hub.secrets.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nsecret = client.hub.secrets.delete(\n    secret_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(secret.data)',
       },
-      typescript: {
-        method: 'client.hub.secrets.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst secret = await client.hub.secrets.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(secret.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/secrets/$SECRET_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2161,19 +2161,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.hub.secrets.update(hub_id: string, secret_id: string, name: string, value: string): { data?: hub_secret; metadata?: object; }`\n\n**put** `/v1/hub/{hub_id}/secrets/{secret_id}`\n\nUpdate a specific secret in a hub\n\n### Parameters\n\n- `hub_id: string`\n\n- `secret_id: string`\n\n- `name: string`\n\n- `value: string`\n\n### Returns\n\n- `{ data?: { createdAt?: string; name?: string; publicId?: string; updatedAt?: string; value?: string; }; metadata?: object; }`\n\n  - `data?: { createdAt?: string; name?: string; publicId?: string; updatedAt?: string; value?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst secret = await client.hub.secrets.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  name: 'name',\n  value: 'value',\n});\n\nconsole.log(secret);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.hub.secrets.update',
         example:
-          'curl https://api.morta.io/v1/hub/$HUB_ID/secrets/$SECRET_ID \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "name": "name",\n          "value": "value"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst secret = await client.hub.secrets.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  name: 'name',\n  value: 'value',\n});\n\nconsole.log(secret.data);",
       },
       python: {
         method: 'hub.secrets.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nsecret = client.hub.secrets.update(\n    secret_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    name="name",\n    value="value",\n)\nprint(secret.data)',
       },
-      typescript: {
-        method: 'client.hub.secrets.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst secret = await client.hub.secrets.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  name: 'name',\n  value: 'value',\n});\n\nconsole.log(secret.data);",
+          'curl https://api.morta.io/v1/hub/$HUB_ID/secrets/$SECRET_ID \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "name": "name",\n          "value": "value"\n        }\'',
       },
     },
   },
@@ -2202,19 +2202,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve\n\n`client.table.retrieve(table_id: string, columns?: string[], distinct_columns?: string[], filter?: string, ignore_cached_options?: boolean, last_created_at?: string, last_updated_at?: string, next_page_token?: string, page?: number, size?: number, sort?: string): { data?: table; metadata?: object; }`\n\n**get** `/v1/table/{table_id}`\n\nRetrieve a table and its rows based on provided parameters\n\n### Parameters\n\n- `table_id: string`\n\n- `columns?: string[]`\n  Specific columns to include in the response\n\n- `distinct_columns?: string[]`\n  Columns to apply distinct filtering\n\n- `filter?: string`\n  Filter criteria for the table rows\n\n- `ignore_cached_options?: boolean`\n  Flag to indicate whether to ignore cached options in the response.\n\n- `last_created_at?: string`\n  Filter for rows created after this date\n\n- `last_updated_at?: string`\n  Filter for rows updated after this date\n\n- `next_page_token?: string`\n  Token for fetching the next page of results\n\n- `page?: number`\n  Page number for pagination\n\n- `size?: number`\n  Number of items per page for pagination\n\n- `sort?: string`\n  Sorting criteria for the table rows\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: table_column[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: table_join[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: project[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: object; type?: string; updatedAt?: string; }; metadata?: { page?: number; size?: number; total?: number; }; }`\n\n  - `data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: { dataColumns?: table_join_imported_columns[]; isOneToMany?: boolean; joinColumns?: table_column_join[]; joinTableId?: string; joinViewId?: string; publicId?: string; }[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: { name?: string; publicId?: string; }[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: { name?: string; publicId?: string; }; type?: string; updatedAt?: string; }`\n  - `metadata?: { page?: number; size?: number; total?: number; }`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst table = await client.table.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(table);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.retrieve',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst table = await client.table.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(table.data);",
       },
       python: {
         method: 'table.retrieve',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ntable = client.table.retrieve(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(table.data)',
       },
-      typescript: {
-        method: 'client.table.retrieve',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst table = await client.table.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(table.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2243,19 +2243,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.table.update(table_id: string, allowComments?: boolean, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, isReferenceTable?: boolean, joins?: { dataColumns?: object[]; isOneToMany?: boolean; joinColumns?: object[]; joinTableName?: string; joinViewId?: string; joinViewName?: string; publicId?: string; }[], keepColoursInSync?: boolean, keepValidationsInSync?: boolean, logo?: string, name?: string, syncHourlyFrequency?: 0 | 24, type?: string): { data?: table; metadata?: object; }`\n\n**put** `/v1/table/{table_id}`\n\nUpdate the properties of an existing table.\n\n### Parameters\n\n- `table_id: string`\n\n- `allowComments?: boolean`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `isReferenceTable?: boolean`\n\n- `joins?: { dataColumns?: { sourceColumnId?: string; targetColumnId?: string; }[]; isOneToMany?: boolean; joinColumns?: { sourceColumnId?: string; targetColumnId?: string; }[]; joinTableName?: string; joinViewId?: string; joinViewName?: string; publicId?: string; }[]`\n\n- `keepColoursInSync?: boolean`\n\n- `keepValidationsInSync?: boolean`\n\n- `logo?: string`\n\n- `name?: string`\n\n- `syncHourlyFrequency?: 0 | 24`\n\n- `type?: string`\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: table_column[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: table_join[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: project[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: object; type?: string; updatedAt?: string; }; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: { dataColumns?: table_join_imported_columns[]; isOneToMany?: boolean; joinColumns?: table_column_join[]; joinTableId?: string; joinViewId?: string; publicId?: string; }[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: { name?: string; publicId?: string; }[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: { name?: string; publicId?: string; }; type?: string; updatedAt?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst table = await client.table.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(table);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.update',
         example:
-          "curl https://api.morta.io/v1/table/$TABLE_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst table = await client.table.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(table.data);",
       },
       python: {
         method: 'table.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ntable = client.table.update(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(table.data)',
       },
-      typescript: {
-        method: 'client.table.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst table = await client.table.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(table.data);",
+          "curl https://api.morta.io/v1/table/$TABLE_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -2272,19 +2272,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.table.delete(table_id: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/table/{table_id}`\n\nDelete a specified table by its UUID.\n\n### Parameters\n\n- `table_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst table = await client.table.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(table);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.delete',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst table = await client.table.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(table.data);",
       },
       python: {
         method: 'table.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ntable = client.table.delete(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(table.data)',
       },
-      typescript: {
-        method: 'client.table.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst table = await client.table.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(table.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2308,19 +2308,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.table.create(columns: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }[], name: string, projectId: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, joins?: { dataColumns?: object[]; isOneToMany?: boolean; joinColumns?: object[]; joinTableName?: string; joinViewId?: string; joinViewName?: string; }[], type?: string): { data?: table; metadata?: object; }`\n\n**post** `/v1/table`\n\nCreate a new document table within a hub.\n\n### Parameters\n\n- `columns: { aggregate?: number; alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object; dateFormat?: string; decimalPlaces?: number; description?: object | { content: object; }; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: object; }; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }[]`\n\n- `name: string`\n\n- `projectId: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `joins?: { dataColumns?: { sourceColumnId?: string; targetColumnId?: string; }[]; isOneToMany?: boolean; joinColumns?: { sourceColumnId?: string; targetColumnId?: string; }[]; joinTableName?: string; joinViewId?: string; joinViewName?: string; }[]`\n\n- `type?: string`\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: table_column[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: table_join[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: project[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: object; type?: string; updatedAt?: string; }; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: { dataColumns?: table_join_imported_columns[]; isOneToMany?: boolean; joinColumns?: table_column_join[]; joinTableId?: string; joinViewId?: string; publicId?: string; }[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: { name?: string; publicId?: string; }[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: { name?: string; publicId?: string; }; type?: string; updatedAt?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst table = await client.table.create({\n  columns: [{}],\n  name: 'name',\n  projectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(table);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.create',
         example:
-          'curl https://api.morta.io/v1/table \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "columns": [\n            {}\n          ],\n          "name": "name",\n          "projectId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst table = await client.table.create({\n  columns: [{}],\n  name: 'name',\n  projectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(table.data);",
       },
       python: {
         method: 'table.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ntable = client.table.create(\n    columns=[{}],\n    name="name",\n    project_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(table.data)',
       },
-      typescript: {
-        method: 'client.table.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst table = await client.table.create({\n  columns: [{}],\n  name: 'name',\n  projectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(table.data);",
+          'curl https://api.morta.io/v1/table \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "columns": [\n            {}\n          ],\n          "name": "name",\n          "projectId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n        }\'',
       },
     },
   },
@@ -2337,19 +2337,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## restore\n\n`client.table.restore(table_id: string): { data?: table; metadata?: object; }`\n\n**put** `/v1/table/{table_id}/restore`\n\nRestore a previously deleted table using its UUID.\n\n### Parameters\n\n- `table_id: string`\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: table_column[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: table_join[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: project[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: object; type?: string; updatedAt?: string; }; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: { dataColumns?: table_join_imported_columns[]; isOneToMany?: boolean; joinColumns?: table_column_join[]; joinTableId?: string; joinViewId?: string; publicId?: string; }[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: { name?: string; publicId?: string; }[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: { name?: string; publicId?: string; }; type?: string; updatedAt?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.restore',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/restore \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.restore',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.restore(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.restore',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/restore \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2373,19 +2373,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## duplicate\n\n`client.table.duplicate(table_id: string, targetProjectId: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, duplicateLinkedTables?: boolean, duplicatePermissions?: boolean): { data?: string; metadata?: object; }`\n\n**post** `/v1/table/{table_id}/duplicate`\n\nCreate a duplicate of an existing table along with its data, settings, and optionally linked tables.\n\n### Parameters\n\n- `table_id: string`\n\n- `targetProjectId: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `duplicateLinkedTables?: boolean`\n\n- `duplicatePermissions?: boolean`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { targetProjectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.duplicate',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/duplicate \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "targetProjectId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  targetProjectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.duplicate',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.duplicate(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    target_project_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.duplicate',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  targetProjectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/duplicate \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "targetProjectId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n        }\'',
       },
     },
   },
@@ -2403,19 +2403,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## check_usage\n\n`client.table.checkUsage(table_id: string): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/table/{table_id}/used`\n\nCheck and return a list of documents, table joins, and selects where the specified table is used.\n\n### Parameters\n\n- `table_id: string`\n\n### Returns\n\n- `{ data?: { link?: string; name?: string; type?: string; }[]; metadata?: object; }`\n\n  - `data?: { link?: string; name?: string; type?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.checkUsage('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.checkUsage',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/used \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.checkUsage('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.check_usage',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.check_usage(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.checkUsage',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.checkUsage('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/used \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2433,19 +2433,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_columns\n\n`client.table.listColumns(table_id: string): { data?: table_column[]; metadata?: object; }`\n\n**get** `/v1/table/{table_id}/columns`\n\nRetrieve all active columns of a specific table.\n\n### Parameters\n\n- `table_id: string`\n\n### Returns\n\n- `{ data?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }[]; metadata?: object; }`\n\n  - `data?: { aggregate?: number; alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object; dateFormat?: string; decimalPlaces?: number; description?: object | { content: object; }; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: object; }; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.listColumns('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.listColumns',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/columns \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.listColumns('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.list_columns',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.list_columns(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.listColumns',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.listColumns('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/columns \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2462,19 +2462,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_statistics\n\n`client.table.getStatistics(table_id: string, aggregation?: object, filter?: string): { data?: table_column_with_aggregation[]; metadata?: object; }`\n\n**get** `/v1/table/{table_id}/stats`\n\nRetrieve statistics for table columns based on specified parameters.\n\n### Parameters\n\n- `table_id: string`\n\n- `aggregation?: object`\n  Aggregation functions to apply on columns\n\n- `filter?: string`\n  Filter criteria for the columns\n\n### Returns\n\n- `{ data?: { aggregation?: object; name?: string; publicId?: string; }[]; metadata?: object; }`\n\n  - `data?: { aggregation?: { name?: string; value?: number; }; name?: string; publicId?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.getStatistics('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.getStatistics',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/stats \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.getStatistics('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.get_statistics',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.get_statistics(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.getStatistics',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.getStatistics('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/stats \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2491,19 +2491,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## download_csv\n\n`client.table.downloadCsv(table_id: string, filter?: string, sort?: string): string`\n\n**get** `/v1/table/{table_id}/csv`\n\nDownload the data of a specified table as a CSV file.\n\n### Parameters\n\n- `table_id: string`\n\n- `filter?: string`\n  Filter criteria for the table rows\n\n- `sort?: string`\n  Sorting criteria for the table rows\n\n### Returns\n\n- `string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.downloadCsv('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.downloadCsv',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/csv \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.downloadCsv('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);",
       },
       python: {
         method: 'table.download_csv',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.download_csv(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response)',
       },
-      typescript: {
-        method: 'client.table.downloadCsv',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.downloadCsv('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/csv \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2520,19 +2520,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_file\n\n`client.table.getFile(table_id: string, column_id: string, filename: string): string`\n\n**get** `/v1/table/{table_id}/file`\n\nRetrieve a file associated with a specific cell in a table.\n\n### Parameters\n\n- `table_id: string`\n\n- `column_id: string`\n  UUID of the column containing the cell.\n\n- `filename: string`\n  Name of the file to retrieve.\n\n### Returns\n\n- `string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.getFile('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { column_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', filename: 'filename' });\n\nconsole.log(response);\n\nconst content = await response.blob()\nconsole.log(content)\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.getFile',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/file \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.getFile('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  column_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  filename: 'filename',\n});\n\nconsole.log(response);\n\nconst content = await response.blob();\nconsole.log(content);",
       },
       python: {
         method: 'table.get_file',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.get_file(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    column_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    filename="filename",\n)\nprint(response)\ncontent = response.read()\nprint(content)',
       },
-      typescript: {
-        method: 'client.table.getFile',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.getFile('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  column_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  filename: 'filename',\n});\n\nconsole.log(response);\n\nconst content = await response.blob();\nconsole.log(content);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/file \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2549,19 +2549,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete_rows\n\n`client.table.deleteRows(table_id: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/table/{table_id}/rows`\n\nDelete all rows or specific rows from a table.\n\n### Parameters\n\n- `table_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.deleteRows('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.deleteRows',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/rows \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.deleteRows('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.delete_rows',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.delete_rows(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.deleteRows',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.deleteRows('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/rows \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2582,19 +2582,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update_cells\n\n`client.table.updateCells(table_id: string, cells: { columnName: string; rowId: string; value: object; context?: object; }[], context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: string; metadata?: object; }`\n\n**put** `/v1/table/{table_id}/cells`\n\nUpdate specific cells in a table.\n\n### Parameters\n\n- `table_id: string`\n\n- `cells: { columnName: string; rowId: string; value: object; context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }; }[]`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.updateCells('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { cells: [{\n  columnName: 'x',\n  rowId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  value: {},\n}] });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.updateCells',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/cells \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "cells": [\n            {\n              "columnName": "x",\n              "rowId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n              "value": {}\n            }\n          ]\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.updateCells('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  cells: [\n    {\n      columnName: 'x',\n      rowId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n      value: {},\n    },\n  ],\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.update_cells',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.update_cells(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    cells=[{\n        "column_name": "x",\n        "row_id": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n        "value": {},\n    }],\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.updateCells',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.updateCells('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  cells: [\n    {\n      columnName: 'x',\n      rowId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n      value: {},\n    },\n  ],\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/cells \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "cells": [\n            {\n              "columnName": "x",\n              "rowId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n              "value": {}\n            }\n          ]\n        }\'',
       },
     },
   },
@@ -2612,19 +2612,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_index\n\n`client.table.createIndex(table_id: string, columns: { publicId: string; }[]): { data?: table_column[]; metadata?: object; }`\n\n**post** `/v1/table/{table_id}/indexes`\n\nCreate an index on one or more columns of a table to improve query performance.\n\n### Parameters\n\n- `table_id: string`\n\n- `columns: { publicId: string; }[]`\n\n### Returns\n\n- `{ data?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }[]; metadata?: object; }`\n\n  - `data?: { aggregate?: number; alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object; dateFormat?: string; decimalPlaces?: number; description?: object | { content: object; }; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: object; }; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.createIndex('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { columns: [{ publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' }] });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.createIndex',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/indexes \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "columns": [\n            {\n              "publicId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n            }\n          ]\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.createIndex('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  columns: [{ publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' }],\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.create_index',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.create_index(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    columns=[{\n        "public_id": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n    }],\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.createIndex',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.createIndex('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  columns: [{ publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' }],\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/indexes \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "columns": [\n            {\n              "publicId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n            }\n          ]\n        }\'',
       },
     },
   },
@@ -2641,19 +2641,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## truncate\n\n`client.table.truncate(table_id: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/table/{table_id}/truncate`\n\nDeletes all rows from the specified table.\n\n### Parameters\n\n- `table_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.truncate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.truncate',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/truncate \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.truncate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.truncate',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.truncate(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.truncate',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.truncate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/truncate \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2670,19 +2670,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## stream_rows\n\n`client.table.streamRows(table_id: string, filter?: string, page?: number, size?: number, sort?: string): string`\n\n**get** `/v1/table/{table_id}/rows-stream`\n\nStream the data of all rows for a specific table.\n\n### Parameters\n\n- `table_id: string`\n\n- `filter?: string`\n  Filters to apply to the streaming data.\n\n- `page?: number`\n  Page number for pagination\n\n- `size?: number`\n  Number of items per page for pagination\n\n- `sort?: string`\n  Sorting parameters for the streaming data.\n\n### Returns\n\n- `string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.streamRows('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n\nconst content = await response.blob()\nconsole.log(content)\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.streamRows',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/rows-stream \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.streamRows('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n\nconst content = await response.blob();\nconsole.log(content);",
       },
       python: {
         method: 'table.stream_rows',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.stream_rows(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response)\ncontent = response.read()\nprint(content)',
       },
-      typescript: {
-        method: 'client.table.streamRows',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.streamRows('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n\nconst content = await response.blob();\nconsole.log(content);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/rows-stream \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2700,19 +2700,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_joins\n\n`client.table.listJoins(table_id: string): { data?: table_join[]; metadata?: object; }`\n\n**get** `/v1/table/{table_id}/joins`\n\nRetrieve all joins associated with a table.\n\n### Parameters\n\n- `table_id: string`\n\n### Returns\n\n- `{ data?: { dataColumns?: table_join_imported_columns[]; isOneToMany?: boolean; joinColumns?: table_column_join[]; joinTableId?: string; joinViewId?: string; publicId?: string; }[]; metadata?: object; }`\n\n  - `data?: { dataColumns?: { sourceColumnId?: string; targetColumnId?: string; }[]; isOneToMany?: boolean; joinColumns?: { sourceColumnId?: string; targetColumnId?: string; }[]; joinTableId?: string; joinViewId?: string; publicId?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.listJoins('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.listJoins',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/joins \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.listJoins('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.list_joins',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.list_joins(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.listJoins',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.listJoins('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/joins \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2730,19 +2730,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_duplicated_children\n\n`client.table.getDuplicatedChildren(table_id: string): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/table/{table_id}/duplicated-children`\n\nGet duplicated children of a table\n\n### Parameters\n\n- `table_id: string`\n\n### Returns\n\n- `{ data?: { createdAt?: string; deletedAt?: string; deletedBy?: string; link?: string; name?: string; publicId?: string; user?: string; }[]; metadata?: object; }`\n\n  - `data?: { createdAt?: string; deletedAt?: string; deletedBy?: string; link?: string; name?: string; publicId?: string; user?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.getDuplicatedChildren('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.getDuplicatedChildren',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/duplicated-children \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.getDuplicatedChildren('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.get_duplicated_children',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.get_duplicated_children(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.getDuplicatedChildren',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.getDuplicatedChildren('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/duplicated-children \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2759,19 +2759,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_csv_backup\n\n`client.table.getCsvBackup(table_id: string, date: string): string`\n\n**get** `/v1/table/{table_id}/csv-backup`\n\nGet a CSV backup of a table at a specific date\n\n### Parameters\n\n- `table_id: string`\n\n- `date: string`\n  The date of the backup to retrieve\n\n### Returns\n\n- `string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.getCsvBackup('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { date: 'date' });\n\nconsole.log(response);\n\nconst content = await response.blob()\nconsole.log(content)\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.getCsvBackup',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/csv-backup \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.getCsvBackup('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  date: 'date',\n});\n\nconsole.log(response);\n\nconst content = await response.blob();\nconsole.log(content);",
       },
       python: {
         method: 'table.get_csv_backup',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.get_csv_backup(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    date="date",\n)\nprint(response)\ncontent = response.read()\nprint(content)',
       },
-      typescript: {
-        method: 'client.table.getCsvBackup',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.getCsvBackup('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  date: 'date',\n});\n\nconsole.log(response);\n\nconst content = await response.blob();\nconsole.log(content);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/csv-backup \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2814,19 +2814,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.table.column.create(table_id: string, aggregate?: number, alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, dateFormat?: string, decimalPlaces?: number, description?: object | { content: object; }, displayLink?: boolean, exportWidth?: number, formula?: string, formulaEnabled?: boolean, headerBackgroundColor?: string, headerTextColor?: string, isIndexed?: boolean, isJoined?: boolean, isSynced?: boolean, kind?: string, kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: object; }, name?: string, publicId?: string, script?: string, scriptEnabled?: boolean, thousandSeparator?: boolean, width?: number): { data?: table_column; metadata?: object; }`\n\n**post** `/v1/table/{table_id}/column`\n\nAdd a new column to an existing table.\n\n### Parameters\n\n- `table_id: string`\n\n- `aggregate?: number`\n\n- `alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `dateFormat?: string`\n\n- `decimalPlaces?: number`\n\n- `description?: object | { content: { blocks: { data: object; depth: number; entityRanges: object[]; inlineStyleRanges: object[]; key: string; text: string; type: string; }[]; entityMap: object; }; }`\n\n- `displayLink?: boolean`\n\n- `exportWidth?: number`\n\n- `formula?: string`\n\n- `formulaEnabled?: boolean`\n\n- `headerBackgroundColor?: string`\n\n- `headerTextColor?: string`\n\n- `isIndexed?: boolean`\n\n- `isJoined?: boolean`\n\n- `isSynced?: boolean`\n\n- `kind?: string`\n\n- `kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: { columnId?: string; dependencies?: { columnId: string; columnJoinId?: string; }[]; liveValues?: boolean; tableId?: string; viewId?: string; }; }`\n  - `autopopulate?: boolean`\n  - `manualOptions?: string[]`\n  - `tableOptions?: { columnId?: string; dependencies?: { columnId: string; columnJoinId?: string; }[]; liveValues?: boolean; tableId?: string; viewId?: string; }`\n\n- `name?: string`\n\n- `publicId?: string`\n\n- `script?: string`\n\n- `scriptEnabled?: boolean`\n\n- `thousandSeparator?: boolean`\n\n- `width?: number`\n\n### Returns\n\n- `{ data?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }; metadata?: object; }`\n\n  - `data?: { aggregate?: number; alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object; dateFormat?: string; decimalPlaces?: number; description?: object | { content: object; }; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: object; }; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst column = await client.table.column.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(column);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.column.create',
         example:
-          "curl https://api.morta.io/v1/table/$TABLE_ID/column \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst column = await client.table.column.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(column.data);",
       },
       python: {
         method: 'table.column.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ncolumn = client.table.column.create(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(column.data)',
       },
-      typescript: {
-        method: 'client.table.column.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst column = await client.table.column.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(column.data);",
+          "curl https://api.morta.io/v1/table/$TABLE_ID/column \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -2870,19 +2870,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.table.column.update(table_id: string, column_id: string, aggregate?: number, alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, dateFormat?: string, decimalPlaces?: number, description?: object | { content: object; }, displayLink?: boolean, exportWidth?: number, formula?: string, formulaEnabled?: boolean, headerBackgroundColor?: string, headerTextColor?: string, isIndexed?: boolean, isJoined?: boolean, isSynced?: boolean, kind?: string, kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: object; }, name?: string, publicId?: string, script?: string, scriptEnabled?: boolean, thousandSeparator?: boolean, width?: number): { data?: table_column; metadata?: object; }`\n\n**put** `/v1/table/{table_id}/column/{column_id}`\n\nUpdate the properties of a specific column in a table.\n\n### Parameters\n\n- `table_id: string`\n\n- `column_id: string`\n\n- `aggregate?: number`\n\n- `alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `dateFormat?: string`\n\n- `decimalPlaces?: number`\n\n- `description?: object | { content: { blocks: { data: object; depth: number; entityRanges: object[]; inlineStyleRanges: object[]; key: string; text: string; type: string; }[]; entityMap: object; }; }`\n\n- `displayLink?: boolean`\n\n- `exportWidth?: number`\n\n- `formula?: string`\n\n- `formulaEnabled?: boolean`\n\n- `headerBackgroundColor?: string`\n\n- `headerTextColor?: string`\n\n- `isIndexed?: boolean`\n\n- `isJoined?: boolean`\n\n- `isSynced?: boolean`\n\n- `kind?: string`\n\n- `kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: { columnId?: string; dependencies?: { columnId: string; columnJoinId?: string; }[]; liveValues?: boolean; tableId?: string; viewId?: string; }; }`\n  - `autopopulate?: boolean`\n  - `manualOptions?: string[]`\n  - `tableOptions?: { columnId?: string; dependencies?: { columnId: string; columnJoinId?: string; }[]; liveValues?: boolean; tableId?: string; viewId?: string; }`\n\n- `name?: string`\n\n- `publicId?: string`\n\n- `script?: string`\n\n- `scriptEnabled?: boolean`\n\n- `thousandSeparator?: boolean`\n\n- `width?: number`\n\n### Returns\n\n- `{ data?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }; metadata?: object; }`\n\n  - `data?: { aggregate?: number; alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object; dateFormat?: string; decimalPlaces?: number; description?: object | { content: object; }; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: object; }; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst column = await client.table.column.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(column);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.column.update',
         example:
-          "curl https://api.morta.io/v1/table/$TABLE_ID/column/$COLUMN_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst column = await client.table.column.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(column.data);",
       },
       python: {
         method: 'table.column.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ncolumn = client.table.column.update(\n    column_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(column.data)',
       },
-      typescript: {
-        method: 'client.table.column.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst column = await client.table.column.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(column.data);",
+          "curl https://api.morta.io/v1/table/$TABLE_ID/column/$COLUMN_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -2899,19 +2899,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.table.column.delete(table_id: string, column_id: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/table/{table_id}/column/{column_id}`\n\nDelete a specific column from a table.\n\n### Parameters\n\n- `table_id: string`\n\n- `column_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst column = await client.table.column.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(column);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.column.delete',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/column/$COLUMN_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst column = await client.table.column.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(column.data);",
       },
       python: {
         method: 'table.column.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ncolumn = client.table.column.delete(\n    column_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(column.data)',
       },
-      typescript: {
-        method: 'client.table.column.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst column = await client.table.column.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(column.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/column/$COLUMN_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2929,19 +2929,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## check_views\n\n`client.table.column.checkViews(table_id: string, column_id: string): { data?: table_view[]; metadata?: object; }`\n\n**get** `/v1/table/{table_id}/column/{column_id}/views`\n\nRetrieve all views in which a specific table column is used.\n\n### Parameters\n\n- `table_id: string`\n\n- `column_id: string`\n\n### Returns\n\n- `{ data?: { name: string; allowContributorDelete?: boolean; chartSettings?: chart; collapsedGroupView?: boolean; colourSettings?: colour[]; columns?: table_view_column[]; description?: draftjs; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; filterSettings?: filter[]; frozenIndex?: number; groupSettings?: group[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: sort[]; type?: number; unpackMultiselectGroupView?: boolean; }[]; metadata?: object; }`\n\n  - `data?: { name: string; allowContributorDelete?: boolean; chartSettings?: { aggregate?: 'sum' | 'count' | 'avg'; chartType?: string; columnGanttEndDateId?: string; columnGanttStartDateId?: string; columnLabelId?: string; columnStackId?: string; columnValueId?: string; showLegend?: boolean; showTitle?: boolean; showValues?: boolean; sortAggregate?: 'asc' | 'desc'; }; collapsedGroupView?: boolean; colourSettings?: { backgroundColour: string; columnName: string; filterType: string; fontColour: string; columnId?: string; multipleValues?: object[]; value?: object; }[]; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; displayValidationError?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; hardValidation?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; locked?: boolean; name?: string; publicId?: string; required?: boolean; script?: string; scriptEnabled?: boolean; sortOrder?: number; stringValidation?: string; thousandSeparator?: boolean; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; width?: number; }[]; description?: { content: object; }; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; filterSettings?: { columnName: string; filterType: string; columnId?: string; multipleValues?: object[]; orGroup?: string; value?: object; }[]; frozenIndex?: number; groupSettings?: { columnName: string; direction: string; columnId?: string; }[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: { columnName: string; direction: string; columnId?: string; }[]; type?: number; unpackMultiselectGroupView?: boolean; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.column.checkViews('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.column.checkViews',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/column/$COLUMN_ID/views \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.column.checkViews('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.column.check_views',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.column.check_views(\n    column_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.column.checkViews',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.column.checkViews('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/column/$COLUMN_ID/views \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2959,19 +2959,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## restore\n\n`client.table.column.restore(table_id: string, column_id: string): { data?: table_column; metadata?: object; }`\n\n**put** `/v1/table/{table_id}/column/{column_id}/restore`\n\nRestore a previously deleted column in a table.\n\n### Parameters\n\n- `table_id: string`\n\n- `column_id: string`\n\n### Returns\n\n- `{ data?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }; metadata?: object; }`\n\n  - `data?: { aggregate?: number; alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object; dateFormat?: string; decimalPlaces?: number; description?: object | { content: object; }; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: object; }; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.column.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.column.restore',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/column/$COLUMN_ID/restore \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.column.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.column.restore',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.column.restore(\n    column_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.column.restore',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.column.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/column/$COLUMN_ID/restore \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -2988,19 +2988,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_distinct_values\n\n`client.table.column.getDistinctValues(table_id: string, column_id: string, filter?: string, group_columns?: string[]): { data?: string[]; metadata?: object; }`\n\n**get** `/v1/table/{table_id}/column/{column_id}/distinct`\n\nRetrieve a list of distinct (unique) values for a specified column in a table.\n\n### Parameters\n\n- `table_id: string`\n\n- `column_id: string`\n\n- `filter?: string`\n  Filter criteria for the distinct values\n\n- `group_columns?: string[]`\n  Specify columns for grouping values\n\n### Returns\n\n- `{ data?: string[]; metadata?: object; }`\n\n  - `data?: string[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.column.getDistinctValues('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.column.getDistinctValues',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/column/$COLUMN_ID/distinct \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.column.getDistinctValues(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  { table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' },\n);\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.column.get_distinct_values',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.column.get_distinct_values(\n    column_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.column.getDistinctValues',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.column.getDistinctValues(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  { table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' },\n);\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/column/$COLUMN_ID/distinct \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3029,19 +3029,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_rows\n\n`client.table.row.getRows(table_id: string, columns?: string[], distinct_columns?: string[], filter?: string, last_created_at?: string, last_updated_at?: string, next_page_token?: string, page?: number, size?: number, sort?: string): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/table/{table_id}/row`\n\nRetrieve rows from a table based on provided query parameters.\n\n### Parameters\n\n- `table_id: string`\n\n- `columns?: string[]`\n  Specific columns to include in the response\n\n- `distinct_columns?: string[]`\n  Columns to apply distinct filtering\n\n- `filter?: string`\n  Filter criteria for the table rows\n\n- `last_created_at?: string`\n  Filter for rows created after this date\n\n- `last_updated_at?: string`\n  Filter for rows updated after this date\n\n- `next_page_token?: string`\n  Token for fetching the next page of results\n\n- `page?: number`\n  Page number for pagination\n\n- `size?: number`\n  Number of items per page for pagination\n\n- `sort?: string`\n  Sorting criteria for the table rows\n\n### Returns\n\n- `{ data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]; metadata?: { next_page_token?: string; page?: number; size?: number; total?: number; }; }`\n\n  - `data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]`\n  - `metadata?: { next_page_token?: string; page?: number; size?: number; total?: number; }`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.row.getRows('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.row.getRows',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/row \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.row.getRows('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.row.get_rows',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.row.get_rows(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.row.getRows',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.row.getRows('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/row \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3062,19 +3062,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## add\n\n`client.table.row.add(table_id: string, rows: { rowData: object; context?: base_request_context; sortOrder?: number; }[], context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: object[]; metadata?: object; }`\n\n**post** `/v1/table/{table_id}/row`\n\nAdd a new row to the specified table.\n\n### Parameters\n\n- `table_id: string`\n\n- `rows: { rowData: object; context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }; sortOrder?: number; }[]`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]; metadata?: object; }`\n\n  - `data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.row.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { rows: [{ rowData: { foo: 'bar' } }] });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.row.add',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/row \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "rows": [\n            {\n              "rowData": {\n                "foo": "bar"\n              }\n            }\n          ]\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.row.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  rows: [{ rowData: { foo: 'bar' } }],\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.row.add',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.row.add(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    rows=[{\n        "row_data": {\n            "foo": "bar"\n        }\n    }],\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.row.add',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.row.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  rows: [{ rowData: { foo: 'bar' } }],\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/row \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "rows": [\n            {\n              "rowData": {\n                "foo": "bar"\n              }\n            }\n          ]\n        }\'',
       },
     },
   },
@@ -3095,19 +3095,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.table.row.update(table_id: string, rows: { publicId: string; rowData: object; context?: object; sortOrder?: number; }[], context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: object[]; metadata?: object; }`\n\n**put** `/v1/table/{table_id}/row`\n\nUpdate existing rows in the specified table.\n\n### Parameters\n\n- `table_id: string`\n\n- `rows: { publicId: string; rowData: object; context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }; sortOrder?: number; }[]`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]; metadata?: object; }`\n\n  - `data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst row = await client.table.row.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { rows: [{\n  publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  rowData: { foo: 'bar' },\n}] });\n\nconsole.log(row);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.row.update',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/row \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "rows": [\n            {\n              "publicId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n              "rowData": {\n                "foo": "bar"\n              }\n            }\n          ]\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst row = await client.table.row.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  rows: [\n    {\n      publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n      rowData: { foo: 'bar' },\n    },\n  ],\n});\n\nconsole.log(row.data);",
       },
       python: {
         method: 'table.row.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nrow = client.table.row.update(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    rows=[{\n        "public_id": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n        "row_data": {\n            "foo": "bar"\n        },\n    }],\n)\nprint(row.data)',
       },
-      typescript: {
-        method: 'client.table.row.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst row = await client.table.row.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  rows: [\n    {\n      publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n      rowData: { foo: 'bar' },\n    },\n  ],\n});\n\nconsole.log(row.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/row \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "rows": [\n            {\n              "publicId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n              "rowData": {\n                "foo": "bar"\n              }\n            }\n          ]\n        }\'',
       },
     },
   },
@@ -3129,19 +3129,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## upsert\n\n`client.table.row.upsert(table_id: string, rows: { rowData: object; context?: base_request_context; sortOrder?: number; }[], upsertColumnName: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: object[]; metadata?: object; }`\n\n**post** `/v1/table/{table_id}/row/upsert`\n\nAdd or update a row in the specified table based on a unique column value.\n\n### Parameters\n\n- `table_id: string`\n\n- `rows: { rowData: object; context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }; sortOrder?: number; }[]`\n\n- `upsertColumnName: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]; metadata?: object; }`\n\n  - `data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.row.upsert('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { rows: [{ rowData: { foo: 'bar' } }], upsertColumnName: 'upsertColumnName' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.row.upsert',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/row/upsert \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "rows": [\n            {\n              "rowData": {\n                "foo": "bar"\n              }\n            }\n          ],\n          "upsertColumnName": "upsertColumnName"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.row.upsert('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  rows: [{ rowData: { foo: 'bar' } }],\n  upsertColumnName: 'upsertColumnName',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.row.upsert',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.row.upsert(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    rows=[{\n        "row_data": {\n            "foo": "bar"\n        }\n    }],\n    upsert_column_name="upsertColumnName",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.row.upsert',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.row.upsert('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  rows: [{ rowData: { foo: 'bar' } }],\n  upsertColumnName: 'upsertColumnName',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/row/upsert \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "rows": [\n            {\n              "rowData": {\n                "foo": "bar"\n              }\n            }\n          ],\n          "upsertColumnName": "upsertColumnName"\n        }\'',
       },
     },
   },
@@ -3165,19 +3165,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.table.join.create(table_id: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, dataColumns?: string[], isOneToMany?: boolean, joinColumns?: { sourceColumnId?: string; targetColumnId?: string; }[], joinViewId?: string): { data?: table; metadata?: object; }`\n\n**post** `/v1/table/{table_id}/join`\n\nCreate a join between two tables.\n\n### Parameters\n\n- `table_id: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `dataColumns?: string[]`\n\n- `isOneToMany?: boolean`\n\n- `joinColumns?: { sourceColumnId?: string; targetColumnId?: string; }[]`\n\n- `joinViewId?: string`\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: table_column[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: table_join[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: project[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: object; type?: string; updatedAt?: string; }; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: { dataColumns?: table_join_imported_columns[]; isOneToMany?: boolean; joinColumns?: table_column_join[]; joinTableId?: string; joinViewId?: string; publicId?: string; }[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: { name?: string; publicId?: string; }[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: { name?: string; publicId?: string; }; type?: string; updatedAt?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst join = await client.table.join.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(join);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.join.create',
         example:
-          "curl https://api.morta.io/v1/table/$TABLE_ID/join \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst join = await client.table.join.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(join.data);",
       },
       python: {
         method: 'table.join.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\njoin = client.table.join.create(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(join.data)',
       },
-      typescript: {
-        method: 'client.table.join.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst join = await client.table.join.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(join.data);",
+          "curl https://api.morta.io/v1/table/$TABLE_ID/join \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -3202,19 +3202,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.table.join.update(table_id: string, join_id: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, dataColumns?: string[], isOneToMany?: boolean, joinColumns?: { sourceColumnId?: string; targetColumnId?: string; }[], joinViewId?: string): { data?: table; metadata?: object; }`\n\n**put** `/v1/table/{table_id}/join/{join_id}`\n\nUpdate an existing join on a table.\n\n### Parameters\n\n- `table_id: string`\n\n- `join_id: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `dataColumns?: string[]`\n\n- `isOneToMany?: boolean`\n\n- `joinColumns?: { sourceColumnId?: string; targetColumnId?: string; }[]`\n\n- `joinViewId?: string`\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: table_column[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: table_join[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: project[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: object; type?: string; updatedAt?: string; }; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; autodeskBim360ModelProperties?: object; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; name?: string; publicId?: string; script?: string; scriptEnabled?: boolean; thousandSeparator?: boolean; width?: number; }[]; createdAt?: string; defaultViewId?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReferenceTable?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; joins?: { dataColumns?: table_join_imported_columns[]; isOneToMany?: boolean; joinColumns?: table_column_join[]; joinTableId?: string; joinViewId?: string; publicId?: string; }[]; keepColoursInSync?: boolean; keepValidationsInSync?: boolean; lastSync?: string; lockedFromDuplication?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; projects?: { name?: string; publicId?: string; }[]; publicId?: string; syncHourlyFrequency?: number; syncUser?: { name?: string; publicId?: string; }; type?: string; updatedAt?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst join = await client.table.join.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(join);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.join.update',
         example:
-          "curl https://api.morta.io/v1/table/$TABLE_ID/join/$JOIN_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst join = await client.table.join.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(join.data);",
       },
       python: {
         method: 'table.join.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\njoin = client.table.join.update(\n    join_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(join.data)',
       },
-      typescript: {
-        method: 'client.table.join.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst join = await client.table.join.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(join.data);",
+          "curl https://api.morta.io/v1/table/$TABLE_ID/join/$JOIN_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -3231,19 +3231,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.table.join.delete(table_id: string, join_id: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/table/{table_id}/join/{join_id}`\n\nDelete a join from a table.\n\n### Parameters\n\n- `table_id: string`\n\n- `join_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst join = await client.table.join.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(join);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.join.delete',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/join/$JOIN_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst join = await client.table.join.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(join.data);",
       },
       python: {
         method: 'table.join.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\njoin = client.table.join.delete(\n    join_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(join.data)',
       },
-      typescript: {
-        method: 'client.table.join.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst join = await client.table.join.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(join.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/join/$JOIN_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3277,19 +3277,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.table.sync.update(table_id: string, integration_name: string, companyId?: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, docTypes?: string[], enterpriseId?: string, folderId?: string, hubId?: string, licenseId?: string, modelId?: string, projectId?: string, projectIds?: string[], properties?: string[], region?: string, topFolderId?: string, type?: string): { data?: string; metadata?: object; }`\n\n**post** `/v1/table/{table_id}/sync/{integration_name}/update`\n\nUpdate a synced table with a specified integration.\n\n### Parameters\n\n- `table_id: string`\n\n- `integration_name: string`\n\n- `companyId?: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `docTypes?: string[]`\n\n- `enterpriseId?: string`\n\n- `folderId?: string`\n\n- `hubId?: string`\n\n- `licenseId?: string`\n\n- `modelId?: string`\n\n- `projectId?: string`\n\n- `projectIds?: string[]`\n\n- `properties?: string[]`\n\n- `region?: string`\n\n- `topFolderId?: string`\n\n- `type?: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst sync = await client.table.sync.update('integration_name', { table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(sync);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.sync.update',
         example:
-          "curl https://api.morta.io/v1/table/$TABLE_ID/sync/$INTEGRATION_NAME/update \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst sync = await client.table.sync.update('integration_name', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(sync.data);",
       },
       python: {
         method: 'table.sync.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nsync = client.table.sync.update(\n    integration_name="integration_name",\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(sync.data)',
       },
-      typescript: {
-        method: 'client.table.sync.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst sync = await client.table.sync.update('integration_name', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(sync.data);",
+          "curl https://api.morta.io/v1/table/$TABLE_ID/sync/$INTEGRATION_NAME/update \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -3323,19 +3323,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## sync_with_integration\n\n`client.table.sync.syncWithIntegration(table_id: string, integration_name: string, companyId?: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, docTypes?: string[], enterpriseId?: string, folderId?: string, hubId?: string, licenseId?: string, modelId?: string, projectId?: string, projectIds?: string[], properties?: string[], region?: string, topFolderId?: string, type?: string): { data?: string; metadata?: object; }`\n\n**post** `/v1/table/{table_id}/sync/{integration_name}`\n\nSync a table with a specified integration.\n\n### Parameters\n\n- `table_id: string`\n\n- `integration_name: string`\n\n- `companyId?: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `docTypes?: string[]`\n\n- `enterpriseId?: string`\n\n- `folderId?: string`\n\n- `hubId?: string`\n\n- `licenseId?: string`\n\n- `modelId?: string`\n\n- `projectId?: string`\n\n- `projectIds?: string[]`\n\n- `properties?: string[]`\n\n- `region?: string`\n\n- `topFolderId?: string`\n\n- `type?: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.sync.syncWithIntegration('integration_name', { table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.sync.syncWithIntegration',
         example:
-          "curl https://api.morta.io/v1/table/$TABLE_ID/sync/$INTEGRATION_NAME \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.sync.syncWithIntegration('integration_name', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.sync.sync_with_integration',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.sync.sync_with_integration(\n    integration_name="integration_name",\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.sync.syncWithIntegration',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.sync.syncWithIntegration('integration_name', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          "curl https://api.morta.io/v1/table/$TABLE_ID/sync/$INTEGRATION_NAME \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -3352,19 +3352,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete_integration\n\n`client.table.sync.deleteIntegration(table_id: string, integration_name: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/table/{table_id}/sync/{integration_name}`\n\nRemove a specific integration from a table.\n\n### Parameters\n\n- `table_id: string`\n\n- `integration_name: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.sync.deleteIntegration('integration_name', { table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.sync.deleteIntegration',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/sync/$INTEGRATION_NAME \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.sync.deleteIntegration('integration_name', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.sync.delete_integration',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.sync.delete_integration(\n    integration_name="integration_name",\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.sync.deleteIntegration',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.sync.deleteIntegration('integration_name', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/sync/$INTEGRATION_NAME \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3381,19 +3381,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retry_integration_sync\n\n`client.table.sync.retryIntegrationSync(table_id: string): { data?: string; metadata?: object; }`\n\n**get** `/v1/table/{table_id}/sync/manual`\n\nRetry a failed integration sync.\n\n### Parameters\n\n- `table_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.sync.retryIntegrationSync('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.sync.retryIntegrationSync',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/sync/manual \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.sync.retryIntegrationSync(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n);\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.sync.retry_integration_sync',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.sync.retry_integration_sync(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.sync.retryIntegrationSync',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.sync.retryIntegrationSync(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n);\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/sync/manual \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3411,19 +3411,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_sync_info\n\n`client.table.sync.getSyncInfo(table_id: string): { data?: object; }`\n\n**get** `/v1/table/{table_id}/sync/info`\n\nRetrieve the integration sync info of a given table.\n\n### Parameters\n\n- `table_id: string`\n\n### Returns\n\n- `{ data?: { createdAt?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; lastSync?: string; name?: string; publicId?: string; syncHourlyFrequency?: number; type?: string; updatedAt?: string; }; }`\n\n  - `data?: { createdAt?: string; deletedAt?: string; failedSyncAttempts?: number; isAconexSynced?: boolean; isAconexWorkflowsSynced?: boolean; isAsiteDocumentsSynced?: boolean; isAsiteFormsSynced?: boolean; isAutodeskBim360ChecklistsSynced?: boolean; isAutodeskBim360IssuesSynced?: boolean; isAutodeskBim360ModelsSynced?: boolean; isAutodeskBim360Synced?: boolean; isAutodeskBim360UsersSynced?: boolean; isDeleted?: boolean; isMortaColumnsSynced?: boolean; isMortaCommentsSynced?: boolean; isMortaProjectsSynced?: boolean; isMortaResourcesSynced?: boolean; isMortaSynced?: boolean; isMortaUsersSynced?: boolean; isProcoreSynced?: boolean; isReviztoIssuesSynced?: boolean; isSynced?: boolean; isSyncing?: boolean; isViewpointRfisSynced?: boolean; isViewpointSynced?: boolean; lastSync?: string; name?: string; publicId?: string; syncHourlyFrequency?: number; type?: string; updatedAt?: string; }`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.sync.getSyncInfo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.sync.getSyncInfo',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/sync/info \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.sync.getSyncInfo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.sync.get_sync_info',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.sync.get_sync_info(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.sync.getSyncInfo',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.sync.getSyncInfo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/sync/info \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3464,19 +3464,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.table.views.create(table_id: string, name: string, allowContributorDelete?: boolean, chartSettings?: object | { aggregate?: 'sum' | 'count' | 'avg'; chartType?: string; columnGanttEndDateId?: string; columnGanttStartDateId?: string; columnLabelId?: string; columnStackId?: string; columnValueId?: string; showLegend?: boolean; showTitle?: boolean; showValues?: boolean; sortAggregate?: 'asc' | 'desc'; }, collapsedGroupView?: boolean, colourSettings?: { backgroundColour: string; columnName: string; filterType: string; fontColour: string; columnId?: string; multipleValues?: object[]; value?: object; }[], columns?: { columnName: string; columnId?: string; description?: object | object; displayValidationError?: boolean; hardValidation?: boolean; locked?: boolean; required?: boolean; stringValidation?: string; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; }[], context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, description?: object | { content: object; }, disableNewRow?: boolean, disableSyncCsv?: boolean, displayCommentRows?: number, displayValidationErrorRows?: 0 | 1 | 2, filterSettings?: { columnName: string; filterType: string; columnId?: string; multipleValues?: object[]; orGroup?: string; value?: object; }[], frozenIndex?: number, groupSettings?: { columnName: string; direction: string; columnId?: string; }[], includeAllColumns?: boolean, isDefault?: boolean, rowHeight?: number, sortSettings?: { columnName: string; direction: string; columnId?: string; }[], type?: number, unpackMultiselectGroupView?: boolean): { data?: table_view; metadata?: object; }`\n\n**post** `/v1/table/{table_id}/views`\n\nCreate a new view for a specific table.\n\n### Parameters\n\n- `table_id: string`\n\n- `name: string`\n\n- `allowContributorDelete?: boolean`\n\n- `chartSettings?: object | { aggregate?: 'sum' | 'count' | 'avg'; chartType?: string; columnGanttEndDateId?: string; columnGanttStartDateId?: string; columnLabelId?: string; columnStackId?: string; columnValueId?: string; showLegend?: boolean; showTitle?: boolean; showValues?: boolean; sortAggregate?: 'asc' | 'desc'; }`\n\n- `collapsedGroupView?: boolean`\n\n- `colourSettings?: { backgroundColour: string; columnName: string; filterType: string; fontColour: string; columnId?: string; multipleValues?: object[]; value?: object; }[]`\n\n- `columns?: { columnName: string; columnId?: string; description?: { content: { blocks: object[]; entityMap: object; }; } | object; displayValidationError?: boolean; hardValidation?: boolean; locked?: boolean; required?: boolean; stringValidation?: string; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; }[]`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `description?: object | { content: { blocks: { data: object; depth: number; entityRanges: object[]; inlineStyleRanges: object[]; key: string; text: string; type: string; }[]; entityMap: object; }; }`\n\n- `disableNewRow?: boolean`\n\n- `disableSyncCsv?: boolean`\n\n- `displayCommentRows?: number`\n\n- `displayValidationErrorRows?: 0 | 1 | 2`\n\n- `filterSettings?: { columnName: string; filterType: string; columnId?: string; multipleValues?: object[]; orGroup?: string; value?: object; }[]`\n\n- `frozenIndex?: number`\n\n- `groupSettings?: { columnName: string; direction: string; columnId?: string; }[]`\n\n- `includeAllColumns?: boolean`\n\n- `isDefault?: boolean`\n\n- `rowHeight?: number`\n\n- `sortSettings?: { columnName: string; direction: string; columnId?: string; }[]`\n\n- `type?: number`\n\n- `unpackMultiselectGroupView?: boolean`\n\n### Returns\n\n- `{ data?: { name: string; allowContributorDelete?: boolean; chartSettings?: chart; collapsedGroupView?: boolean; colourSettings?: colour[]; columns?: table_view_column[]; description?: draftjs; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; filterSettings?: filter[]; frozenIndex?: number; groupSettings?: group[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: sort[]; type?: number; unpackMultiselectGroupView?: boolean; }; metadata?: object; }`\n\n  - `data?: { name: string; allowContributorDelete?: boolean; chartSettings?: { aggregate?: 'sum' | 'count' | 'avg'; chartType?: string; columnGanttEndDateId?: string; columnGanttStartDateId?: string; columnLabelId?: string; columnStackId?: string; columnValueId?: string; showLegend?: boolean; showTitle?: boolean; showValues?: boolean; sortAggregate?: 'asc' | 'desc'; }; collapsedGroupView?: boolean; colourSettings?: { backgroundColour: string; columnName: string; filterType: string; fontColour: string; columnId?: string; multipleValues?: object[]; value?: object; }[]; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; displayValidationError?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; hardValidation?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; locked?: boolean; name?: string; publicId?: string; required?: boolean; script?: string; scriptEnabled?: boolean; sortOrder?: number; stringValidation?: string; thousandSeparator?: boolean; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; width?: number; }[]; description?: { content: object; }; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; filterSettings?: { columnName: string; filterType: string; columnId?: string; multipleValues?: object[]; orGroup?: string; value?: object; }[]; frozenIndex?: number; groupSettings?: { columnName: string; direction: string; columnId?: string; }[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: { columnName: string; direction: string; columnId?: string; }[]; type?: number; unpackMultiselectGroupView?: boolean; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst view = await client.table.views.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { name: 'x' });\n\nconsole.log(view);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.create',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/views \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "name": "x"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst view = await client.table.views.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { name: 'x' });\n\nconsole.log(view.data);",
       },
       python: {
         method: 'table.views.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nview = client.table.views.create(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    name="x",\n)\nprint(view.data)',
       },
-      typescript: {
-        method: 'client.table.views.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst view = await client.table.views.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { name: 'x' });\n\nconsole.log(view.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/views \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "name": "x"\n        }\'',
       },
     },
   },
@@ -3494,19 +3494,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list\n\n`client.table.views.list(table_id: string, ignore_columns?: boolean): { data?: table_view[]; metadata?: object; }`\n\n**get** `/v1/table/{table_id}/views`\n\nRetrieve all views associated with a specific table.\n\n### Parameters\n\n- `table_id: string`\n\n- `ignore_columns?: boolean`\n  Flag to indicate whether to ignore column data in the response.\n\n### Returns\n\n- `{ data?: { name: string; allowContributorDelete?: boolean; chartSettings?: chart; collapsedGroupView?: boolean; colourSettings?: colour[]; columns?: table_view_column[]; description?: draftjs; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; filterSettings?: filter[]; frozenIndex?: number; groupSettings?: group[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: sort[]; type?: number; unpackMultiselectGroupView?: boolean; }[]; metadata?: object; }`\n\n  - `data?: { name: string; allowContributorDelete?: boolean; chartSettings?: { aggregate?: 'sum' | 'count' | 'avg'; chartType?: string; columnGanttEndDateId?: string; columnGanttStartDateId?: string; columnLabelId?: string; columnStackId?: string; columnValueId?: string; showLegend?: boolean; showTitle?: boolean; showValues?: boolean; sortAggregate?: 'asc' | 'desc'; }; collapsedGroupView?: boolean; colourSettings?: { backgroundColour: string; columnName: string; filterType: string; fontColour: string; columnId?: string; multipleValues?: object[]; value?: object; }[]; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; displayValidationError?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; hardValidation?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; locked?: boolean; name?: string; publicId?: string; required?: boolean; script?: string; scriptEnabled?: boolean; sortOrder?: number; stringValidation?: string; thousandSeparator?: boolean; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; width?: number; }[]; description?: { content: object; }; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; filterSettings?: { columnName: string; filterType: string; columnId?: string; multipleValues?: object[]; orGroup?: string; value?: object; }[]; frozenIndex?: number; groupSettings?: { columnName: string; direction: string; columnId?: string; }[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: { columnName: string; direction: string; columnId?: string; }[]; type?: number; unpackMultiselectGroupView?: boolean; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst views = await client.table.views.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(views);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.list',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/views \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst views = await client.table.views.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(views.data);",
       },
       python: {
         method: 'table.views.list',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nviews = client.table.views.list(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(views.data)',
       },
-      typescript: {
-        method: 'client.table.views.list',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst views = await client.table.views.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(views.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/views \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3529,19 +3529,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## duplicate_default\n\n`client.table.views.duplicateDefault(table_id: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, name?: string, type?: number): { data?: table_view; metadata?: object; }`\n\n**post** `/v1/table/{table_id}/views/duplicate-default`\n\nCreate a duplicate of the default view for a specific table.\n\n### Parameters\n\n- `table_id: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `name?: string`\n\n- `type?: number`\n\n### Returns\n\n- `{ data?: { name: string; allowContributorDelete?: boolean; chartSettings?: chart; collapsedGroupView?: boolean; colourSettings?: colour[]; columns?: table_view_column[]; description?: draftjs; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; filterSettings?: filter[]; frozenIndex?: number; groupSettings?: group[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: sort[]; type?: number; unpackMultiselectGroupView?: boolean; }; metadata?: object; }`\n\n  - `data?: { name: string; allowContributorDelete?: boolean; chartSettings?: { aggregate?: 'sum' | 'count' | 'avg'; chartType?: string; columnGanttEndDateId?: string; columnGanttStartDateId?: string; columnLabelId?: string; columnStackId?: string; columnValueId?: string; showLegend?: boolean; showTitle?: boolean; showValues?: boolean; sortAggregate?: 'asc' | 'desc'; }; collapsedGroupView?: boolean; colourSettings?: { backgroundColour: string; columnName: string; filterType: string; fontColour: string; columnId?: string; multipleValues?: object[]; value?: object; }[]; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; displayValidationError?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; hardValidation?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; locked?: boolean; name?: string; publicId?: string; required?: boolean; script?: string; scriptEnabled?: boolean; sortOrder?: number; stringValidation?: string; thousandSeparator?: boolean; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; width?: number; }[]; description?: { content: object; }; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; filterSettings?: { columnName: string; filterType: string; columnId?: string; multipleValues?: object[]; orGroup?: string; value?: object; }[]; frozenIndex?: number; groupSettings?: { columnName: string; direction: string; columnId?: string; }[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: { columnName: string; direction: string; columnId?: string; }[]; type?: number; unpackMultiselectGroupView?: boolean; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.views.duplicateDefault('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.duplicateDefault',
         example:
-          "curl https://api.morta.io/v1/table/$TABLE_ID/views/duplicate-default \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.duplicateDefault('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.views.duplicate_default',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.views.duplicate_default(\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.views.duplicateDefault',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.duplicateDefault('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          "curl https://api.morta.io/v1/table/$TABLE_ID/views/duplicate-default \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -3559,19 +3559,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## duplicate\n\n`client.table.views.duplicate(table_id: string, view_id: string): { data?: table_view; metadata?: object; }`\n\n**post** `/v1/table/{table_id}/views/{view_id}/duplicate`\n\nCreate a duplicate of an existing view for a specific table.\n\n### Parameters\n\n- `table_id: string`\n\n- `view_id: string`\n\n### Returns\n\n- `{ data?: { name: string; allowContributorDelete?: boolean; chartSettings?: chart; collapsedGroupView?: boolean; colourSettings?: colour[]; columns?: table_view_column[]; description?: draftjs; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; filterSettings?: filter[]; frozenIndex?: number; groupSettings?: group[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: sort[]; type?: number; unpackMultiselectGroupView?: boolean; }; metadata?: object; }`\n\n  - `data?: { name: string; allowContributorDelete?: boolean; chartSettings?: { aggregate?: 'sum' | 'count' | 'avg'; chartType?: string; columnGanttEndDateId?: string; columnGanttStartDateId?: string; columnLabelId?: string; columnStackId?: string; columnValueId?: string; showLegend?: boolean; showTitle?: boolean; showValues?: boolean; sortAggregate?: 'asc' | 'desc'; }; collapsedGroupView?: boolean; colourSettings?: { backgroundColour: string; columnName: string; filterType: string; fontColour: string; columnId?: string; multipleValues?: object[]; value?: object; }[]; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; displayValidationError?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; hardValidation?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; locked?: boolean; name?: string; publicId?: string; required?: boolean; script?: string; scriptEnabled?: boolean; sortOrder?: number; stringValidation?: string; thousandSeparator?: boolean; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; width?: number; }[]; description?: { content: object; }; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; filterSettings?: { columnName: string; filterType: string; columnId?: string; multipleValues?: object[]; orGroup?: string; value?: object; }[]; frozenIndex?: number; groupSettings?: { columnName: string; direction: string; columnId?: string; }[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: { columnName: string; direction: string; columnId?: string; }[]; type?: number; unpackMultiselectGroupView?: boolean; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.views.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.duplicate',
         example:
-          'curl https://api.morta.io/v1/table/$TABLE_ID/views/$VIEW_ID/duplicate \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.views.duplicate',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.views.duplicate(\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    table_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.views.duplicate',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  table_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/$TABLE_ID/views/$VIEW_ID/duplicate \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3589,19 +3589,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve\n\n`client.table.views.retrieve(view_id: string, ignore_cached_options?: boolean): { data?: object; metadata?: object; }`\n\n**get** `/v1/table/views/{view_id}`\n\nRetrieve a specific view by its ID for a table.\n\n### Parameters\n\n- `view_id: string`\n\n- `ignore_cached_options?: boolean`\n  Flag to indicate whether to ignore cached options in the response.\n\n### Returns\n\n- `{ data?: { name: string; allowContributorDelete?: boolean; chartSettings?: object; collapsedGroupView?: boolean; colourSettings?: object[]; columns?: object[]; description?: object; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; documentTable?: { createdAt?: string; name?: string; publicId?: string; type?: string; updatedAt?: string; }; filterSettings?: object[]; frozenIndex?: number; groupSettings?: object[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: object[]; type?: number; unpackMultiselectGroupView?: boolean; }; metadata?: object; }`\n\n  - `data?: { name: string; allowContributorDelete?: boolean; chartSettings?: { aggregate?: 'sum' | 'count' | 'avg'; chartType?: string; columnGanttEndDateId?: string; columnGanttStartDateId?: string; columnLabelId?: string; columnStackId?: string; columnValueId?: string; showLegend?: boolean; showTitle?: boolean; showValues?: boolean; sortAggregate?: 'asc' | 'desc'; }; collapsedGroupView?: boolean; colourSettings?: { backgroundColour: string; columnName: string; filterType: string; fontColour: string; columnId?: string; multipleValues?: object[]; value?: object; }[]; columns?: { aggregate?: number; alterOptions?: object | object; dateFormat?: string; decimalPlaces?: number; description?: object | object; displayLink?: boolean; displayValidationError?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; hardValidation?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: object; locked?: boolean; name?: string; publicId?: string; required?: boolean; script?: string; scriptEnabled?: boolean; sortOrder?: number; stringValidation?: string; thousandSeparator?: boolean; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; width?: number; }[]; description?: { content: { blocks: object[]; entityMap: object; }; }; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; documentTable?: { createdAt?: string; name?: string; publicId?: string; type?: string; updatedAt?: string; }; filterSettings?: { columnName: string; filterType: string; columnId?: string; multipleValues?: object[]; orGroup?: string; value?: object; }[]; frozenIndex?: number; groupSettings?: { columnName: string; direction: string; columnId?: string; }[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: { columnName: string; direction: string; columnId?: string; }[]; type?: number; unpackMultiselectGroupView?: boolean; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst view = await client.table.views.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(view);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.retrieve',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst view = await client.table.views.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(view.data);",
       },
       python: {
         method: 'table.views.retrieve',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nview = client.table.views.retrieve(\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(view.data)',
       },
-      typescript: {
-        method: 'client.table.views.retrieve',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst view = await client.table.views.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(view.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3640,19 +3640,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.table.views.update(view_id: string, allowContributorDelete?: boolean, chartSettings?: object | { aggregate?: 'sum' | 'count' | 'avg'; chartType?: string; columnGanttEndDateId?: string; columnGanttStartDateId?: string; columnLabelId?: string; columnStackId?: string; columnValueId?: string; showLegend?: boolean; showTitle?: boolean; showValues?: boolean; sortAggregate?: 'asc' | 'desc'; }, collapsedGroupView?: boolean, colourSettings?: { backgroundColour: string; columnName: string; filterType: string; fontColour: string; columnId?: string; multipleValues?: object[]; value?: object; }[], columns?: { aggregate?: number; alterOptions?: table_column_alter | object; context?: base_request_context; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; displayValidationError?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; hardValidation?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; locked?: boolean; name?: string; publicId?: string; required?: boolean; script?: string; scriptEnabled?: boolean; sortOrder?: number; stringValidation?: string; thousandSeparator?: boolean; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; width?: number; }[], context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, description?: object | { content: object; }, disableNewRow?: boolean, disableSyncCsv?: boolean, displayCommentRows?: number, displayValidationErrorRows?: 0 | 1 | 2, filterSettings?: { columnName: string; filterType: string; columnId?: string; multipleValues?: object[]; orGroup?: string; value?: object; }[], frozenIndex?: number, groupSettings?: { columnName: string; direction: string; columnId?: string; }[], name?: string, rowHeight?: number, sortSettings?: { columnName: string; direction: string; columnId?: string; }[], type?: number, unpackMultiselectGroupView?: boolean): { data?: table_view; metadata?: object; }`\n\n**put** `/v1/table/views/{view_id}`\n\nUpdate an existing view for a specific table.\n\n### Parameters\n\n- `view_id: string`\n\n- `allowContributorDelete?: boolean`\n\n- `chartSettings?: object | { aggregate?: 'sum' | 'count' | 'avg'; chartType?: string; columnGanttEndDateId?: string; columnGanttStartDateId?: string; columnLabelId?: string; columnStackId?: string; columnValueId?: string; showLegend?: boolean; showTitle?: boolean; showValues?: boolean; sortAggregate?: 'asc' | 'desc'; }`\n\n- `collapsedGroupView?: boolean`\n\n- `colourSettings?: { backgroundColour: string; columnName: string; filterType: string; fontColour: string; columnId?: string; multipleValues?: object[]; value?: object; }[]`\n\n- `columns?: { aggregate?: number; alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object; context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }; dateFormat?: string; decimalPlaces?: number; description?: object | { content: object; }; displayLink?: boolean; displayValidationError?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; hardValidation?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: object; }; locked?: boolean; name?: string; publicId?: string; required?: boolean; script?: string; scriptEnabled?: boolean; sortOrder?: number; stringValidation?: string; thousandSeparator?: boolean; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; width?: number; }[]`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `description?: object | { content: { blocks: { data: object; depth: number; entityRanges: object[]; inlineStyleRanges: object[]; key: string; text: string; type: string; }[]; entityMap: object; }; }`\n\n- `disableNewRow?: boolean`\n\n- `disableSyncCsv?: boolean`\n\n- `displayCommentRows?: number`\n\n- `displayValidationErrorRows?: 0 | 1 | 2`\n\n- `filterSettings?: { columnName: string; filterType: string; columnId?: string; multipleValues?: object[]; orGroup?: string; value?: object; }[]`\n\n- `frozenIndex?: number`\n\n- `groupSettings?: { columnName: string; direction: string; columnId?: string; }[]`\n\n- `name?: string`\n\n- `rowHeight?: number`\n\n- `sortSettings?: { columnName: string; direction: string; columnId?: string; }[]`\n\n- `type?: number`\n\n- `unpackMultiselectGroupView?: boolean`\n\n### Returns\n\n- `{ data?: { name: string; allowContributorDelete?: boolean; chartSettings?: chart; collapsedGroupView?: boolean; colourSettings?: colour[]; columns?: table_view_column[]; description?: draftjs; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; filterSettings?: filter[]; frozenIndex?: number; groupSettings?: group[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: sort[]; type?: number; unpackMultiselectGroupView?: boolean; }; metadata?: object; }`\n\n  - `data?: { name: string; allowContributorDelete?: boolean; chartSettings?: { aggregate?: 'sum' | 'count' | 'avg'; chartType?: string; columnGanttEndDateId?: string; columnGanttStartDateId?: string; columnLabelId?: string; columnStackId?: string; columnValueId?: string; showLegend?: boolean; showTitle?: boolean; showValues?: boolean; sortAggregate?: 'asc' | 'desc'; }; collapsedGroupView?: boolean; colourSettings?: { backgroundColour: string; columnName: string; filterType: string; fontColour: string; columnId?: string; multipleValues?: object[]; value?: object; }[]; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; displayValidationError?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; hardValidation?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; locked?: boolean; name?: string; publicId?: string; required?: boolean; script?: string; scriptEnabled?: boolean; sortOrder?: number; stringValidation?: string; thousandSeparator?: boolean; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; width?: number; }[]; description?: { content: object; }; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; filterSettings?: { columnName: string; filterType: string; columnId?: string; multipleValues?: object[]; orGroup?: string; value?: object; }[]; frozenIndex?: number; groupSettings?: { columnName: string; direction: string; columnId?: string; }[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: { columnName: string; direction: string; columnId?: string; }[]; type?: number; unpackMultiselectGroupView?: boolean; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst view = await client.table.views.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(view);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.update',
         example:
-          "curl https://api.morta.io/v1/table/views/$VIEW_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst view = await client.table.views.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(view.data);",
       },
       python: {
         method: 'table.views.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nview = client.table.views.update(\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(view.data)',
       },
-      typescript: {
-        method: 'client.table.views.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst view = await client.table.views.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(view.data);",
+          "curl https://api.morta.io/v1/table/views/$VIEW_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -3669,19 +3669,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.table.views.delete(view_id: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/table/views/{view_id}`\n\nDelete a specific view of a table.\n\n### Parameters\n\n- `view_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst view = await client.table.views.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(view);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.delete',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst view = await client.table.views.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(view.data);",
       },
       python: {
         method: 'table.views.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nview = client.table.views.delete(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(view.data)',
       },
-      typescript: {
-        method: 'client.table.views.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst view = await client.table.views.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(view.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3703,19 +3703,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## stats\n\n`client.table.views.stats(view_id: string, filter?: string, process_id?: string, sum, avg, max, min, count?: string[]): { data?: table_column_with_aggregation[]; metadata?: object; }`\n\n**get** `/v1/table/views/{view_id}/stats`\n\nRetrieve statistical data for columns in a specific table view.\n\n### Parameters\n\n- `view_id: string`\n\n- `filter?: string`\n  Filters to apply to the statistical data retrieval.\n\n- `process_id?: string`\n  Optional UUID of a process to filter the data.\n\n- `sum, avg, max, min, count?: string[]`\n  Specify columns to perform sum, average, max, min, or count operations.\n\n### Returns\n\n- `{ data?: { aggregation?: object; name?: string; publicId?: string; }[]; metadata?: object; }`\n\n  - `data?: { aggregation?: { name?: string; value?: number; }; name?: string; publicId?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.views.stats('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.stats',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/stats \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.stats('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.views.stats',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.views.stats(\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.views.stats',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.stats('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/stats \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3732,19 +3732,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## download_csv\n\n`client.table.views.downloadCsv(view_id: string, filter?: string, process_id?: string, sort?: string): string`\n\n**get** `/v1/table/views/{view_id}/csv`\n\nDownload the data of a specific table view in CSV format.\n\n### Parameters\n\n- `view_id: string`\n\n- `filter?: string`\n  Filters to apply to the CSV data.\n\n- `process_id?: string`\n  Optional UUID of a process to filter the data.\n\n- `sort?: string`\n  Sorting parameters for the CSV data.\n\n### Returns\n\n- `string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.views.downloadCsv('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.downloadCsv',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/csv \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.downloadCsv('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);",
       },
       python: {
         method: 'table.views.download_csv',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.views.download_csv(\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response)',
       },
-      typescript: {
-        method: 'client.table.views.downloadCsv',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.downloadCsv('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/csv \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3762,19 +3762,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## set_default\n\n`client.table.views.setDefault(view_id: string): { data?: table_view; metadata?: object; }`\n\n**post** `/v1/table/views/{view_id}/default`\n\nDesignate a specific table view as the default view for the table.\n\n### Parameters\n\n- `view_id: string`\n\n### Returns\n\n- `{ data?: { name: string; allowContributorDelete?: boolean; chartSettings?: chart; collapsedGroupView?: boolean; colourSettings?: colour[]; columns?: table_view_column[]; description?: draftjs; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; filterSettings?: filter[]; frozenIndex?: number; groupSettings?: group[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: sort[]; type?: number; unpackMultiselectGroupView?: boolean; }; metadata?: object; }`\n\n  - `data?: { name: string; allowContributorDelete?: boolean; chartSettings?: { aggregate?: 'sum' | 'count' | 'avg'; chartType?: string; columnGanttEndDateId?: string; columnGanttStartDateId?: string; columnLabelId?: string; columnStackId?: string; columnValueId?: string; showLegend?: boolean; showTitle?: boolean; showValues?: boolean; sortAggregate?: 'asc' | 'desc'; }; collapsedGroupView?: boolean; colourSettings?: { backgroundColour: string; columnName: string; filterType: string; fontColour: string; columnId?: string; multipleValues?: object[]; value?: object; }[]; columns?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; displayValidationError?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; hardValidation?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; locked?: boolean; name?: string; publicId?: string; required?: boolean; script?: string; scriptEnabled?: boolean; sortOrder?: number; stringValidation?: string; thousandSeparator?: boolean; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; width?: number; }[]; description?: { content: object; }; disableNewRow?: boolean; disableSyncCsv?: boolean; displayCommentRows?: number; displayValidationErrorRows?: number; filterSettings?: { columnName: string; filterType: string; columnId?: string; multipleValues?: object[]; orGroup?: string; value?: object; }[]; frozenIndex?: number; groupSettings?: { columnName: string; direction: string; columnId?: string; }[]; isDefault?: boolean; lockedFromDuplication?: boolean; publicId?: string; rowHeight?: number; sortSettings?: { columnName: string; direction: string; columnId?: string; }[]; type?: number; unpackMultiselectGroupView?: boolean; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.views.setDefault('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.setDefault',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/default \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.setDefault('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.views.set_default',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.views.set_default(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.views.setDefault',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.setDefault('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/default \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3795,19 +3795,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## preview_row\n\n`client.table.views.previewRow(view_id: string, rowData: object, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: object; metadata?: object; }`\n\n**post** `/v1/table/views/{view_id}/preview-row`\n\nPreview the resulting row from given inputs in a specific table view.\n\n### Parameters\n\n- `view_id: string`\n\n- `rowData: object`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: { publicId?: string; rowData?: object; sortOrder?: number; }; metadata?: object; }`\n\n  - `data?: { publicId?: string; rowData?: object; sortOrder?: number; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.views.previewRow('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { rowData: { foo: 'bar' } });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.previewRow',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/preview-row \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "rowData": {\n            "foo": "bar"\n          }\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.previewRow('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  rowData: { foo: 'bar' },\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.views.preview_row',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.views.preview_row(\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    row_data={\n        "foo": "bar"\n    },\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.views.previewRow',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.previewRow('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  rowData: { foo: 'bar' },\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/preview-row \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "rowData": {\n            "foo": "bar"\n          }\n        }\'',
       },
     },
   },
@@ -3828,19 +3828,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update_cells\n\n`client.table.views.updateCells(view_id: string, cells: { columnName: string; rowId: string; value: object; context?: object; }[], context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: object[]; metadata?: object; }`\n\n**put** `/v1/table/views/{view_id}/cells`\n\nUpdate specific cells in a table view.\n\n### Parameters\n\n- `view_id: string`\n\n- `cells: { columnName: string; rowId: string; value: object; context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }; }[]`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]; metadata?: object; }`\n\n  - `data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.views.updateCells('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { cells: [{\n  columnName: 'x',\n  rowId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  value: {},\n}] });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.updateCells',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/cells \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "cells": [\n            {\n              "columnName": "x",\n              "rowId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n              "value": {}\n            }\n          ]\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.updateCells('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  cells: [\n    {\n      columnName: 'x',\n      rowId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n      value: {},\n    },\n  ],\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.views.update_cells',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.views.update_cells(\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    cells=[{\n        "column_name": "x",\n        "row_id": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n        "value": {},\n    }],\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.views.updateCells',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.updateCells('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  cells: [\n    {\n      columnName: 'x',\n      rowId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n      value: {},\n    },\n  ],\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/cells \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "cells": [\n            {\n              "columnName": "x",\n              "rowId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n              "value": {}\n            }\n          ]\n        }\'',
       },
     },
   },
@@ -3864,19 +3864,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## stream_rows\n\n`client.table.views.streamRows(view_id: string, filter?: string, page?: number, process_id?: string, size?: number, sort?: string): string`\n\n**get** `/v1/table/views/{view_id}/rows-stream`\n\nStream the data of all rows for a specific table view.\n\n### Parameters\n\n- `view_id: string`\n\n- `filter?: string`\n  Filters to apply to the streaming data.\n\n- `page?: number`\n  Page number for pagination\n\n- `process_id?: string`\n  Optional UUID of a process to filter the data.\n\n- `size?: number`\n  Number of items per page for pagination\n\n- `sort?: string`\n  Sorting parameters for the streaming data.\n\n### Returns\n\n- `string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.views.streamRows('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n\nconst content = await response.blob()\nconsole.log(content)\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.streamRows',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/rows-stream \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.streamRows('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n\nconst content = await response.blob();\nconsole.log(content);",
       },
       python: {
         method: 'table.views.stream_rows',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.views.stream_rows(\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response)\ncontent = response.read()\nprint(content)',
       },
-      typescript: {
-        method: 'client.table.views.streamRows',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.streamRows('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n\nconst content = await response.blob();\nconsole.log(content);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/rows-stream \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3901,19 +3901,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list\n\n`client.table.views.rows.list(view_id: string, alphabeticalColumnSort?: boolean, filter?: string, page?: number, size?: number, sort?: string): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/table/views/{view_id}/rows`\n\nRetrieve the actual data for a specific table view.\n\n### Parameters\n\n- `view_id: string`\n\n- `alphabeticalColumnSort?: boolean`\n  If true, columns in row data are sorted alphabetically otherwise columns in row data follows their order in the view.\n\n- `filter?: string`\n  URL encoded JSON string of filter criteria (e.g. 'filter=%7B%22columnName%22%3A%22Price%22%2C%22value%22%3A%22100%22%2C%22filterType%22%3A%22gt%22%7D')\n\n- `page?: number`\n  Page number for pagination.\n\n- `size?: number`\n  Number of items per page for pagination.\n\n- `sort?: string`\n  Sort the results by a field, this parameter takes the form `ColumnName:SortDirection`, for example to sort by price ascending `sort=Price:asc`. Sort direction can be either `asc` or `desc`. You can pass multiple sort parameters to add secondary and tertiary sorts etc., the sort will be applied in the order of the query string.\n\n### Returns\n\n- `{ data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]; metadata?: { next_page_token?: string; size?: number; total?: number; }; }`\n\n  - `data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]`\n  - `metadata?: { next_page_token?: string; size?: number; total?: number; }`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst rows = await client.table.views.rows.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(rows);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.rows.list',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/rows \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst rows = await client.table.views.rows.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(rows.data);",
       },
       python: {
         method: 'table.views.rows.list',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nrows = client.table.views.rows.list(\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(rows.data)',
       },
-      typescript: {
-        method: 'client.table.views.rows.list',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst rows = await client.table.views.rows.list('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(rows.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/rows \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -3934,19 +3934,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## add\n\n`client.table.views.rows.add(view_id: string, rows: { rowData: object; context?: base_request_context; sortOrder?: number; }[], context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: object[]; metadata?: object; }`\n\n**post** `/v1/table/views/{view_id}/rows`\n\nInsert new rows at the end of the specified table view.\n\n### Parameters\n\n- `view_id: string`\n\n- `rows: { rowData: object; context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }; sortOrder?: number; }[]`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]; metadata?: object; }`\n\n  - `data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.views.rows.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { rows: [{ rowData: { foo: 'bar' } }] });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.rows.add',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/rows \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "rows": [\n            {\n              "rowData": {\n                "foo": "bar"\n              }\n            }\n          ]\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.rows.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  rows: [{ rowData: { foo: 'bar' } }],\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.views.rows.add',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.views.rows.add(\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    rows=[{\n        "row_data": {\n            "foo": "bar"\n        }\n    }],\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.views.rows.add',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.rows.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  rows: [{ rowData: { foo: 'bar' } }],\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/rows \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "rows": [\n            {\n              "rowData": {\n                "foo": "bar"\n              }\n            }\n          ]\n        }\'',
       },
     },
   },
@@ -3967,19 +3967,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.table.views.rows.update(view_id: string, rows: { publicId: string; rowData: object; context?: object; sortOrder?: number; }[], context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: object[]; metadata?: object; }`\n\n**put** `/v1/table/views/{view_id}/rows`\n\nUpdate existing rows in a specified table view.\n\n### Parameters\n\n- `view_id: string`\n\n- `rows: { publicId: string; rowData: object; context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }; sortOrder?: number; }[]`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]; metadata?: object; }`\n\n  - `data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst row = await client.table.views.rows.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { rows: [{\n  publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  rowData: { foo: 'bar' },\n}] });\n\nconsole.log(row);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.rows.update',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/rows \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "rows": [\n            {\n              "publicId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n              "rowData": {\n                "foo": "bar"\n              }\n            }\n          ]\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst row = await client.table.views.rows.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  rows: [\n    {\n      publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n      rowData: { foo: 'bar' },\n    },\n  ],\n});\n\nconsole.log(row.data);",
       },
       python: {
         method: 'table.views.rows.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nrow = client.table.views.rows.update(\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    rows=[{\n        "public_id": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n        "row_data": {\n            "foo": "bar"\n        },\n    }],\n)\nprint(row.data)',
       },
-      typescript: {
-        method: 'client.table.views.rows.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst row = await client.table.views.rows.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  rows: [\n    {\n      publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n      rowData: { foo: 'bar' },\n    },\n  ],\n});\n\nconsole.log(row.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/rows \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "rows": [\n            {\n              "publicId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n              "rowData": {\n                "foo": "bar"\n              }\n            }\n          ]\n        }\'',
       },
     },
   },
@@ -3996,19 +3996,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.table.views.rows.delete(view_id: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/table/views/{view_id}/rows`\n\nDelete specific rows from a table view based on row IDs.\n\n### Parameters\n\n- `view_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst row = await client.table.views.rows.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(row);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.rows.delete',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/rows \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst row = await client.table.views.rows.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(row.data);",
       },
       python: {
         method: 'table.views.rows.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nrow = client.table.views.rows.delete(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(row.data)',
       },
-      typescript: {
-        method: 'client.table.views.rows.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst row = await client.table.views.rows.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(row.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/rows \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4030,19 +4030,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## upsert\n\n`client.table.views.rows.upsert(view_id: string, rows: { rowData: object; context?: base_request_context; sortOrder?: number; }[], upsertColumnName: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: object[]; metadata?: object; }`\n\n**post** `/v1/table/views/{view_id}/rows/upsert`\n\nUpsert (add or update) rows in a table view based on a specified column.\n\n### Parameters\n\n- `view_id: string`\n\n- `rows: { rowData: object; context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }; sortOrder?: number; }[]`\n\n- `upsertColumnName: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]; metadata?: object; }`\n\n  - `data?: { publicId?: string; rowData?: object; sortOrder?: number; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.views.rows.upsert('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { rows: [{ rowData: { foo: 'bar' } }], upsertColumnName: 'upsertColumnName' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.rows.upsert',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/rows/upsert \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "rows": [\n            {\n              "rowData": {\n                "foo": "bar"\n              }\n            }\n          ],\n          "upsertColumnName": "upsertColumnName"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.rows.upsert('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  rows: [{ rowData: { foo: 'bar' } }],\n  upsertColumnName: 'upsertColumnName',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.views.rows.upsert',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.views.rows.upsert(\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    rows=[{\n        "row_data": {\n            "foo": "bar"\n        }\n    }],\n    upsert_column_name="upsertColumnName",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.views.rows.upsert',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.rows.upsert('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  rows: [{ rowData: { foo: 'bar' } }],\n  upsertColumnName: 'upsertColumnName',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/rows/upsert \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "rows": [\n            {\n              "rowData": {\n                "foo": "bar"\n              }\n            }\n          ],\n          "upsertColumnName": "upsertColumnName"\n        }\'',
       },
     },
   },
@@ -4059,19 +4059,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## distinct\n\n`client.table.views.columns.distinct(view_id: string, column_id: string, filter?: string, group_columns?: string[]): { data?: string[]; metadata?: object; }`\n\n**get** `/v1/table/views/{view_id}/column/{column_id}/distinct`\n\nRetrieve the unique/distinct values for a specific column in a table view.\n\n### Parameters\n\n- `view_id: string`\n\n- `column_id: string`\n\n- `filter?: string`\n  Filters to apply to the data retrieval.\n\n- `group_columns?: string[]`\n  Optional columns to group the distinct values.\n\n### Returns\n\n- `{ data?: string[]; metadata?: object; }`\n\n  - `data?: string[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.views.columns.distinct('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.columns.distinct',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/column/$COLUMN_ID/distinct \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.columns.distinct('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.views.columns.distinct',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.views.columns.distinct(\n    column_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.views.columns.distinct',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.columns.distinct('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/column/$COLUMN_ID/distinct \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4088,19 +4088,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## formula_info\n\n`client.table.views.columns.formulaInfo(view_id: string, column_id: string): { data?: object; metadata?: object; }`\n\n**get** `/v1/table/views/{view_id}/column/{column_id}/formula-info`\n\nRetrieve formula information for a specific column in a table view.\n\n### Parameters\n\n- `view_id: string`\n\n- `column_id: string`\n\n### Returns\n\n- `{ data?: { formula_info?: object; }; metadata?: object; }`\n\n  - `data?: { formula_info?: object; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.views.columns.formulaInfo('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.columns.formulaInfo',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/column/$COLUMN_ID/formula-info \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.columns.formulaInfo(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  { view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' },\n);\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.views.columns.formula_info',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.views.columns.formula_info(\n    column_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.views.columns.formulaInfo',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.columns.formulaInfo(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  { view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' },\n);\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/column/$COLUMN_ID/formula-info \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4117,19 +4117,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## ai_formula_helper\n\n`client.table.views.columns.aiFormulaHelper(view_id: string, column_id: string, text: string): { data?: object; metadata?: object; }`\n\n**post** `/v1/table/views/{view_id}/column/{column_id}/ai-formula-helper`\n\nGet AI formula helper for a specific column in a table view.\n\n### Parameters\n\n- `view_id: string`\n\n- `column_id: string`\n\n- `text: string`\n\n### Returns\n\n- `{ data?: { ai_formula_helper?: object; }; metadata?: object; }`\n\n  - `data?: { ai_formula_helper?: object; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.views.columns.aiFormulaHelper('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', text: 'text' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.columns.aiFormulaHelper',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/column/$COLUMN_ID/ai-formula-helper \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "text": "text"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.columns.aiFormulaHelper(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  { view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', text: 'text' },\n);\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.views.columns.ai_formula_helper',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.views.columns.ai_formula_helper(\n    column_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    text="text",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.views.columns.aiFormulaHelper',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.columns.aiFormulaHelper(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  { view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', text: 'text' },\n);\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/column/$COLUMN_ID/ai-formula-helper \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "text": "text"\n        }\'',
       },
     },
   },
@@ -4181,19 +4181,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## add\n\n`client.table.views.columns.add(view_id: string, locked: boolean, required: boolean, sortOrder: number, aggregate?: number, alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, dateFormat?: string, decimalPlaces?: number, description?: object | { content: object; }, displayLink?: boolean, displayValidationError?: boolean, exportWidth?: number, formula?: string, formulaEnabled?: boolean, hardValidation?: boolean, headerBackgroundColor?: string, headerTextColor?: string, isIndexed?: boolean, isJoined?: boolean, isSynced?: boolean, kind?: string, kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: object; }, name?: string, publicId?: string, script?: string, scriptEnabled?: boolean, stringValidation?: string, thousandSeparator?: boolean, validationMessage?: string, validationNoBlanks?: boolean, validationNoDuplicates?: boolean, width?: number): { data?: table_view_column; metadata?: object; }`\n\n**post** `/v1/table/views/{view_id}/columns`\n\nAdd a new column to a specific table view.\n\n### Parameters\n\n- `view_id: string`\n\n- `locked: boolean`\n\n- `required: boolean`\n\n- `sortOrder: number`\n\n- `aggregate?: number`\n\n- `alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `dateFormat?: string`\n\n- `decimalPlaces?: number`\n\n- `description?: object | { content: { blocks: { data: object; depth: number; entityRanges: object[]; inlineStyleRanges: object[]; key: string; text: string; type: string; }[]; entityMap: object; }; }`\n\n- `displayLink?: boolean`\n\n- `displayValidationError?: boolean`\n\n- `exportWidth?: number`\n\n- `formula?: string`\n\n- `formulaEnabled?: boolean`\n\n- `hardValidation?: boolean`\n\n- `headerBackgroundColor?: string`\n\n- `headerTextColor?: string`\n\n- `isIndexed?: boolean`\n\n- `isJoined?: boolean`\n\n- `isSynced?: boolean`\n\n- `kind?: string`\n\n- `kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: { columnId?: string; dependencies?: { columnId: string; columnJoinId?: string; }[]; liveValues?: boolean; tableId?: string; viewId?: string; }; }`\n  - `autopopulate?: boolean`\n  - `manualOptions?: string[]`\n  - `tableOptions?: { columnId?: string; dependencies?: { columnId: string; columnJoinId?: string; }[]; liveValues?: boolean; tableId?: string; viewId?: string; }`\n\n- `name?: string`\n\n- `publicId?: string`\n\n- `script?: string`\n\n- `scriptEnabled?: boolean`\n\n- `stringValidation?: string`\n\n- `thousandSeparator?: boolean`\n\n- `validationMessage?: string`\n\n- `validationNoBlanks?: boolean`\n\n- `validationNoDuplicates?: boolean`\n\n- `width?: number`\n\n### Returns\n\n- `{ data?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; displayValidationError?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; hardValidation?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; locked?: boolean; name?: string; publicId?: string; required?: boolean; script?: string; scriptEnabled?: boolean; sortOrder?: number; stringValidation?: string; thousandSeparator?: boolean; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; width?: number; }; metadata?: object; }`\n\n  - `data?: { aggregate?: number; alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object; dateFormat?: string; decimalPlaces?: number; description?: object | { content: object; }; displayLink?: boolean; displayValidationError?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; hardValidation?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: object; }; locked?: boolean; name?: string; publicId?: string; required?: boolean; script?: string; scriptEnabled?: boolean; sortOrder?: number; stringValidation?: string; thousandSeparator?: boolean; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; width?: number; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.table.views.columns.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  locked: true,\n  required: true,\n  sortOrder: 0,\n});\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.columns.add',
         example:
-          'curl https://api.morta.io/v1/table/views/$VIEW_ID/columns \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "locked": true,\n          "required": true,\n          "sortOrder": 0\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.columns.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  locked: true,\n  required: true,\n  sortOrder: 0,\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'table.views.columns.add',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.table.views.columns.add(\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    locked=True,\n    required=True,\n    sort_order=0,\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.table.views.columns.add',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.table.views.columns.add('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  locked: true,\n  required: true,\n  sortOrder: 0,\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/table/views/$VIEW_ID/columns \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "locked": true,\n          "required": true,\n          "sortOrder": 0\n        }\'',
       },
     },
   },
@@ -4246,19 +4246,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.table.views.columns.update(view_id: string, column_id: string, aggregate?: number, alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, dateFormat?: string, decimalPlaces?: number, description?: object | { content: object; }, displayLink?: boolean, displayValidationError?: boolean, exportWidth?: number, formula?: string, formulaEnabled?: boolean, hardValidation?: boolean, headerBackgroundColor?: string, headerTextColor?: string, isIndexed?: boolean, isJoined?: boolean, isSynced?: boolean, kind?: string, kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: object; }, locked?: boolean, name?: string, publicId?: string, required?: boolean, script?: string, scriptEnabled?: boolean, sortOrder?: number, stringValidation?: string, thousandSeparator?: boolean, validationMessage?: string, validationNoBlanks?: boolean, validationNoDuplicates?: boolean, width?: number): { data?: table_view_column; metadata?: object; }`\n\n**put** `/v1/table/views/{view_id}/columns/{column_id}`\n\nUpdate a specific column in a table view.\n\n### Parameters\n\n- `view_id: string`\n\n- `column_id: string`\n\n- `aggregate?: number`\n\n- `alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `dateFormat?: string`\n\n- `decimalPlaces?: number`\n\n- `description?: object | { content: { blocks: { data: object; depth: number; entityRanges: object[]; inlineStyleRanges: object[]; key: string; text: string; type: string; }[]; entityMap: object; }; }`\n\n- `displayLink?: boolean`\n\n- `displayValidationError?: boolean`\n\n- `exportWidth?: number`\n\n- `formula?: string`\n\n- `formulaEnabled?: boolean`\n\n- `hardValidation?: boolean`\n\n- `headerBackgroundColor?: string`\n\n- `headerTextColor?: string`\n\n- `isIndexed?: boolean`\n\n- `isJoined?: boolean`\n\n- `isSynced?: boolean`\n\n- `kind?: string`\n\n- `kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: { columnId?: string; dependencies?: { columnId: string; columnJoinId?: string; }[]; liveValues?: boolean; tableId?: string; viewId?: string; }; }`\n  - `autopopulate?: boolean`\n  - `manualOptions?: string[]`\n  - `tableOptions?: { columnId?: string; dependencies?: { columnId: string; columnJoinId?: string; }[]; liveValues?: boolean; tableId?: string; viewId?: string; }`\n\n- `locked?: boolean`\n\n- `name?: string`\n\n- `publicId?: string`\n\n- `required?: boolean`\n\n- `script?: string`\n\n- `scriptEnabled?: boolean`\n\n- `sortOrder?: number`\n\n- `stringValidation?: string`\n\n- `thousandSeparator?: boolean`\n\n- `validationMessage?: string`\n\n- `validationNoBlanks?: boolean`\n\n- `validationNoDuplicates?: boolean`\n\n- `width?: number`\n\n### Returns\n\n- `{ data?: { aggregate?: number; alterOptions?: table_column_alter | object; dateFormat?: string; decimalPlaces?: number; description?: object | draftjs; displayLink?: boolean; displayValidationError?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; hardValidation?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: select_options_lookup; locked?: boolean; name?: string; publicId?: string; required?: boolean; script?: string; scriptEnabled?: boolean; sortOrder?: number; stringValidation?: string; thousandSeparator?: boolean; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; width?: number; }; metadata?: object; }`\n\n  - `data?: { aggregate?: number; alterOptions?: { dateConversionFormat?: 'DD/MM/YYYY' | 'MM/DD/YYYY' | 'ISO8601' | 'DD-Mon-YY'; runScriptOnAllCells?: boolean; } | object; dateFormat?: string; decimalPlaces?: number; description?: object | { content: object; }; displayLink?: boolean; displayValidationError?: boolean; exportWidth?: number; formula?: string; formulaEnabled?: boolean; hardValidation?: boolean; headerBackgroundColor?: string; headerTextColor?: string; isIndexed?: boolean; isJoined?: boolean; isSynced?: boolean; kind?: string; kindOptions?: { autopopulate?: boolean; manualOptions?: string[]; tableOptions?: object; }; locked?: boolean; name?: string; publicId?: string; required?: boolean; script?: string; scriptEnabled?: boolean; sortOrder?: number; stringValidation?: string; thousandSeparator?: boolean; validationMessage?: string; validationNoBlanks?: boolean; validationNoDuplicates?: boolean; width?: number; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst column = await client.table.views.columns.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(column);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.table.views.columns.update',
         example:
-          "curl https://api.morta.io/v1/table/views/$VIEW_ID/columns/$COLUMN_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst column = await client.table.views.columns.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(column.data);",
       },
       python: {
         method: 'table.views.columns.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ncolumn = client.table.views.columns.update(\n    column_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    view_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(column.data)',
       },
-      typescript: {
-        method: 'client.table.views.columns.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst column = await client.table.views.columns.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  view_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(column.data);",
+          "curl https://api.morta.io/v1/table/views/$VIEW_ID/columns/$COLUMN_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -4281,19 +4281,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.document.create(name: string, projectId: string, type: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: document; metadata?: object; }`\n\n**post** `/v1/document`\n\nCreate a new document in a specified hub\n\n### Parameters\n\n- `name: string`\n\n- `projectId: string`\n\n- `type: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: { name?: string; publicId?: string; }; metadata?: { change?: object; event?: string; resourceId?: string; }; }`\n\n  - `data?: { name?: string; publicId?: string; }`\n  - `metadata?: { change?: object; event?: string; resourceId?: string; }`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst document = await client.document.create({\n  name: 'name',\n  projectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  type: 'type',\n});\n\nconsole.log(document);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.create',
         example:
-          'curl https://api.morta.io/v1/document \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "name": "name",\n          "projectId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "type": "type"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst document = await client.document.create({\n  name: 'name',\n  projectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  type: 'type',\n});\n\nconsole.log(document.data);",
       },
       python: {
         method: 'document.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ndocument = client.document.create(\n    name="name",\n    project_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    type="type",\n)\nprint(document.data)',
       },
-      typescript: {
-        method: 'client.document.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst document = await client.document.create({\n  name: 'name',\n  projectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  type: 'type',\n});\n\nconsole.log(document.data);",
+          'curl https://api.morta.io/v1/document \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "name": "name",\n          "projectId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "type": "type"\n        }\'',
       },
     },
   },
@@ -4324,19 +4324,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.document.update(document_id: string, allowComments?: boolean, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, description?: object | { content: object; }, expandByDefault?: boolean, isTemplate?: boolean, lockedTemplate?: boolean, logo?: string, name?: string, plaintextDescription?: string, type?: string, variables?: string[]): { data?: simple_document; metadata?: object; }`\n\n**put** `/v1/document/{document_id}`\n\nUpdate an existing documents's details by document ID\n\n### Parameters\n\n- `document_id: string`\n\n- `allowComments?: boolean`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `description?: object | { content: { blocks: { data: object; depth: number; entityRanges: object[]; inlineStyleRanges: object[]; key: string; text: string; type: string; }[]; entityMap: object; }; }`\n\n- `expandByDefault?: boolean`\n\n- `isTemplate?: boolean`\n\n- `lockedTemplate?: boolean`\n\n- `logo?: string`\n\n- `name?: string`\n\n- `plaintextDescription?: string`\n\n- `type?: string`\n\n- `variables?: string[]`\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; children?: object[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; children?: { name?: string; publicId?: string; }[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst document = await client.document.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(document);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.update',
         example:
-          "curl https://api.morta.io/v1/document/$DOCUMENT_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst document = await client.document.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(document.data);",
       },
       python: {
         method: 'document.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ndocument = client.document.update(\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(document.data)',
       },
-      typescript: {
-        method: 'client.document.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst document = await client.document.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(document.data);",
+          "curl https://api.morta.io/v1/document/$DOCUMENT_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -4354,19 +4354,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.document.delete(document_id: string): { data?: morta_document; metadata?: object; }`\n\n**delete** `/v1/document/{document_id}`\n\nDelete a document identified by its UUID\n\n### Parameters\n\n- `document_id: string`\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; children?: document_section_1[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; children?: { children?: document_section_1[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst document = await client.document.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(document);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.delete',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst document = await client.document.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(document.data);",
       },
       python: {
         method: 'document.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ndocument = client.document.delete(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(document.data)',
       },
-      typescript: {
-        method: 'client.document.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst document = await client.document.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(document.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4384,19 +4384,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve\n\n`client.document.retrieve(document_id: string, exclude_children?: boolean): { data?: morta_document; metadata?: object; }`\n\n**get** `/v1/document/{document_id}`\n\nRetrieve detailed information of a specific document by its UUID\n\n### Parameters\n\n- `document_id: string`\n\n- `exclude_children?: boolean`\n  Flag to exclude child elements from the document response\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; children?: document_section_1[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; children?: { children?: document_section_1[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst document = await client.document.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(document);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.retrieve',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst document = await client.document.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(document.data);",
       },
       python: {
         method: 'document.retrieve',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ndocument = client.document.retrieve(\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(document.data)',
       },
-      typescript: {
-        method: 'client.document.retrieve',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst document = await client.document.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(document.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4414,19 +4414,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## restore\n\n`client.document.restore(document_id: string): { data?: morta_document; metadata?: object; }`\n\n**put** `/v1/document/{document_id}/restore`\n\nRestore a deleted document identified by its UUID\n\n### Parameters\n\n- `document_id: string`\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; children?: document_section_1[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; children?: { children?: document_section_1[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.restore',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/restore \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.restore',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.restore(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.restore',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/restore \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4448,19 +4448,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## export\n\n`client.document.export(document_id: string, page_format?: 'A1' | 'A2' | 'A3' | 'A4' | 'letter' | 'legal', page_orientation?: 'portrait' | 'landscape', table_links?: boolean): string`\n\n**get** `/v1/document/{document_id}/export`\n\nExport a specific document by its UUID\n\n### Parameters\n\n- `document_id: string`\n\n- `page_format?: 'A1' | 'A2' | 'A3' | 'A4' | 'letter' | 'legal'`\n  Page format for the export\n\n- `page_orientation?: 'portrait' | 'landscape'`\n  Page orientation for the export\n\n- `table_links?: boolean`\n  Include table links in the export\n\n### Returns\n\n- `string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.export('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n\nconst content = await response.blob()\nconsole.log(content)\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.export',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/export \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.export('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n\nconst content = await response.blob();\nconsole.log(content);",
       },
       python: {
         method: 'document.export',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.export(\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response)\ncontent = response.read()\nprint(content)',
       },
-      typescript: {
-        method: 'client.document.export',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.export('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n\nconst content = await response.blob();\nconsole.log(content);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/export \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4479,19 +4479,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_deleted_sections\n\n`client.document.getDeletedSections(document_id: string, process_section_id?: string): object[]`\n\n**get** `/v1/document/{document_id}/deletedsections`\n\nRetrieve all deleted sections of a specific document, with an optional filter for a specific document section\n\n### Parameters\n\n- `document_id: string`\n\n- `process_section_id?: string`\n  Optional UUID of a specific document section to filter deleted sections\n\n### Returns\n\n- `{ children?: object[]; createdAt?: string; deletedAt?: string; description?: object; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: object[]; }[]`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst mortaDocumentSections = await client.document.getDeletedSections('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(mortaDocumentSections);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.getDeletedSections',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/deletedsections \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst mortaDocumentSections = await client.document.getDeletedSections(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n);\n\nconsole.log(mortaDocumentSections);",
       },
       python: {
         method: 'document.get_deleted_sections',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nmorta_document_sections = client.document.get_deleted_sections(\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(morta_document_sections)',
       },
-      typescript: {
-        method: 'client.document.getDeletedSections',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst mortaDocumentSections = await client.document.getDeletedSections(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n);\n\nconsole.log(mortaDocumentSections);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/deletedsections \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4513,19 +4513,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_multiple_sections\n\n`client.document.createMultipleSections(document_id: string, sections: { name: string; context?: base_request_context; description?: draftjs | object; parentId?: string; plaintextDescription?: string; }[], context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: string; metadata?: object; }`\n\n**post** `/v1/document/{document_id}/multiple-section`\n\nCreate multiple new sections within a specified document, each with an optional parent section\n\n### Parameters\n\n- `document_id: string`\n\n- `sections: { name: string; context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }; description?: { content: object; } | object; parentId?: string; plaintextDescription?: string; }[]`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: string; metadata?: { resourceIds?: string[]; }; }`\n\n  - `data?: string`\n  - `metadata?: { resourceIds?: string[]; }`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.createMultipleSections('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { sections: [{ name: 'name' }] });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.createMultipleSections',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/multiple-section \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "sections": [\n            {\n              "name": "name"\n            }\n          ]\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.createMultipleSections(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  { sections: [{ name: 'name' }] },\n);\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.create_multiple_sections',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.create_multiple_sections(\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    sections=[{\n        "name": "name"\n    }],\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.createMultipleSections',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.createMultipleSections(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  { sections: [{ name: 'name' }] },\n);\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/multiple-section \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "sections": [\n            {\n              "name": "name"\n            }\n          ]\n        }\'',
       },
     },
   },
@@ -4547,19 +4547,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_sections\n\n`client.document.createSections(document_id: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, details?: { name: string; context?: base_request_context; description?: draftjs | object; parentId?: string; plaintextDescription?: string; }[]): { data?: morta_document_section[]; metadata?: object; }`\n\n**post** `/v1/document/{document_id}/sections`\n\nCreate multiple new sections within a document\n\n### Parameters\n\n- `document_id: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `details?: { name: string; context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }; description?: { content: object; } | object; parentId?: string; plaintextDescription?: string; }[]`\n\n### Returns\n\n- `{ data?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; metadata?: object; }`\n\n  - `data?: { children?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: { content: object; }; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: summary_user; }[]; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.createSections('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.createSections',
         example:
-          "curl https://api.morta.io/v1/document/$DOCUMENT_ID/sections \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.createSections('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.create_sections',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.create_sections(\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.createSections',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.createSections('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          "curl https://api.morta.io/v1/document/$DOCUMENT_ID/sections \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -4581,19 +4581,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update_multiple_sections\n\n`client.document.updateMultipleSections(document_id: string, sections: { publicId: string; context?: object; description?: object | object; name?: string; pageBreakBefore?: boolean; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; plaintextDescription?: string; }[], context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: morta_document_section[]; metadata?: object; }`\n\n**put** `/v1/document/{document_id}/update-multiple-section`\n\nUpdate multiple existing document sections.\n\n### Parameters\n\n- `document_id: string`\n\n- `sections: { publicId: string; context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }; description?: object | { content: { blocks: object[]; entityMap: object; }; }; name?: string; pageBreakBefore?: boolean; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; plaintextDescription?: string; }[]`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; metadata?: object; }`\n\n  - `data?: { children?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: { content: object; }; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: summary_user; }[]; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.updateMultipleSections('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { sections: [{ publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' }] });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.updateMultipleSections',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/update-multiple-section \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "sections": [\n            {\n              "publicId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n            }\n          ]\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.updateMultipleSections(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  { sections: [{ publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' }] },\n);\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.update_multiple_sections',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.update_multiple_sections(\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    sections=[{\n        "public_id": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n    }],\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.updateMultipleSections',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.updateMultipleSections(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  { sections: [{ publicId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' }] },\n);\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/update-multiple-section \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "sections": [\n            {\n              "publicId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n            }\n          ]\n        }\'',
       },
     },
   },
@@ -4615,19 +4615,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update_section_order\n\n`client.document.updateSectionOrder(document_id: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, processSections?: { parentId?: string; position?: number; sectionId?: string; }[]): { data?: morta_document; metadata?: object; }`\n\n**put** `/v1/document/{document_id}/changesectionorder`\n\nUpdate the order of document sections within a document.\n\n### Parameters\n\n- `document_id: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `processSections?: { parentId?: string; position?: number; sectionId?: string; }[]`\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; children?: document_section_1[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; children?: { children?: document_section_1[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.updateSectionOrder('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.updateSectionOrder',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/changesectionorder \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.updateSectionOrder('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.update_section_order',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.update_section_order(\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.updateSectionOrder',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.updateSectionOrder('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/changesectionorder \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4644,19 +4644,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update_views_permissions\n\n`client.document.updateViewsPermissions(resource_id: string): { data?: string; }`\n\n**put** `/v1/document/sync-views-permissions`\n\nUpdate permissions for all views using as reference the permissions in a document.\n\n### Parameters\n\n- `resource_id: string`\n  UUID of the document for which to retrieve permissions.\n\n### Returns\n\n- `{ data?: string; }`\n\n  - `data?: string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.updateViewsPermissions({ resource_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.updateViewsPermissions',
         example:
-          'curl https://api.morta.io/v1/document/sync-views-permissions \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.updateViewsPermissions({\n  resource_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.update_views_permissions',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.update_views_permissions(\n    resource_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.updateViewsPermissions',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.updateViewsPermissions({\n  resource_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/sync-views-permissions \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4674,19 +4674,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_duplicated_children\n\n`client.document.getDuplicatedChildren(document_id: string): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/document/{document_id}/duplicated-children`\n\nGet duplicated children of a document\n\n### Parameters\n\n- `document_id: string`\n\n### Returns\n\n- `{ data?: { createdAt?: string; deletedAt?: string; deletedBy?: string; link?: string; name?: string; publicId?: string; user?: string; }[]; metadata?: object; }`\n\n  - `data?: { createdAt?: string; deletedAt?: string; deletedBy?: string; link?: string; name?: string; publicId?: string; user?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.getDuplicatedChildren('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.getDuplicatedChildren',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/duplicated-children \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.getDuplicatedChildren(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n);\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.get_duplicated_children',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.get_duplicated_children(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.getDuplicatedChildren',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.getDuplicatedChildren(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n);\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/duplicated-children \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4703,19 +4703,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## sync_template\n\n`client.document.syncTemplate(document_id: string): { data?: document[]; metadata?: object; }`\n\n**get** `/v1/document/{document_id}/sync-template`\n\nSync template changes to children of a document\n\n### Parameters\n\n- `document_id: string`\n\n### Returns\n\n- `{ data?: { name?: string; publicId?: string; }[]; metadata?: object; }`\n\n  - `data?: { name?: string; publicId?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.syncTemplate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.syncTemplate',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/sync-template \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.syncTemplate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.sync_template',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.sync_template(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.syncTemplate',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.syncTemplate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/sync-template \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4737,19 +4737,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## duplicate\n\n`client.document.duplicate.duplicate(document_id: string, targetProjectId: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, duplicateLinkedTables?: boolean, duplicatePermissions?: boolean): void`\n\n**post** `/v1/document/{document_id}/duplicate`\n\nDuplicate an existing document, potentially in a different hub\n\n### Parameters\n\n- `document_id: string`\n\n- `targetProjectId: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `duplicateLinkedTables?: boolean`\n\n- `duplicatePermissions?: boolean`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nawait client.document.duplicate.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { targetProjectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.duplicate.duplicate',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/duplicate \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "targetProjectId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.document.duplicate.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  targetProjectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});",
       },
       python: {
         method: 'document.duplicate.duplicate',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nclient.document.duplicate.duplicate(\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    target_project_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)',
       },
-      typescript: {
-        method: 'client.document.duplicate.duplicate',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.document.duplicate.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  targetProjectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/duplicate \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "targetProjectId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n        }\'',
       },
     },
   },
@@ -4771,19 +4771,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## global\n\n`client.document.duplicate.global(processId: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, projectId?: string): { data?: morta_document; metadata?: object; }`\n\n**post** `/v1/document/duplicate`\n\nDuplicate an existing document, optionally into a different hub\n\n### Parameters\n\n- `processId: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `projectId?: string`\n\n### Returns\n\n- `{ data?: { allowComments?: boolean; children?: document_section_1[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }; metadata?: object; }`\n\n  - `data?: { allowComments?: boolean; children?: { children?: document_section_1[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: object; expandByDefault?: boolean; isDeleted?: boolean; isTemplate?: boolean; lockedTemplate?: boolean; logo?: string; name?: string; projectName?: string; projectPublicId?: string; publicId?: string; type?: string; updatedAt?: string; variables?: string[]; variableValues?: string[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.duplicate.global({ processId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.duplicate.global',
         example:
-          'curl https://api.morta.io/v1/document/duplicate \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "processId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.duplicate.global({\n  processId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.duplicate.global_',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.duplicate.global_(\n    process_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.duplicate.global',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.duplicate.global({\n  processId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/duplicate \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "processId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e"\n        }\'',
       },
     },
   },
@@ -4808,19 +4808,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.document.section.create(document_id: string, name: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, description?: { content: object; } | object, parentId?: string, plaintextDescription?: string): { data?: morta_document_section; metadata?: object; }`\n\n**post** `/v1/document/{document_id}/section`\n\nCreate a new section within a specified document, with an option to set a parent section\n\n### Parameters\n\n- `document_id: string`\n\n- `name: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `description?: { content: { blocks: { data: object; depth: number; entityRanges: object[]; inlineStyleRanges: object[]; key: string; text: string; type: string; }[]; entityMap: object; }; } | object`\n\n- `parentId?: string`\n\n- `plaintextDescription?: string`\n\n### Returns\n\n- `{ data?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }; metadata?: object; }`\n\n  - `data?: { children?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: { content: object; }; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: summary_user; }[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst section = await client.document.section.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { name: 'name' });\n\nconsole.log(section);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.section.create',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "name": "name"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst section = await client.document.section.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  name: 'name',\n});\n\nconsole.log(section.data);",
       },
       python: {
         method: 'document.section.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nsection = client.document.section.create(\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    name="name",\n)\nprint(section.data)',
       },
-      typescript: {
-        method: 'client.document.section.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst section = await client.document.section.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  name: 'name',\n});\n\nconsole.log(section.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "name": "name"\n        }\'',
       },
     },
   },
@@ -4837,19 +4837,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## duplicate_async\n\n`client.document.section.duplicateAsync(document_id: string, document_section_id: string): { data?: string; metadata?: object; }`\n\n**post** `/v1/document/{document_id}/section/{document_section_id}/duplicate-async`\n\nDuplicate a specific document section asynchronously.\n\n### Parameters\n\n- `document_id: string`\n\n- `document_section_id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.section.duplicateAsync('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.section.duplicateAsync',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/duplicate-async \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.duplicateAsync(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' },\n);\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.section.duplicate_async',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.section.duplicate_async(\n    document_section_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.section.duplicateAsync',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.duplicateAsync(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' },\n);\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/duplicate-async \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4867,19 +4867,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## duplicate\n\n`client.document.section.duplicate(document_id: string, document_section_id: string): { data?: morta_document_section; metadata?: object; }`\n\n**post** `/v1/document/{document_id}/section/{document_section_id}/duplicate`\n\nDuplicate a specific document section.\n\n### Parameters\n\n- `document_id: string`\n\n- `document_section_id: string`\n\n### Returns\n\n- `{ data?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }; metadata?: object; }`\n\n  - `data?: { children?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: { content: object; }; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: summary_user; }[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.section.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.section.duplicate',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/duplicate \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.section.duplicate',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.section.duplicate(\n    document_section_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.section.duplicate',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.duplicate('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/duplicate \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4897,19 +4897,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve\n\n`client.document.section.retrieve(document_id: string, document_section_id: string, main_parent_section?: boolean): { data?: morta_document_section; metadata?: object; }`\n\n**get** `/v1/document/{document_id}/section/{document_section_id}`\n\nRetrieve a specific Document section.\n\n### Parameters\n\n- `document_id: string`\n\n- `document_section_id: string`\n\n- `main_parent_section?: boolean`\n  Flag to retrieve the main parent section of the document section\n\n### Returns\n\n- `{ data?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }; metadata?: object; }`\n\n  - `data?: { children?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: { content: object; }; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: summary_user; }[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst section = await client.document.section.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(section);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.section.retrieve',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst section = await client.document.section.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(section.data);",
       },
       python: {
         method: 'document.section.retrieve',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nsection = client.document.section.retrieve(\n    document_section_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(section.data)',
       },
-      typescript: {
-        method: 'client.document.section.retrieve',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst section = await client.document.section.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(section.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4937,19 +4937,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.document.section.update(document_id: string, document_section_id: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, description?: object | { content: object; }, name?: string, pageBreakBefore?: boolean, pdfIncludeDescription?: boolean, pdfIncludeSection?: boolean, plaintextDescription?: string): { data?: morta_document_section; metadata?: object; }`\n\n**put** `/v1/document/{document_id}/section/{document_section_id}`\n\nUpdate an existing document section's details by document section ID\n\n### Parameters\n\n- `document_id: string`\n\n- `document_section_id: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `description?: object | { content: { blocks: { data: object; depth: number; entityRanges: object[]; inlineStyleRanges: object[]; key: string; text: string; type: string; }[]; entityMap: object; }; }`\n\n- `name?: string`\n\n- `pageBreakBefore?: boolean`\n\n- `pdfIncludeDescription?: boolean`\n\n- `pdfIncludeSection?: boolean`\n\n- `plaintextDescription?: string`\n\n### Returns\n\n- `{ data?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }; metadata?: object; }`\n\n  - `data?: { children?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: { content: object; }; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: summary_user; }[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst section = await client.document.section.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(section);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.section.update',
         example:
-          "curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst section = await client.document.section.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(section.data);",
       },
       python: {
         method: 'document.section.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nsection = client.document.section.update(\n    document_section_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(section.data)',
       },
-      typescript: {
-        method: 'client.document.section.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst section = await client.document.section.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(section.data);",
+          "curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID \\\n    -X PUT \\\n    -H 'Content-Type: application/json' \\\n    -H \"Authorization: Bearer $MORTA_API_KEY\" \\\n    -d '{}'",
       },
     },
   },
@@ -4967,19 +4967,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.document.section.delete(document_id: string, document_section_id: string): { data?: morta_document_section; metadata?: object; }`\n\n**delete** `/v1/document/{document_id}/section/{document_section_id}`\n\nDelete a specific document section.\n\n### Parameters\n\n- `document_id: string`\n\n- `document_section_id: string`\n\n### Returns\n\n- `{ data?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }; metadata?: object; }`\n\n  - `data?: { children?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: { content: object; }; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: summary_user; }[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst section = await client.document.section.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(section);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.section.delete',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst section = await client.document.section.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(section.data);",
       },
       python: {
         method: 'document.section.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nsection = client.document.section.delete(\n    document_section_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(section.data)',
       },
-      typescript: {
-        method: 'client.document.section.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst section = await client.document.section.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(section.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -4997,19 +4997,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## restore\n\n`client.document.section.restore(document_id: string, document_section_id: string): { data?: morta_document_section; metadata?: object; }`\n\n**put** `/v1/document/{document_id}/section/{document_section_id}/restore`\n\nRestore a previously deleted document section.\n\n### Parameters\n\n- `document_id: string`\n\n- `document_section_id: string`\n\n### Returns\n\n- `{ data?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }; metadata?: object; }`\n\n  - `data?: { children?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: { content: object; }; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: summary_user; }[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.section.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.section.restore',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/restore \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.section.restore',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.section.restore(\n    document_section_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.section.restore',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/restore \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5032,19 +5032,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.document.section.response.create(document_id: string, document_section_id: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, type?: 'Flexible' | 'File Upload' | 'Table' | 'Signature' | 'Selection'): { data?: document_response; metadata?: object; }`\n\n**post** `/v1/document/{document_id}/section/{document_section_id}/response`\n\nCreate a new response for a document section.\n\n### Parameters\n\n- `document_id: string`\n\n- `document_section_id: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `type?: 'Flexible' | 'File Upload' | 'Table' | 'Signature' | 'Selection'`\n\n### Returns\n\n- `{ data?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: summary_user; }; metadata?: object; }`\n\n  - `data?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; name?: string; profilePicture?: string; publicId?: string; }; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.section.response.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.section.response.create',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/response \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.response.create(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' },\n);\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.section.response.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.section.response.create(\n    document_section_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.section.response.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.response.create(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' },\n);\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/response \\\n    -X POST \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5072,19 +5072,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.document.section.response.update(document_id: string, document_section_id: string, document_response_id: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, enableSubmission?: boolean, pdfIncludeResponse?: boolean, resetAfterResponse?: boolean, type?: 'Flexible' | 'File Upload' | 'Table' | 'Signature' | 'Selection', typeOptions?: object): { data?: object; metadata?: object; }`\n\n**put** `/v1/document/{document_id}/section/{document_section_id}/response/{document_response_id}`\n\nUpdate an existing response for a document section.\n\n### Parameters\n\n- `document_id: string`\n\n- `document_section_id: string`\n\n- `document_response_id: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `enableSubmission?: boolean`\n\n- `pdfIncludeResponse?: boolean`\n\n- `resetAfterResponse?: boolean`\n\n- `type?: 'Flexible' | 'File Upload' | 'Table' | 'Signature' | 'Selection'`\n\n- `typeOptions?: object`\n\n### Returns\n\n- `{ data?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: object; }; metadata?: object; }`\n\n  - `data?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; name?: string; profilePicture?: string; publicId?: string; }; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.section.response.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.section.response.update',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/response/$DOCUMENT_RESPONSE_ID \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.response.update(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  {\n    document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n    document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  },\n);\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.section.response.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.section.response.update(\n    document_response_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_section_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.section.response.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.response.update(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  {\n    document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n    document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  },\n);\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/response/$DOCUMENT_RESPONSE_ID \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5102,19 +5102,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.document.section.response.delete(document_id: string, document_section_id: string, document_response_id: string): { data?: morta_document_section; metadata?: object; }`\n\n**delete** `/v1/document/{document_id}/section/{document_section_id}/response/{document_response_id}`\n\nDelete a specific document response.\n\n### Parameters\n\n- `document_id: string`\n\n- `document_section_id: string`\n\n- `document_response_id: string`\n\n### Returns\n\n- `{ data?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }; metadata?: object; }`\n\n  - `data?: { children?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: { content: object; }; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: summary_user; }[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.section.response.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.section.response.delete',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/response/$DOCUMENT_RESPONSE_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.response.delete(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  {\n    document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n    document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  },\n);\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.section.response.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.section.response.delete(\n    document_response_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_section_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.section.response.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.response.delete(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  {\n    document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n    document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  },\n);\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/response/$DOCUMENT_RESPONSE_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5133,19 +5133,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## reset\n\n`client.document.section.response.reset(document_id: string, document_section_id: string, document_response_id: string): { data?: morta_document_section; metadata?: object; }`\n\n**put** `/v1/document/{document_id}/section/{document_section_id}/response/{document_response_id}/reset`\n\nReset an existing document response to its initial state.\n\n### Parameters\n\n- `document_id: string`\n\n- `document_section_id: string`\n\n- `document_response_id: string`\n\n### Returns\n\n- `{ data?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }; metadata?: object; }`\n\n  - `data?: { children?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: { content: object; }; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: summary_user; }[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.section.response.reset('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.section.response.reset',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/response/$DOCUMENT_RESPONSE_ID/reset \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.response.reset(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  {\n    document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n    document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  },\n);\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.section.response.reset',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.section.response.reset(\n    document_response_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_section_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.section.response.reset',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.response.reset(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  {\n    document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n    document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  },\n);\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/response/$DOCUMENT_RESPONSE_ID/reset \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5170,19 +5170,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## submit\n\n`client.document.section.response.submit(document_id: string, document_section_id: string, document_response_id: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, response?: object): { data?: morta_document_section; metadata?: object; }`\n\n**put** `/v1/document/{document_id}/section/{document_section_id}/response/{document_response_id}/submit`\n\nSubmit a document response, marking it as completed.\n\n### Parameters\n\n- `document_id: string`\n\n- `document_section_id: string`\n\n- `document_response_id: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `response?: object`\n\n### Returns\n\n- `{ data?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }; metadata?: object; }`\n\n  - `data?: { children?: { children?: morta_document_section[]; createdAt?: string; deletedAt?: string; description?: draftjs; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: document_response[]; }[]; createdAt?: string; deletedAt?: string; description?: { content: object; }; isDeleted?: boolean; name?: string; openCommentThreads?: number; pageBreakBefore?: boolean; parentId?: string; pdfIncludeDescription?: boolean; pdfIncludeSection?: boolean; position?: number; publicId?: string; responses?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: summary_user; }[]; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.section.response.submit('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.section.response.submit',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/response/$DOCUMENT_RESPONSE_ID/submit \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.response.submit(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  {\n    document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n    document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  },\n);\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.section.response.submit',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.section.response.submit(\n    document_response_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_section_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.section.response.submit',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.response.submit(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  {\n    document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n    document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  },\n);\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/response/$DOCUMENT_RESPONSE_ID/submit \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5201,19 +5201,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## restore\n\n`client.document.section.response.restore(document_id: string, document_section_id: string, document_response_id: string): { data?: document_response; metadata?: object; }`\n\n**put** `/v1/document/{document_id}/section/{document_section_id}/response/{document_response_id}/restore`\n\nRestore a previously deleted document response.\n\n### Parameters\n\n- `document_id: string`\n\n- `document_section_id: string`\n\n- `document_response_id: string`\n\n### Returns\n\n- `{ data?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: summary_user; }; metadata?: object; }`\n\n  - `data?: { createdAt?: string; deletedAt?: string; enableSubmission?: boolean; isDeleted?: boolean; pdfIncludeResponse?: boolean; position?: number; publicId?: string; resetAfterResponse?: boolean; response?: object; responseDate?: string; type?: string; typeOptions?: object; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; name?: string; profilePicture?: string; publicId?: string; }; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.document.section.response.restore('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.document.section.response.restore',
         example:
-          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/response/$DOCUMENT_RESPONSE_ID/restore \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.response.restore(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  {\n    document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n    document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  },\n);\n\nconsole.log(response.data);",
       },
       python: {
         method: 'document.section.response.restore',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.document.section.response.restore(\n    document_response_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    document_section_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.document.section.response.restore',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.document.section.response.restore(\n  '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  {\n    document_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n    document_section_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  },\n);\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/document/$DOCUMENT_ID/section/$DOCUMENT_SECTION_ID/response/$DOCUMENT_RESPONSE_ID/restore \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5239,19 +5239,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.notifications.create(description: string, projectId: string, triggers: { resource: string; verb: string; }[], webhookUrl: string, customHeaders?: { key: string; value: string; }[], processes?: string[], tables?: string[]): { data?: notification; metadata?: object; }`\n\n**post** `/v1/notifications`\n\nCreate a new notification for a specific hub.\n\n### Parameters\n\n- `description: string`\n\n- `projectId: string`\n\n- `triggers: { resource: string; verb: string; }[]`\n\n- `webhookUrl: string`\n\n- `customHeaders?: { key: string; value: string; }[]`\n\n- `processes?: string[]`\n\n- `tables?: string[]`\n\n### Returns\n\n- `{ data?: { actions: action[]; publicId: string; triggers: trigger[]; createdAt?: string; description?: string; processes?: document[]; tables?: table1[]; user?: summary_user; }; metadata?: object; }`\n\n  - `data?: { actions: { kind: string; publicId: string; customHeaders?: object[]; webhookUrl?: string; }[]; publicId: string; triggers: { publicId: string; resource: string; verb: string; }[]; createdAt?: string; description?: string; processes?: { name?: string; publicId?: string; }[]; tables?: { defaultViewId?: string; name?: string; publicId?: string; }[]; user?: { email?: string; firebaseUserId?: string; name?: string; profilePicture?: string; publicId?: string; }; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst notification = await client.notifications.create({\n  description: 'description',\n  projectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  triggers: [{ resource: 'resource', verb: 'verb' }],\n  webhookUrl: 'webhookUrl',\n});\n\nconsole.log(notification);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.notifications.create',
         example:
-          'curl https://api.morta.io/v1/notifications \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "description": "description",\n          "projectId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "triggers": [\n            {\n              "resource": "resource",\n              "verb": "verb"\n            }\n          ],\n          "webhookUrl": "webhookUrl"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst notification = await client.notifications.create({\n  description: 'description',\n  projectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  triggers: [{ resource: 'resource', verb: 'verb' }],\n  webhookUrl: 'webhookUrl',\n});\n\nconsole.log(notification.data);",
       },
       python: {
         method: 'notifications.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nnotification = client.notifications.create(\n    description="description",\n    project_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    triggers=[{\n        "resource": "resource",\n        "verb": "verb",\n    }],\n    webhook_url="webhookUrl",\n)\nprint(notification.data)',
       },
-      typescript: {
-        method: 'client.notifications.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst notification = await client.notifications.create({\n  description: 'description',\n  projectId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  triggers: [{ resource: 'resource', verb: 'verb' }],\n  webhookUrl: 'webhookUrl',\n});\n\nconsole.log(notification.data);",
+          'curl https://api.morta.io/v1/notifications \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "description": "description",\n          "projectId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "triggers": [\n            {\n              "resource": "resource",\n              "verb": "verb"\n            }\n          ],\n          "webhookUrl": "webhookUrl"\n        }\'',
       },
     },
   },
@@ -5268,19 +5268,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.notifications.delete(id: string): { data?: string; metadata?: object; }`\n\n**delete** `/v1/notifications/{id}`\n\nDelete a specific notification by its ID.\n\n### Parameters\n\n- `id: string`\n\n### Returns\n\n- `{ data?: string; metadata?: object; }`\n\n  - `data?: string`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst notification = await client.notifications.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(notification);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.notifications.delete',
         example:
-          'curl https://api.morta.io/v1/notifications/$ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst notification = await client.notifications.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(notification.data);",
       },
       python: {
         method: 'notifications.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nnotification = client.notifications.delete(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(notification.data)',
       },
-      typescript: {
-        method: 'client.notifications.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst notification = await client.notifications.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(notification.data);",
+          'curl https://api.morta.io/v1/notifications/$ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5306,19 +5306,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.notifications.update(id: string, webhookUrl: string, customHeaders?: { key: string; value: string; }[], description?: string, processes?: string[], tables?: string[], triggers?: { resource: string; verb: string; publicId?: string; }[]): { data?: notification; metadata?: object; }`\n\n**put** `/v1/notifications/{id}`\n\nUpdate a specific notification by its ID.\n\n### Parameters\n\n- `id: string`\n\n- `webhookUrl: string`\n\n- `customHeaders?: { key: string; value: string; }[]`\n\n- `description?: string`\n\n- `processes?: string[]`\n\n- `tables?: string[]`\n\n- `triggers?: { resource: string; verb: string; publicId?: string; }[]`\n\n### Returns\n\n- `{ data?: { actions: action[]; publicId: string; triggers: trigger[]; createdAt?: string; description?: string; processes?: document[]; tables?: table1[]; user?: summary_user; }; metadata?: object; }`\n\n  - `data?: { actions: { kind: string; publicId: string; customHeaders?: object[]; webhookUrl?: string; }[]; publicId: string; triggers: { publicId: string; resource: string; verb: string; }[]; createdAt?: string; description?: string; processes?: { name?: string; publicId?: string; }[]; tables?: { defaultViewId?: string; name?: string; publicId?: string; }[]; user?: { email?: string; firebaseUserId?: string; name?: string; profilePicture?: string; publicId?: string; }; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst notification = await client.notifications.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { webhookUrl: 'webhookUrl' });\n\nconsole.log(notification);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.notifications.update',
         example:
-          'curl https://api.morta.io/v1/notifications/$ID \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "webhookUrl": "webhookUrl"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst notification = await client.notifications.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  webhookUrl: 'webhookUrl',\n});\n\nconsole.log(notification.data);",
       },
       python: {
         method: 'notifications.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nnotification = client.notifications.update(\n    id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    webhook_url="webhookUrl",\n)\nprint(notification.data)',
       },
-      typescript: {
-        method: 'client.notifications.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst notification = await client.notifications.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  webhookUrl: 'webhookUrl',\n});\n\nconsole.log(notification.data);",
+          'curl https://api.morta.io/v1/notifications/$ID \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "webhookUrl": "webhookUrl"\n        }\'',
       },
     },
   },
@@ -5334,19 +5334,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_event_types\n\n`client.notifications.listEventTypes(): { data?: string[]; metadata?: object; }`\n\n**get** `/v1/notifications/event-types`\n\nRetrieve a list of all supported event types for notifications.\n\n### Returns\n\n- `{ data?: string[]; metadata?: object; }`\n\n  - `data?: string[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.notifications.listEventTypes();\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.notifications.listEventTypes',
         example:
-          'curl https://api.morta.io/v1/notifications/event-types \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.notifications.listEventTypes();\n\nconsole.log(response.data);",
       },
       python: {
         method: 'notifications.list_event_types',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.notifications.list_event_types()\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.notifications.listEventTypes',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.notifications.listEventTypes();\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/notifications/event-types \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5373,19 +5373,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list_events\n\n`client.notifications.listEvents(resource_id: string, type: 'process' | 'process_section' | 'process_response' | 'table' | 'project' | 'user', end_date?: string, page?: number, search?: string, start_date?: string, users?: string[], verb?: string[]): { data?: event[]; metadata?: object; }`\n\n**get** `/v1/notifications/events/{resource_id}`\n\nRetrieve all events associated with a specific resource, filtered by various criteria.\n\n### Parameters\n\n- `resource_id: string`\n\n- `type: 'process' | 'process_section' | 'process_response' | 'table' | 'project' | 'user'`\n  The type of the resource (e.g., user, process, table, project).\n\n- `end_date?: string`\n  Optional end date to filter the events.\n\n- `page?: number`\n  Page number for pagination.\n\n- `search?: string`\n  Optional search term to filter the events.\n\n- `start_date?: string`\n  Optional start date to filter the events.\n\n- `users?: string[]`\n  Optional UUID of a user to filter the events.\n\n- `verb?: string[]`\n  Optional list of verbs to filter the events.\n\n### Returns\n\n- `{ data?: { change?: object; changeId?: string; channel?: string; context?: object; contextProcessId?: number; contextProcessResponseId?: number; contextProcessSectionId?: number; contextTableColumnId?: number; contextTableId?: number; contextTableViewId?: number; createdAt?: string; projectId?: number; publicId?: string; resource?: string; resourcePublicId?: string; userId?: number; verb?: string; }[]; metadata?: object; }`\n\n  - `data?: { change?: object; changeId?: string; channel?: string; context?: object; contextProcessId?: number; contextProcessResponseId?: number; contextProcessSectionId?: number; contextTableColumnId?: number; contextTableId?: number; contextTableViewId?: number; createdAt?: string; projectId?: number; publicId?: string; resource?: string; resourcePublicId?: string; userId?: number; verb?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.notifications.listEvents('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { type: 'process' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.notifications.listEvents',
         example:
-          'curl https://api.morta.io/v1/notifications/events/$RESOURCE_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.notifications.listEvents('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  type: 'process',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'notifications.list_events',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.notifications.list_events(\n    resource_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    type="process",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.notifications.listEvents',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.notifications.listEvents('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  type: 'process',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/notifications/events/$RESOURCE_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5403,19 +5403,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve\n\n`client.commentThread.retrieve(comment_thread_id: string): { data?: comment_thread; metadata?: object; }`\n\n**get** `/v1/comment_thread/{comment_thread_id}`\n\nRetrieve a specific comment thread by its ID\n\n### Parameters\n\n- `comment_thread_id: string`\n\n### Returns\n\n- `{ data?: { comments?: comment_model[]; createdAt?: string; deletedAt?: string; isCommentInitiator?: object; publicId?: string; resolvedAt?: string; resolver?: object; updatedAt?: string; }; metadata?: object; }`\n\n  - `data?: { comments?: { commentText?: string; createdAt?: string; deletedAt?: string; isOwner?: object; publicId?: string; updatedAt?: string; user?: summary_user; }[]; createdAt?: string; deletedAt?: string; isCommentInitiator?: object; publicId?: string; resolvedAt?: string; resolver?: { name?: string; }; updatedAt?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst commentThread = await client.commentThread.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(commentThread);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.commentThread.retrieve',
         example:
-          'curl https://api.morta.io/v1/comment_thread/$COMMENT_THREAD_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst commentThread = await client.commentThread.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(commentThread.data);",
       },
       python: {
         method: 'comment_thread.retrieve',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ncomment_thread = client.comment_thread.retrieve(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(comment_thread.data)',
       },
-      typescript: {
-        method: 'client.commentThread.retrieve',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst commentThread = await client.commentThread.retrieve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(commentThread.data);",
+          'curl https://api.morta.io/v1/comment_thread/$COMMENT_THREAD_ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5433,19 +5433,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.commentThread.delete(comment_thread_id: string): { data?: comment_thread; metadata?: object; }`\n\n**delete** `/v1/comment_thread/{comment_thread_id}`\n\nDelete a comment thread\n\n### Parameters\n\n- `comment_thread_id: string`\n\n### Returns\n\n- `{ data?: { comments?: comment_model[]; createdAt?: string; deletedAt?: string; isCommentInitiator?: object; publicId?: string; resolvedAt?: string; resolver?: object; updatedAt?: string; }; metadata?: { change?: object; event?: string; resourceId?: string; }; }`\n\n  - `data?: { comments?: { commentText?: string; createdAt?: string; deletedAt?: string; isOwner?: object; publicId?: string; updatedAt?: string; user?: summary_user; }[]; createdAt?: string; deletedAt?: string; isCommentInitiator?: object; publicId?: string; resolvedAt?: string; resolver?: { name?: string; }; updatedAt?: string; }`\n  - `metadata?: { change?: object; event?: string; resourceId?: string; }`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst commentThread = await client.commentThread.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(commentThread);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.commentThread.delete',
         example:
-          'curl https://api.morta.io/v1/comment_thread/$COMMENT_THREAD_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst commentThread = await client.commentThread.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(commentThread.data);",
       },
       python: {
         method: 'comment_thread.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ncomment_thread = client.comment_thread.delete(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(comment_thread.data)',
       },
-      typescript: {
-        method: 'client.commentThread.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst commentThread = await client.commentThread.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(commentThread.data);",
+          'curl https://api.morta.io/v1/comment_thread/$COMMENT_THREAD_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5467,19 +5467,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## list\n\n`client.commentThread.list(reference_id: string, reference_type: 'process_section' | 'table' | 'table_view', main_reference?: string): { data?: comment_thread[]; metadata?: object; }`\n\n**get** `/v1/comment_thread`\n\nRetrieve all comment threads associated with a specific reference\n\n### Parameters\n\n- `reference_id: string`\n  UUID of the reference associated with the comment threads\n\n- `reference_type: 'process_section' | 'table' | 'table_view'`\n  Type of the reference (process_section, table, or table_view) associated with the comment threads\n\n- `main_reference?: string`\n  Optional main reference for additional filtering\n\n### Returns\n\n- `{ data?: { comments?: comment_model[]; createdAt?: string; deletedAt?: string; isCommentInitiator?: object; publicId?: string; resolvedAt?: string; resolver?: object; updatedAt?: string; }[]; metadata?: object; }`\n\n  - `data?: { comments?: { commentText?: string; createdAt?: string; deletedAt?: string; isOwner?: object; publicId?: string; updatedAt?: string; user?: summary_user; }[]; createdAt?: string; deletedAt?: string; isCommentInitiator?: object; publicId?: string; resolvedAt?: string; resolver?: { name?: string; }; updatedAt?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst commentThreads = await client.commentThread.list({ reference_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', reference_type: 'process_section' });\n\nconsole.log(commentThreads);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.commentThread.list',
         example:
-          'curl https://api.morta.io/v1/comment_thread \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst commentThreads = await client.commentThread.list({\n  reference_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  reference_type: 'process_section',\n});\n\nconsole.log(commentThreads.data);",
       },
       python: {
         method: 'comment_thread.list',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ncomment_threads = client.comment_thread.list(\n    reference_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    reference_type="process_section",\n)\nprint(comment_threads.data)',
       },
-      typescript: {
-        method: 'client.commentThread.list',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst commentThreads = await client.commentThread.list({\n  reference_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  reference_type: 'process_section',\n});\n\nconsole.log(commentThreads.data);",
+          'curl https://api.morta.io/v1/comment_thread \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5503,19 +5503,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.commentThread.create(commentText: string, referenceId: string, referenceType: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, mainReferenceId?: string): { data?: comment_thread; metadata?: object; }`\n\n**post** `/v1/comment_thread`\n\nCreate a new comment thread\n\n### Parameters\n\n- `commentText: string`\n\n- `referenceId: string`\n\n- `referenceType: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `mainReferenceId?: string`\n\n### Returns\n\n- `{ data?: { comments?: comment_model[]; createdAt?: string; deletedAt?: string; isCommentInitiator?: object; publicId?: string; resolvedAt?: string; resolver?: object; updatedAt?: string; }; metadata?: { change?: object; event?: string; resourceId?: string; }; }`\n\n  - `data?: { comments?: { commentText?: string; createdAt?: string; deletedAt?: string; isOwner?: object; publicId?: string; updatedAt?: string; user?: summary_user; }[]; createdAt?: string; deletedAt?: string; isCommentInitiator?: object; publicId?: string; resolvedAt?: string; resolver?: { name?: string; }; updatedAt?: string; }`\n  - `metadata?: { change?: object; event?: string; resourceId?: string; }`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst commentThread = await client.commentThread.create({\n  commentText: 'commentText',\n  referenceId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  referenceType: 'referenceType',\n});\n\nconsole.log(commentThread);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.commentThread.create',
         example:
-          'curl https://api.morta.io/v1/comment_thread \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "commentText": "commentText",\n          "referenceId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "referenceType": "referenceType"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst commentThread = await client.commentThread.create({\n  commentText: 'commentText',\n  referenceId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  referenceType: 'referenceType',\n});\n\nconsole.log(commentThread.data);",
       },
       python: {
         method: 'comment_thread.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ncomment_thread = client.comment_thread.create(\n    comment_text="commentText",\n    reference_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    reference_type="referenceType",\n)\nprint(comment_thread.data)',
       },
-      typescript: {
-        method: 'client.commentThread.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst commentThread = await client.commentThread.create({\n  commentText: 'commentText',\n  referenceId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  referenceType: 'referenceType',\n});\n\nconsole.log(commentThread.data);",
+          'curl https://api.morta.io/v1/comment_thread \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "commentText": "commentText",\n          "referenceId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "referenceType": "referenceType"\n        }\'',
       },
     },
   },
@@ -5533,19 +5533,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## get_stats\n\n`client.commentThread.getStats(reference_type: 'process_section' | 'table' | 'table_view', main_reference_id?: string): { data?: object[]; metadata?: object; }`\n\n**get** `/v1/comment_thread/stats`\n\nRetrieve statistics for comment threads based on reference type and main reference ID\n\n### Parameters\n\n- `reference_type: 'process_section' | 'table' | 'table_view'`\n  Type of the reference (process_section, table, or table_view) for which to gather statistics\n\n- `main_reference_id?: string`\n  UUID of the main reference for which to gather statistics\n\n### Returns\n\n- `{ data?: { openCommentThreads: number; resolvedCommentThreads: number; referenceId?: string; }[]; metadata?: object; }`\n\n  - `data?: { openCommentThreads: number; resolvedCommentThreads: number; referenceId?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.commentThread.getStats({ reference_type: 'process_section' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.commentThread.getStats',
         example:
-          'curl https://api.morta.io/v1/comment_thread/stats \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.commentThread.getStats({ reference_type: 'process_section' });\n\nconsole.log(response.data);",
       },
       python: {
         method: 'comment_thread.get_stats',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.comment_thread.get_stats(\n    reference_type="process_section",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.commentThread.getStats',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.commentThread.getStats({ reference_type: 'process_section' });\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/comment_thread/stats \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5563,19 +5563,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## resolve\n\n`client.commentThread.resolve(comment_thread_id: string): { data?: comment_thread; metadata?: object; }`\n\n**put** `/v1/comment_thread/{comment_thread_id}/resolve`\n\nResolve a comment thread\n\n### Parameters\n\n- `comment_thread_id: string`\n\n### Returns\n\n- `{ data?: { comments?: comment_model[]; createdAt?: string; deletedAt?: string; isCommentInitiator?: object; publicId?: string; resolvedAt?: string; resolver?: object; updatedAt?: string; }; metadata?: { change?: object; event?: string; resourceId?: string; }; }`\n\n  - `data?: { comments?: { commentText?: string; createdAt?: string; deletedAt?: string; isOwner?: object; publicId?: string; updatedAt?: string; user?: summary_user; }[]; createdAt?: string; deletedAt?: string; isCommentInitiator?: object; publicId?: string; resolvedAt?: string; resolver?: { name?: string; }; updatedAt?: string; }`\n  - `metadata?: { change?: object; event?: string; resourceId?: string; }`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.commentThread.resolve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.commentThread.resolve',
         example:
-          'curl https://api.morta.io/v1/comment_thread/$COMMENT_THREAD_ID/resolve \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.commentThread.resolve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'comment_thread.resolve',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.comment_thread.resolve(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.commentThread.resolve',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.commentThread.resolve('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/comment_thread/$COMMENT_THREAD_ID/resolve \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5593,19 +5593,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## reopen\n\n`client.commentThread.reopen(comment_thread_id: string): { data?: comment_thread; metadata?: object; }`\n\n**put** `/v1/comment_thread/{comment_thread_id}/reopen`\n\nReopen a previously resolved comment thread\n\n### Parameters\n\n- `comment_thread_id: string`\n\n### Returns\n\n- `{ data?: { comments?: comment_model[]; createdAt?: string; deletedAt?: string; isCommentInitiator?: object; publicId?: string; resolvedAt?: string; resolver?: object; updatedAt?: string; }; metadata?: { change?: object; event?: string; resourceId?: string; }; }`\n\n  - `data?: { comments?: { commentText?: string; createdAt?: string; deletedAt?: string; isOwner?: object; publicId?: string; updatedAt?: string; user?: summary_user; }[]; createdAt?: string; deletedAt?: string; isCommentInitiator?: object; publicId?: string; resolvedAt?: string; resolver?: { name?: string; }; updatedAt?: string; }`\n  - `metadata?: { change?: object; event?: string; resourceId?: string; }`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.commentThread.reopen('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.commentThread.reopen',
         example:
-          'curl https://api.morta.io/v1/comment_thread/$COMMENT_THREAD_ID/reopen \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.commentThread.reopen('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
       },
       python: {
         method: 'comment_thread.reopen',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.comment_thread.reopen(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.commentThread.reopen',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.commentThread.reopen('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/comment_thread/$COMMENT_THREAD_ID/reopen \\\n    -X PUT \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5627,19 +5627,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.commentThread.comment.create(comment_thread_id: string, commentText: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: comment_model; metadata?: object; }`\n\n**post** `/v1/comment_thread/{comment_thread_id}/comment`\n\nCreate a new comment within a specific comment thread\n\n### Parameters\n\n- `comment_thread_id: string`\n\n- `commentText: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: { commentText?: string; createdAt?: string; deletedAt?: string; isOwner?: object; publicId?: string; updatedAt?: string; user?: summary_user; }; metadata?: { change?: object; event?: string; resourceId?: string; }; }`\n\n  - `data?: { commentText?: string; createdAt?: string; deletedAt?: string; isOwner?: object; publicId?: string; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; name?: string; profilePicture?: string; publicId?: string; }; }`\n  - `metadata?: { change?: object; event?: string; resourceId?: string; }`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst comment = await client.commentThread.comment.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { commentText: 'commentText' });\n\nconsole.log(comment);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.commentThread.comment.create',
         example:
-          'curl https://api.morta.io/v1/comment_thread/$COMMENT_THREAD_ID/comment \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "commentText": "commentText"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst comment = await client.commentThread.comment.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  commentText: 'commentText',\n});\n\nconsole.log(comment.data);",
       },
       python: {
         method: 'comment_thread.comment.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ncomment = client.comment_thread.comment.create(\n    comment_thread_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    comment_text="commentText",\n)\nprint(comment.data)',
       },
-      typescript: {
-        method: 'client.commentThread.comment.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst comment = await client.commentThread.comment.create('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  commentText: 'commentText',\n});\n\nconsole.log(comment.data);",
+          'curl https://api.morta.io/v1/comment_thread/$COMMENT_THREAD_ID/comment \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "commentText": "commentText"\n        }\'',
       },
     },
   },
@@ -5662,19 +5662,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.commentThread.comment.update(comment_thread_id: string, comment_id: string, commentText: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: comment_model; metadata?: object; }`\n\n**put** `/v1/comment_thread/{comment_thread_id}/comment/{comment_id}`\n\nUpdate a specific comment within a comment thread\n\n### Parameters\n\n- `comment_thread_id: string`\n\n- `comment_id: string`\n\n- `commentText: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: { commentText?: string; createdAt?: string; deletedAt?: string; isOwner?: object; publicId?: string; updatedAt?: string; user?: summary_user; }; metadata?: { change?: object; event?: string; resourceId?: string; }; }`\n\n  - `data?: { commentText?: string; createdAt?: string; deletedAt?: string; isOwner?: object; publicId?: string; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; name?: string; profilePicture?: string; publicId?: string; }; }`\n  - `metadata?: { change?: object; event?: string; resourceId?: string; }`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst comment = await client.commentThread.comment.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { comment_thread_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', commentText: 'commentText' });\n\nconsole.log(comment);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.commentThread.comment.update',
         example:
-          'curl https://api.morta.io/v1/comment_thread/$COMMENT_THREAD_ID/comment/$COMMENT_ID \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "commentText": "commentText"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst comment = await client.commentThread.comment.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  comment_thread_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  commentText: 'commentText',\n});\n\nconsole.log(comment.data);",
       },
       python: {
         method: 'comment_thread.comment.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ncomment = client.comment_thread.comment.update(\n    comment_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    comment_thread_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    comment_text="commentText",\n)\nprint(comment.data)',
       },
-      typescript: {
-        method: 'client.commentThread.comment.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst comment = await client.commentThread.comment.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  comment_thread_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  commentText: 'commentText',\n});\n\nconsole.log(comment.data);",
+          'curl https://api.morta.io/v1/comment_thread/$COMMENT_THREAD_ID/comment/$COMMENT_ID \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "commentText": "commentText"\n        }\'',
       },
     },
   },
@@ -5692,19 +5692,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.commentThread.comment.delete(comment_thread_id: string, comment_id: string): { data?: comment_model; metadata?: object; }`\n\n**delete** `/v1/comment_thread/{comment_thread_id}/comment/{comment_id}`\n\nDelete a specific comment within a comment thread\n\n### Parameters\n\n- `comment_thread_id: string`\n\n- `comment_id: string`\n\n### Returns\n\n- `{ data?: { commentText?: string; createdAt?: string; deletedAt?: string; isOwner?: object; publicId?: string; updatedAt?: string; user?: summary_user; }; metadata?: { change?: object; event?: string; resourceId?: string; }; }`\n\n  - `data?: { commentText?: string; createdAt?: string; deletedAt?: string; isOwner?: object; publicId?: string; updatedAt?: string; user?: { email?: string; firebaseUserId?: string; name?: string; profilePicture?: string; publicId?: string; }; }`\n  - `metadata?: { change?: object; event?: string; resourceId?: string; }`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst comment = await client.commentThread.comment.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { comment_thread_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(comment);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.commentThread.comment.delete',
         example:
-          'curl https://api.morta.io/v1/comment_thread/$COMMENT_THREAD_ID/comment/$COMMENT_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst comment = await client.commentThread.comment.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  comment_thread_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(comment.data);",
       },
       python: {
         method: 'comment_thread.comment.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\ncomment = client.comment_thread.comment.delete(\n    comment_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    comment_thread_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(comment.data)',
       },
-      typescript: {
-        method: 'client.commentThread.comment.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst comment = await client.commentThread.comment.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  comment_thread_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(comment.data);",
+          'curl https://api.morta.io/v1/comment_thread/$COMMENT_THREAD_ID/comment/$COMMENT_ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5722,18 +5722,18 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve\n\n`client.permissions.retrieve(resource: 'process' | 'table' | 'table_view', resource_id: string): { data?: access_policy[]; metadata?: object; }`\n\n**get** `/v1/permissions`\n\nRetrieve permissions for a specified resource, such as a table, table view, or process.\n\n### Parameters\n\n- `resource: 'process' | 'table' | 'table_view'`\n  The kind of resource for which to retrieve permissions. Valid options are 'process', 'table', or 'table_view'.\n\n- `resource_id: string`\n  UUID of the resource for which to retrieve permissions.\n\n### Returns\n\n- `{ data?: { accessAttribute?: object; accessResource?: object; publicId?: string; role?: number; roleLabel?: string; }[]; metadata?: object; }`\n\n  - `data?: { accessAttribute?: { documentTable?: object; kind?: string; project?: object; publicId?: string; tag?: object; user?: { firebaseUserId?: string; name?: string; publicId?: string; }; }; accessResource?: { documentTable?: object; kind?: string; process?: object; publicId?: string; }; publicId?: string; role?: number; roleLabel?: string; }[]`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst permission = await client.permissions.retrieve({ resource: 'process', resource_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e' });\n\nconsole.log(permission);\n```",
     perLanguage: {
-      http: {
-        example: 'curl https://api.morta.io/v1/permissions \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+      typescript: {
+        method: 'client.permissions.retrieve',
+        example:
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst permission = await client.permissions.retrieve({\n  resource: 'process',\n  resource_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(permission.data);",
       },
       python: {
         method: 'permissions.retrieve',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\npermission = client.permissions.retrieve(\n    resource="process",\n    resource_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)\nprint(permission.data)',
       },
-      typescript: {
-        method: 'client.permissions.retrieve',
-        example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst permission = await client.permissions.retrieve({\n  resource: 'process',\n  resource_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n});\n\nconsole.log(permission.data);",
+      http: {
+        example: 'curl https://api.morta.io/v1/permissions \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5759,19 +5759,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create\n\n`client.permissions.create(attributeKind: 'user' | 'tag' | 'project' | 'all_table_tags', resourceId: string, resourceKind: 'process' | 'table' | 'table_view', role: 0 | 1 | 2 | 3 | 4, attributeId?: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, tagReferenceId?: string): { data?: access_policy; metadata?: object; }`\n\n**post** `/v1/permissions`\n\nCreate permissions for a specific resource (such as a table, table view, or process).\n\n### Parameters\n\n- `attributeKind: 'user' | 'tag' | 'project' | 'all_table_tags'`\n\n- `resourceId: string`\n\n- `resourceKind: 'process' | 'table' | 'table_view'`\n\n- `role: 0 | 1 | 2 | 3 | 4`\n\n- `attributeId?: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `tagReferenceId?: string`\n\n### Returns\n\n- `{ data?: { accessAttribute?: object; accessResource?: object; publicId?: string; role?: number; roleLabel?: string; }; metadata?: object; }`\n\n  - `data?: { accessAttribute?: { documentTable?: object; kind?: string; project?: object; publicId?: string; tag?: object; user?: { firebaseUserId?: string; name?: string; publicId?: string; }; }; accessResource?: { documentTable?: object; kind?: string; process?: object; publicId?: string; }; publicId?: string; role?: number; roleLabel?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst permission = await client.permissions.create({\n  attributeKind: 'user',\n  resourceId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  resourceKind: 'process',\n  role: 0,\n});\n\nconsole.log(permission);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.permissions.create',
         example:
-          'curl https://api.morta.io/v1/permissions \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "attributeKind": "user",\n          "resourceId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "resourceKind": "process",\n          "role": 0\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst permission = await client.permissions.create({\n  attributeKind: 'user',\n  resourceId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  resourceKind: 'process',\n  role: 0,\n});\n\nconsole.log(permission.data);",
       },
       python: {
         method: 'permissions.create',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\npermission = client.permissions.create(\n    attribute_kind="user",\n    resource_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    resource_kind="process",\n    role=0,\n)\nprint(permission.data)',
       },
-      typescript: {
-        method: 'client.permissions.create',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst permission = await client.permissions.create({\n  attributeKind: 'user',\n  resourceId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  resourceKind: 'process',\n  role: 0,\n});\n\nconsole.log(permission.data);",
+          'curl https://api.morta.io/v1/permissions \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "attributeKind": "user",\n          "resourceId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "resourceKind": "process",\n          "role": 0\n        }\'',
       },
     },
   },
@@ -5789,19 +5789,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## retrieve_tag\n\n`client.permissions.retrieveTag(tag_id: string): { data?: tag; metadata?: object; }`\n\n**get** `/v1/permissions/tag`\n\nRetrieve a tag by its public ID.\n\n### Parameters\n\n- `tag_id: string`\n  Public ID of the tag to retrieve.\n\n### Returns\n\n- `{ data?: { documentTableId?: string; projectPublicId?: string; publicId?: string; referencePublicId?: string; value?: object; }; metadata?: object; }`\n\n  - `data?: { documentTableId?: string; projectPublicId?: string; publicId?: string; referencePublicId?: string; value?: object; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.permissions.retrieveTag({ tag_id: 'tag_id' });\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.permissions.retrieveTag',
         example:
-          'curl https://api.morta.io/v1/permissions/tag \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.permissions.retrieveTag({ tag_id: 'tag_id' });\n\nconsole.log(response.data);",
       },
       python: {
         method: 'permissions.retrieve_tag',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.permissions.retrieve_tag(\n    tag_id="tag_id",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.permissions.retrieveTag',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.permissions.retrieveTag({ tag_id: 'tag_id' });\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/permissions/tag \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5827,19 +5827,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_all\n\n`client.permissions.createAll(attributeKind: 'user' | 'tag' | 'project' | 'all_table_tags', resourceId: string, resourceKind: 'process' | 'table' | 'table_view', role: 0 | 1 | 2 | 3 | 4, attributeId?: string, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, tagReferenceId?: string): { data?: access_policy; metadata?: object; }`\n\n**post** `/v1/permissions/all`\n\nCreate permissions for a specific resource (such as a table, table view, or process).\n\n### Parameters\n\n- `attributeKind: 'user' | 'tag' | 'project' | 'all_table_tags'`\n\n- `resourceId: string`\n\n- `resourceKind: 'process' | 'table' | 'table_view'`\n\n- `role: 0 | 1 | 2 | 3 | 4`\n\n- `attributeId?: string`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `tagReferenceId?: string`\n\n### Returns\n\n- `{ data?: { accessAttribute?: object; accessResource?: object; publicId?: string; role?: number; roleLabel?: string; }; metadata?: object; }`\n\n  - `data?: { accessAttribute?: { documentTable?: object; kind?: string; project?: object; publicId?: string; tag?: object; user?: { firebaseUserId?: string; name?: string; publicId?: string; }; }; accessResource?: { documentTable?: object; kind?: string; process?: object; publicId?: string; }; publicId?: string; role?: number; roleLabel?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.permissions.createAll({\n  attributeKind: 'user',\n  resourceId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  resourceKind: 'process',\n  role: 0,\n});\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.permissions.createAll',
         example:
-          'curl https://api.morta.io/v1/permissions/all \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "attributeKind": "user",\n          "resourceId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "resourceKind": "process",\n          "role": 0\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.permissions.createAll({\n  attributeKind: 'user',\n  resourceId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  resourceKind: 'process',\n  role: 0,\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'permissions.create_all',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.permissions.create_all(\n    attribute_kind="user",\n    resource_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    resource_kind="process",\n    role=0,\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.permissions.createAll',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.permissions.createAll({\n  attributeKind: 'user',\n  resourceId: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  resourceKind: 'process',\n  role: 0,\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/permissions/all \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "attributeKind": "user",\n          "resourceId": "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n          "resourceKind": "process",\n          "role": 0\n        }\'',
       },
     },
   },
@@ -5861,19 +5861,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## update\n\n`client.permissions.update(id: string, role: 0 | 1 | 2 | 3 | 4, context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }): { data?: access_policy; metadata?: object; }`\n\n**put** `/v1/permissions/{id}`\n\nUpdate permissions for a specific resource (such as a table, table view, or process).\n\n### Parameters\n\n- `id: string`\n\n- `role: 0 | 1 | 2 | 3 | 4`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n### Returns\n\n- `{ data?: { accessAttribute?: object; accessResource?: object; publicId?: string; role?: number; roleLabel?: string; }; metadata?: object; }`\n\n  - `data?: { accessAttribute?: { documentTable?: object; kind?: string; project?: object; publicId?: string; tag?: object; user?: { firebaseUserId?: string; name?: string; publicId?: string; }; }; accessResource?: { documentTable?: object; kind?: string; process?: object; publicId?: string; }; publicId?: string; role?: number; roleLabel?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst permission = await client.permissions.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { role: 0 });\n\nconsole.log(permission);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.permissions.update',
         example:
-          'curl https://api.morta.io/v1/permissions/$ID \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "role": 0\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst permission = await client.permissions.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  role: 0,\n});\n\nconsole.log(permission.data);",
       },
       python: {
         method: 'permissions.update',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\npermission = client.permissions.update(\n    id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    role=0,\n)\nprint(permission.data)',
       },
-      typescript: {
-        method: 'client.permissions.update',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst permission = await client.permissions.update('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  role: 0,\n});\n\nconsole.log(permission.data);",
+          'curl https://api.morta.io/v1/permissions/$ID \\\n    -X PUT \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "role": 0\n        }\'',
       },
     },
   },
@@ -5889,19 +5889,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## delete\n\n`client.permissions.delete(id: string): void`\n\n**delete** `/v1/permissions/{id}`\n\nDelete permissions for a specific resource (such as a table, table view, or process).\n\n### Parameters\n\n- `id: string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nawait client.permissions.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e')\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.permissions.delete',
         example:
-          'curl https://api.morta.io/v1/permissions/$ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.permissions.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');",
       },
       python: {
         method: 'permissions.delete',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nclient.permissions.delete(\n    "182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n)',
       },
-      typescript: {
-        method: 'client.permissions.delete',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.permissions.delete('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e');",
+          'curl https://api.morta.io/v1/permissions/$ID \\\n    -X DELETE \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5917,19 +5917,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## request\n\n`client.permissions.request(hub_id: string, type: 'project' | 'process' | 'table' | 'view', id: string): void`\n\n**get** `/v1/permissions/request/{hub_id}/{type}/{id}`\n\nRequest permissions for a specific resource (such as a table, table view, or process).\n\n### Parameters\n\n- `hub_id: string`\n\n- `type: 'project' | 'process' | 'table' | 'view'`\n\n- `id: string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nawait client.permissions.request('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', { hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', type: 'project' })\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.permissions.request',
         example:
-          'curl https://api.morta.io/v1/permissions/request/$HUB_ID/$TYPE/$ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.permissions.request('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  type: 'project',\n});",
       },
       python: {
         method: 'permissions.request',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nclient.permissions.request(\n    id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    hub_id="182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e",\n    type="project",\n)',
       },
-      typescript: {
-        method: 'client.permissions.request',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nawait client.permissions.request('182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e', {\n  hub_id: '182bd5e5-6e1a-4fe4-a799-aa6d9a6ab26e',\n  type: 'project',\n});",
+          'curl https://api.morta.io/v1/permissions/request/$HUB_ID/$TYPE/$ID \\\n    -H "Authorization: Bearer $MORTA_API_KEY"',
       },
     },
   },
@@ -5955,19 +5955,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_passthrough\n\n`client.integrations.createPassthrough(method: 'GET' | 'PUT' | 'POST' | 'DELETE' | 'PATCH', path: string, sourceSystem: 'viewpoint' | 'aconex' | 'autodesk-bim360' | 'procore' | 'revizto' | 'morta' | 'asite', context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, data?: object, headers?: object, onBehalfUserId?: string): { data?: object; metadata?: object; }`\n\n**post** `/v1/integrations/passthrough`\n\nMake a passthrough API call to an external source system.\n\n### Parameters\n\n- `method: 'GET' | 'PUT' | 'POST' | 'DELETE' | 'PATCH'`\n\n- `path: string`\n\n- `sourceSystem: 'viewpoint' | 'aconex' | 'autodesk-bim360' | 'procore' | 'revizto' | 'morta' | 'asite'`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `data?: object`\n\n- `headers?: object`\n\n- `onBehalfUserId?: string`\n\n### Returns\n\n- `{ data?: { body?: object; contentType?: string; headers?: object; status?: string; }; metadata?: object; }`\n\n  - `data?: { body?: object; contentType?: string; headers?: object; status?: string; }`\n  - `metadata?: object`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.integrations.createPassthrough({\n  method: 'GET',\n  path: 'path',\n  sourceSystem: 'viewpoint',\n});\n\nconsole.log(response);\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.integrations.createPassthrough',
         example:
-          'curl https://api.morta.io/v1/integrations/passthrough \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "method": "GET",\n          "path": "path",\n          "sourceSystem": "viewpoint"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.integrations.createPassthrough({\n  method: 'GET',\n  path: 'path',\n  sourceSystem: 'viewpoint',\n});\n\nconsole.log(response.data);",
       },
       python: {
         method: 'integrations.create_passthrough',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.integrations.create_passthrough(\n    method="GET",\n    path="path",\n    source_system="viewpoint",\n)\nprint(response.data)',
       },
-      typescript: {
-        method: 'client.integrations.createPassthrough',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.integrations.createPassthrough({\n  method: 'GET',\n  path: 'path',\n  sourceSystem: 'viewpoint',\n});\n\nconsole.log(response.data);",
+          'curl https://api.morta.io/v1/integrations/passthrough \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "method": "GET",\n          "path": "path",\n          "sourceSystem": "viewpoint"\n        }\'',
       },
     },
   },
@@ -5992,19 +5992,19 @@ const EMBEDDED_METHODS: MethodEntry[] = [
     markdown:
       "## create_passthrough_download\n\n`client.integrations.createPassthroughDownload(method: 'GET' | 'PUT' | 'POST' | 'DELETE' | 'PATCH', path: string, sourceSystem: 'viewpoint' | 'aconex' | 'autodesk-bim360' | 'procore' | 'revizto' | 'morta' | 'asite', context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }, data?: object, headers?: object, onBehalfUserId?: string): string`\n\n**post** `/v1/integrations/passthrough-download`\n\nMake a passthrough API call to an external source system for downloading files.\n\n### Parameters\n\n- `method: 'GET' | 'PUT' | 'POST' | 'DELETE' | 'PATCH'`\n\n- `path: string`\n\n- `sourceSystem: 'viewpoint' | 'aconex' | 'autodesk-bim360' | 'procore' | 'revizto' | 'morta' | 'asite'`\n\n- `context?: { processPublicId?: string; processResponsePublicId?: string; processSectionPublicId?: string; projectId?: string; }`\n  - `processPublicId?: string`\n  - `processResponsePublicId?: string`\n  - `processSectionPublicId?: string`\n  - `projectId?: string`\n\n- `data?: object`\n\n- `headers?: object`\n\n- `onBehalfUserId?: string`\n\n### Returns\n\n- `string`\n\n### Example\n\n```typescript\nimport Morta from 'morta';\n\nconst client = new Morta();\n\nconst response = await client.integrations.createPassthroughDownload({\n  method: 'GET',\n  path: 'path',\n  sourceSystem: 'viewpoint',\n});\n\nconsole.log(response);\n\nconst content = await response.blob()\nconsole.log(content)\n```",
     perLanguage: {
-      http: {
+      typescript: {
+        method: 'client.integrations.createPassthroughDownload',
         example:
-          'curl https://api.morta.io/v1/integrations/passthrough-download \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "method": "GET",\n          "path": "path",\n          "sourceSystem": "viewpoint"\n        }\'',
+          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.integrations.createPassthroughDownload({\n  method: 'GET',\n  path: 'path',\n  sourceSystem: 'viewpoint',\n});\n\nconsole.log(response);\n\nconst content = await response.blob();\nconsole.log(content);",
       },
       python: {
         method: 'integrations.create_passthrough_download',
         example:
           'import os\nfrom morta import Morta\n\nclient = Morta(\n    api_key=os.environ.get("MORTA_API_KEY"),  # This is the default and can be omitted\n)\nresponse = client.integrations.create_passthrough_download(\n    method="GET",\n    path="path",\n    source_system="viewpoint",\n)\nprint(response)\ncontent = response.read()\nprint(content)',
       },
-      typescript: {
-        method: 'client.integrations.createPassthroughDownload',
+      http: {
         example:
-          "import Morta from 'morta';\n\nconst client = new Morta({\n  apiKey: process.env['MORTA_API_KEY'], // This is the default and can be omitted\n});\n\nconst response = await client.integrations.createPassthroughDownload({\n  method: 'GET',\n  path: 'path',\n  sourceSystem: 'viewpoint',\n});\n\nconsole.log(response);\n\nconst content = await response.blob();\nconsole.log(content);",
+          'curl https://api.morta.io/v1/integrations/passthrough-download \\\n    -H \'Content-Type: application/json\' \\\n    -H "Authorization: Bearer $MORTA_API_KEY" \\\n    -d \'{\n          "method": "GET",\n          "path": "path",\n          "sourceSystem": "viewpoint"\n        }\'',
       },
     },
   },
