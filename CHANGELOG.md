@@ -1,5 +1,57 @@
 # Changelog
 
+## 2.1.0 (2026-04-29)
+
+Full Changelog: [v2.0.0...v2.1.0](https://github.com/morta-technology/morta-typescript/compare/v2.0.0...v2.1.0)
+
+### Features
+
+* support setting headers via env ([1a2df98](https://github.com/morta-technology/morta-typescript/commit/1a2df98f9d694dd459dd294d8bce1ae92d2ff679))
+
+
+### Bug Fixes
+
+* **client:** preserve URL params already embedded in path ([bca1acc](https://github.com/morta-technology/morta-typescript/commit/bca1acc6e891b162953909183bc90566786233e3))
+
+
+### Chores
+
+* **ci:** escape input path in publish-npm workflow ([995b958](https://github.com/morta-technology/morta-typescript/commit/995b9586bd8723019364917e71bbc01cea86b653))
+* **ci:** skip lint on metadata-only changes ([862c887](https://github.com/morta-technology/morta-typescript/commit/862c887eaa6bd6ea837e94e25e35cba0c6f8184c))
+* **ci:** skip uploading artifacts on stainless-internal branches ([13079f1](https://github.com/morta-technology/morta-typescript/commit/13079f1c21192272c311fc3407a799905353c5bf))
+* fix example snippet imports ([8e5a7fd](https://github.com/morta-technology/morta-typescript/commit/8e5a7fd618a7d153e979d98da9b4656bc8b91b6a))
+* **format:** run eslint and prettier separately ([22bf9db](https://github.com/morta-technology/morta-typescript/commit/22bf9db44aae355ab2a9f7a2e7dfe9023341714f))
+* **internal:** bump @modelcontextprotocol/sdk, @hono/node-server, and minimatch ([eca165f](https://github.com/morta-technology/morta-typescript/commit/eca165f5fb1d13bc02b6796bdd591bd7629933fd))
+* **internal:** codegen related update ([76661fc](https://github.com/morta-technology/morta-typescript/commit/76661fcb38882d4d60d82ccf2a1c68fd88aaf6b5))
+* **internal:** codegen related update ([e65fd66](https://github.com/morta-technology/morta-typescript/commit/e65fd66d09f5aa60d433efaed589d626c6cc1961))
+* **internal:** codegen related update ([7b6eecd](https://github.com/morta-technology/morta-typescript/commit/7b6eecddd5db4f7eff6e89c882f840c6b06691ca))
+* **internal:** codegen related update ([819e0e0](https://github.com/morta-technology/morta-typescript/commit/819e0e058458d2eba0df9a7259dbeb466769fbe9))
+* **internal:** codegen related update ([1d701f4](https://github.com/morta-technology/morta-typescript/commit/1d701f411b8179a101c406dc918dc4a7c352e1b4))
+* **internal:** fix MCP docker image builds in yarn projects ([bf3146b](https://github.com/morta-technology/morta-typescript/commit/bf3146b77687edb85d32fb4932f41c179865a70f))
+* **internal:** fix MCP server import ordering ([b86faa7](https://github.com/morta-technology/morta-typescript/commit/b86faa71e989b19f712e2e669b47987229afbb77))
+* **internal:** fix MCP server TS errors that occur with required client options ([e142c76](https://github.com/morta-technology/morta-typescript/commit/e142c760a96ccb17b8474cdcbcf3fbe8fe93b2c5))
+* **internal:** improve local docs search for MCP servers ([87f8312](https://github.com/morta-technology/morta-typescript/commit/87f8312059c3ef7dc8b203f302ff767fa2619417))
+* **internal:** improve local docs search for MCP servers ([17980e2](https://github.com/morta-technology/morta-typescript/commit/17980e218e5fd671e3791ae79e422ae6b6d538ec))
+* **internal:** make generated MCP servers compatible with Cloudflare worker environments ([930b611](https://github.com/morta-technology/morta-typescript/commit/930b6111ad64dc04be23a1fba3ca6f7cb7301641))
+* **internal:** more robust bootstrap script ([7bef003](https://github.com/morta-technology/morta-typescript/commit/7bef003d70fc290f024e4683cb656eac515b9ad0))
+* **internal:** show error causes in MCP servers when running in local mode ([fdec682](https://github.com/morta-technology/morta-typescript/commit/fdec68214d3f92585d5cce5338991e90fea1246e))
+* **internal:** support custom-instructions-path flag in MCP servers ([9f1d85f](https://github.com/morta-technology/morta-typescript/commit/9f1d85f83fc3fc1dfea29e5a4650cd81e634c080))
+* **internal:** support local docs search in MCP servers ([0a0ea82](https://github.com/morta-technology/morta-typescript/commit/0a0ea82fac4310ea31268ca19410e69edfe733d7))
+* **internal:** support type annotations when running MCP in local execution mode ([8326d51](https://github.com/morta-technology/morta-typescript/commit/8326d51227f3745a354c0b1f3884caca609c585d))
+* **internal:** support x-stainless-mcp-client-envs header in MCP servers ([5584cc3](https://github.com/morta-technology/morta-typescript/commit/5584cc3b07caa33da00ea3755e82e63907ae7cd5))
+* **internal:** support x-stainless-mcp-client-permissions headers in MCP servers ([a42232e](https://github.com/morta-technology/morta-typescript/commit/a42232eb1d20229e9b6a4ca669d3ba2a777f8b32))
+* **internal:** tweak CI branches ([858d821](https://github.com/morta-technology/morta-typescript/commit/858d8215c248daedab97a4dd5e79ae8021ce4e13))
+* **internal:** update dependencies to address dependabot vulnerabilities ([5683660](https://github.com/morta-technology/morta-typescript/commit/568366029a2d62bc8303ec54d360571e2fcda314))
+* **internal:** update gitignore ([9521d99](https://github.com/morta-technology/morta-typescript/commit/9521d99d455029a2c7a8db1c77824266e615fe49))
+* **internal:** use link instead of file in MCP server package.json files ([898b842](https://github.com/morta-technology/morta-typescript/commit/898b84219539066197c2ed218e68b496116e6ea9))
+* **internal:** use x-stainless-mcp-client-envs header for MCP remote code tool calls ([dad6152](https://github.com/morta-technology/morta-typescript/commit/dad6152f8c077e7dfe1d86fb20eeef66aaa9edaf))
+* **mcp-server:** add support for session id, forward client info ([dbee146](https://github.com/morta-technology/morta-typescript/commit/dbee14606829cca7338ca4c526d7bbbfe9705efb))
+* **mcp-server:** improve instructions ([2435a2d](https://github.com/morta-technology/morta-typescript/commit/2435a2d7e3166afc58737cb31d18cfc30e103f40))
+* **mcp-server:** increase local docs search result count from 5 to 10 ([a4a02f9](https://github.com/morta-technology/morta-typescript/commit/a4a02f92348a53402409c30053dd8f7c726561a8))
+* **mcp-server:** log client info ([039b88b](https://github.com/morta-technology/morta-typescript/commit/039b88b24ae1ff787eceee3034c22b96a541a077))
+* **mcp-server:** return access instructions for 404 without API key ([64d5d53](https://github.com/morta-technology/morta-typescript/commit/64d5d5381265f024ed57dfb06d11969fdfacad34))
+* restructure docs search code ([6d3ef59](https://github.com/morta-technology/morta-typescript/commit/6d3ef5900da85da6643c9a58ce89649aeda4bb1a))
+
 ## 2.0.0 (2026-03-01)
 
 Full Changelog: [v1.4.0...v2.0.0](https://github.com/morta-technology/morta-typescript/compare/v1.4.0...v2.0.0)
