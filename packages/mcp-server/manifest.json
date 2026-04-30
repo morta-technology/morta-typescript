@@ -27,7 +27,7 @@
   "user_config": {
     "MORTA_API_KEY": {
       "title": "api_key",
-      "description": "The Morta API uses API Keys to authenicate requests. You can view and manage your API keys in the profile section of your user account.Your API keys carry permissions tied to your user account, so please make sure to keep them secure. Avoid storing your API keys in your version control system.All API requests are made over HTTPS, Morta doesn't support plain HTTP connections.",
+      "description": "The Morta API uses API Keys to authenicate requests. You can view and manage your API keys in the profile section of your user account.Your API keys carry permissions tied to your user account, so please make sure to keep them secure. Avoid storing your API keys in your version control system.All API requests are made over HTTPS, Morta doesn\'t support plain HTTP connections.",
       "required": true,
       "type": "string"
     }
